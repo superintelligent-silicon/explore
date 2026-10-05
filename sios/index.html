@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIOS — Silicon OS / Superintelligent OS</title>
+  <meta name="description" content="SIOS (Silicon OS / Superintelligent OS) — a compact, local-first utility OS from Superintelligent Silicon. Phase 0 scaffold." />
+  <meta name="theme-color" content="#050506" />
+  <link rel="canonical" href="https://exploresuperintelligence.online/sios/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;560;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .sios-page { max-width: var(--max); padding: 3.5rem 0 5rem; animation: rise 0.85s var(--ease) both; }
+    .sios-page h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 6vw, 3.6rem);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 0 0 0.75rem;
+    }
+    .sios-page .expand {
+      margin: 0 0 1.5rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .sios-page .intro {
+      color: var(--fg-muted);
+      margin: 0 0 2rem;
+      font-size: 1.1rem;
+      max-width: 34rem;
+      line-height: 1.7;
+    }
+    .module-grid {
+      list-style: none; margin: 0 0 2rem; padding: 0;
+      display: grid; gap: 0.55rem;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 520px) { .module-grid { grid-template-columns: 1fr; } }
+    .module-grid li {
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-elev);
+      color: var(--fg-muted);
+      font-size: 0.95rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .module-grid strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .phase-note {
+      padding: 1.25rem 1.3rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      color: var(--fg-muted);
+      margin: 0 0 2rem;
+      font-size: 0.98rem;
+    }
+    .phase-note strong { color: var(--fg); }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="mark" href="/">Explore Superintelligence</a>
+    <nav aria-label="Primary">
+      <a href="/#meaning">Meaning</a>
+      <a href="/#funnel">Funnel</a>
+      <a href="/shipping/">Shipping</a>
+      <a href="/sios/" aria-current="page">SIOS</a>
+      <a href="https://superintelligentsilicon.com">Org</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="sios-page">
+      <a class="back" href="/">← Home</a>
+      <p class="eyebrow">Lab · Phase 0</p>
+      <h1>SIOS</h1>
+      <p class="expand">Silicon OS / Superintelligent OS</p>
+      <p class="intro">
+        A compact, local-first utility layer from
+        <a href="https://superintelligentsilicon.com">Superintelligent Silicon</a> —
+        files, keys, calculator, calendar, notes — interoperable, exportable, calm.
+        Built to open in a page or on a machine. Not a cloud desktop. Not vapor dressed as a launch.
+      </p>
+
+      <div class="hero-actions" style="margin-bottom:2.5rem">
+        <a class="btn primary" href="https://github.com/superintelligent-silicon/sios">View on GitHub</a>
+        <a class="btn ghost" href="https://github.com/superintelligent-silicon/sios/tree/main/apps/shell">Shell placeholder</a>
+      </div>
+
+      <div class="phase-note">
+        <strong>Honest status.</strong> Phase 0 scaffold only — public vision, MIT license, and a
+        non-functional desktop frame with dock stubs. No crypto. No key collection. No downloadable product yet.
+      </div>
+
+      <p class="panel-label" style="margin-bottom:0.85rem">Planned modules</p>
+      <ul class="module-grid">
+        <li><strong>Files</strong> Local tree, exportable</li>
+        <li><strong>Keys</strong> Encrypt on-device; keys never leave without you</li>
+        <li><strong>Calc</strong> Simple, history export</li>
+        <li><strong>Calendar</strong> Local events + ICS</li>
+      </ul>
+
+      <p class="aside">
+        Source:
+        <a href="https://github.com/superintelligent-silicon/sios">github.com/superintelligent-silicon/sios</a>
+        · Vision:
+        <a href="https://github.com/superintelligent-silicon/sios/blob/main/docs/VISION.md">docs/VISION.md</a>
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span>© Superintelligent Silicon</span>
+    <a href="https://github.com/superintelligent-silicon/sios">SIOS on GitHub</a>
+  </footer>
+</body>
+</html>
