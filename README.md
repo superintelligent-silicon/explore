@@ -8,3 +8,8 @@ Public static site for [exploresuperintelligence.online](https://exploresuperint
 - Short alias: [exploresi.online](https://exploresi.online) → 301 here
 
 No secrets. No build step required — copy `index.html` and `styles.css`.
+
+## Pages
+
+- `/` — home
+- `/shipping/` — what’s live / what’s coming (honest v0)
