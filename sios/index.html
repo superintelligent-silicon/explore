@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SIOS — Silicon OS / Superintelligent OS</title>
-  <meta name="description" content="SIOS (Silicon OS / Superintelligent OS) — a compact, local-first utility OS from Superintelligent Silicon. Phase 0 scaffold." />
+  <meta name="description" content="SIOS (Silicon OS / Superintelligent OS) — local-first Files, Keys, Calc, and Calendar in the browser. Phase 0.5." />
   <meta name="theme-color" content="#050506" />
   <link rel="canonical" href="https://exploresuperintelligence.online/sios/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,15 +59,28 @@
       margin-bottom: 0.3rem;
     }
     .phase-note {
-      padding: 1.25rem 1.3rem;
-      border-radius: var(--radius);
+      padding: 1.3rem 1.35rem;
+      border-radius: 16px;
       border: 1px solid var(--line);
-      background: var(--bg-soft);
+      background: linear-gradient(165deg, var(--accent-soft), transparent 55%), var(--bg-soft);
       color: var(--fg-muted);
       margin: 0 0 2rem;
       font-size: 0.98rem;
+      line-height: 1.65;
     }
     .phase-note strong { color: var(--fg); }
+    .module-grid li {
+      transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+    }
+    .module-grid li:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-1px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .module-grid li { transition: none; }
+      .module-grid li:hover { transform: none; }
+      .sios-page { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -97,7 +110,7 @@
       </p>
 
       <div class="hero-actions" style="margin-bottom:2.5rem">
-        <a class="btn primary" href="/sios/shell/">Open shell preview</a>
+        <a class="btn primary" href="/sios/shell/">Open the live shell</a>
         <a class="btn ghost" href="https://github.com/superintelligent-silicon/sios">View on GitHub</a>
       </div>
 
