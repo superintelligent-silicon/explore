@@ -102,14 +102,14 @@
       </div>
 
       <div class="phase-note">
-        <strong>Honest status.</strong> Phase 0.5 — Files + Calc + Calendar live — public vision, MIT license, and a
-        live in-browser desktop preview. <strong>Files</strong>, <strong>Calc</strong>, and <strong>Calendar</strong> work locally (JSON export); <strong>Keys</strong> stays a placeholder. No crypto. No key collection.
+        <strong>Honest status.</strong> Phase 0.5 — Files + Keys + Calc + Calendar — public vision, MIT license, and a
+        live in-browser desktop preview. <strong>Files</strong>, <strong>Keys</strong>, <strong>Calc</strong>, and <strong>Calendar</strong> work locally. Keys uses on-device Web Crypto (<strong>not audited</strong>). No key collection or network upload.
       </div>
 
       <p class="panel-label" style="margin-bottom:0.85rem">Planned modules</p>
       <ul class="module-grid">
         <li><strong>Files</strong> Live virtual FS · editor + JSON import/export</li>
-        <li><strong>Keys</strong> Encrypt on-device; keys never leave without you</li>
+        <li><strong>Keys</strong> Live · PBKDF2+AES-GCM · not audited · local-only</li>
         <li><strong>Calc</strong> Live in shell preview · history + JSON export</li>
         <li><strong>Calendar</strong> Live in shell · events + JSON import/export</li>
       </ul>
