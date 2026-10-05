@@ -1,15 +1,10 @@
 # Explore Superintelligence
 
-Public static site for [exploresuperintelligence.online](https://exploresuperintelligence.online).
+Public site for [exploresuperintelligence.online](https://exploresuperintelligence.online).
 
-- Stack: plain HTML + CSS (Google Fonts for Instrument Serif + Inter)
-- Deploy target: droplet `/var/www/exploresuperintelligence.online/`
-- Org / lab: [superintelligentsilicon.com](https://superintelligentsilicon.com)
+- Design system **v2** — shared calm dark UI (Instrument Serif + Inter)
 - Short alias: [exploresi.online](https://exploresi.online) → 301 here
+- Lab: [superintelligentsilicon.com](https://superintelligentsilicon.com)
+- Org / private ops: [superintelligent-silicon](https://github.com/superintelligent-silicon)
 
-No secrets. No build step required — copy `index.html` and `styles.css`.
-
-## Pages
-
-- `/` — home
-- `/shipping/` — what’s live / what’s coming (honest v0)
+Deploy: static files to `/var/www/exploresuperintelligence.online/` on the SI droplet.
