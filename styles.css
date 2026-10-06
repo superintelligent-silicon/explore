@@ -406,6 +406,7 @@ main {
 
 .site-footer a { color: var(--fg-soft); }
 .site-footer a:hover { color: var(--fg); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
 
 /* ——— Shipping page ——— */
 .ship-page {

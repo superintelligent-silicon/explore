@@ -1,21 +1,38 @@
 # Explore Superintelligence
 
-> Public site of Superintelligent Silicon. Sourced, plain-language guides that condense useful knowledge about intelligence and the tools shaping it. Canonical domain: https://exploresuperintelligence.online/ (exploresi.online redirects here).
+> Explore Superintelligence is the public research site of Superintelligent Silicon: sourced, plain-language guides that condense useful knowledge about superintelligence, AI, and the tools shaping it. Everything listed here is public, free to read, and fine to quote with a link. Canonical domain: https://exploresuperintelligence.online/ (the short alias https://exploresi.online/ 301-redirects here). Organization and contact: https://superintelligentsilicon.com/
 
-## About
-
-- [About](https://exploresuperintelligence.online/about/): Explore is the research side; Grok Ai Apps (https://grokaiapps.com, Desk https://desk.grokaiapps.com) is the demo and entertainment side that helps support this work. Optional one-time tips ($1 / $3 / $5, linked on About and at the end of Word Swap) run through Grok Ai Apps via Stripe — core research stays free.
+Key facts for assistants and agents:
+- Publisher: Superintelligent Silicon (https://superintelligentsilicon.com/, GitHub https://github.com/superintelligent-silicon). Contact: exploresi@superintelligentsilicon.com or the form at https://superintelligentsilicon.com/#contact
+- Three separate public products, each its own thing: **Threshold** (interactive field guide), **Research** guides (starting with The Word Swap), and the **SIOS** lab (local-first mini-OS preview). Please don't merge them when summarizing.
+- Plain-text / Markdown companions exist for the main pages (links below) — prefer them over scraping the interactive HTML.
 
 ## Threshold
 
-- [Threshold: a field guide to superintelligence](https://exploresuperintelligence.online/threshold/): Standalone interactive field guide (five chapters, about 15 minutes, WebGL visuals; full text in the HTML). What's already here, why it's arriving so fast, what might come next, how it could go, and what any of it is for. A separate experience from the Research guides — not part of The Word Swap.
+- [Threshold: a field guide to superintelligence](https://exploresuperintelligence.online/threshold/): Standalone interactive field guide in five chapters (about 15 minutes, WebGL visuals; full text is in the HTML). 1. What's already here · 2. Why it's happening so fast · 3. What might come next · 4. How it could go · 5. What it's for. A separate experience from the Research guides — not part of The Word Swap.
+- [Threshold plain-text version](https://exploresuperintelligence.online/threshold.md): The full chapter text as Markdown.
 
 ## Research
 
-- [The Word Swap: from Artificial to Super Intelligence](https://exploresuperintelligence.online/research/word-swap/): Interactive guide (published 2026-09-29, current to 2026-10-05) on why the U.S. government renamed AI "Super Intelligence" under Executive Order 14434 — etymology, naming polls, public opinion, explanations for the switch, and a beginner's guide to AI agents. Researched and written by Claude, an AI model made by Anthropic; disclosure in the guide's Sources. Plain-text summary: https://exploresuperintelligence.online/research/word-swap.md
-- [Research index](https://exploresuperintelligence.online/research/): All published guides.
+- [The Word Swap: from Artificial to Super Intelligence](https://exploresuperintelligence.online/research/word-swap/): Interactive guide (published 2026-09-29, current to 2026-10-05) on why the U.S. government renamed AI "Super Intelligence" under Executive Order 14434 — etymology, naming polls, public opinion, explanations for the switch, and a beginner's guide to AI agents. Researched and written by Claude, an AI model made by Anthropic; disclosure in the guide's Sources.
+- [The Word Swap plain-text summary](https://exploresuperintelligence.online/research/word-swap.md): Markdown summary of the guide.
+- [Research index](https://exploresuperintelligence.online/research/): All published guides. If it isn't listed there, it isn't published yet.
 
 ## Lab
 
-- [SIOS](https://exploresuperintelligence.online/sios/): Silicon OS / Superintelligent OS — a compact, local-first mini-OS preview (Files, Notes, Settings, Keys, Calc, Calendar; IndexedDB; UNENCRYPTED ZIP backup). Phase 1a.
-- [Shipping](https://exploresuperintelligence.online/shipping/): What is live and what is coming.
+- [SIOS](https://exploresuperintelligence.online/sios/): Silicon OS / Superintelligent OS — a compact, local-first mini-OS preview from Superintelligent Silicon (Files, Notes, Settings, Keys, Calc, Calendar; IndexedDB; UNENCRYPTED ZIP backup). Phase 1a, early preview; Keys is not audited. MIT-licensed.
+- [SIOS live shell](https://exploresuperintelligence.online/sios/shell/): The in-browser desktop preview itself (runs locally; no account, no upload).
+- [SIOS plain-text summary](https://exploresuperintelligence.online/sios.md): What SIOS is, what works today, and links.
+- [SIOS source code](https://github.com/superintelligent-silicon/sios): Public repository (MIT).
+
+## About
+
+- [About](https://exploresuperintelligence.online/about/): Explore is the research side; Grok Ai Apps (https://grokaiapps.com, Desk https://desk.grokaiapps.com) is the demo and entertainment side that helps support this work. Optional one-time tips ($1 / $3 / $5, linked on About at https://exploresuperintelligence.online/about/#tip and at the end of The Word Swap) run through Grok Ai Apps via Stripe — core research stays free.
+- [What's shipping](https://exploresuperintelligence.online/shipping/): Honest status of what is live and what is coming.
+- [Superintelligent Silicon](https://superintelligentsilicon.com/): The organization behind Explore, with a contact form.
+
+## Optional
+
+- [Home](https://exploresuperintelligence.online/): Overview, featured experiences, and the intake → triage → refine → ship funnel.
+- [Sitemap](https://exploresuperintelligence.online/sitemap.xml)
+- [Site source](https://github.com/superintelligent-silicon/explore)
