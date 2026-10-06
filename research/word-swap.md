@@ -37,3 +37,7 @@ An interactive field guide to why the U.S. government renamed AI "Super Intellig
 - Risks: compounding mistakes, runaway costs, and prompt injection (instructions hidden in pages, emails, and files an agent reads). The guide recommends a small first task, a clear brief, and granting permissions one notch at a time.
 
 The full guide links every claim to its source (White House order and fact sheet, polling releases, news coverage, Online Etymology Dictionary). See the Sources chapters at https://exploresuperintelligence.online/research/word-swap/
+
+## Support
+
+Explore research is supported via [Grok Ai Apps](https://grokaiapps.com) (demo / entertainment). See [About](https://exploresuperintelligence.online/about/). Tip amounts are not live yet.
