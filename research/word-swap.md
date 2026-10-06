@@ -40,4 +40,4 @@ The full guide links every claim to its source (White House order and fact sheet
 
 ## Support
 
-Explore research is supported via [Grok Ai Apps](https://grokaiapps.com) (demo / entertainment). See [About](https://exploresuperintelligence.online/about/). Tip amounts are not live yet.
+Explore research is supported via [Grok Ai Apps](https://grokaiapps.com) (demo / entertainment). See [About](https://exploresuperintelligence.online/about/). Optional tips: [$1](https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00) / [$3](https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01) / [$5](https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02).

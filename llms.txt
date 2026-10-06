@@ -4,7 +4,7 @@
 
 ## About
 
-- [About](https://exploresuperintelligence.online/about/): Explore is the research side; Grok Ai Apps (https://grokaiapps.com, Desk https://desk.grokaiapps.com) is the demo and entertainment side that helps support this work. Optional tips, when live, run through Grok Ai Apps — core research stays free.
+- [About](https://exploresuperintelligence.online/about/): Explore is the research side; Grok Ai Apps (https://grokaiapps.com, Desk https://desk.grokaiapps.com) is the demo and entertainment side that helps support this work. Optional one-time tips ($1 / $3 / $5, linked on About and at the end of Word Swap) run through Grok Ai Apps via Stripe — core research stays free.
 
 ## Research
 

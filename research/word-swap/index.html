@@ -233,6 +233,8 @@ p{margin:0 0 10px;max-width:68ch}
 .refs{margin-top:8px}
 .note{border-left:3px solid var(--blue);padding:6px 0 6px 14px;margin:16px 0 4px;color:var(--ink2);font-size:15.5px}
 .note.r{border-left-color:var(--red)}
+.tipbox .tip-links a{font-weight:700;text-decoration:none}
+.tipbox .tip-thanks{margin:0 0 6px;color:var(--blue);font-weight:700}
 
 /* segmented control with sliding indicator */
 .seg{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:3px;margin:0 0 14px;max-width:640px}
@@ -1148,7 +1150,7 @@ pre.brief{white-space:pre-wrap;word-break:break-word;font-family:"SF Mono",ui-mo
         <p class="lede">Current to October 5, 2026. Charts use only figures reported in the linked coverage. Etymologies follow the Online Etymology Dictionary unless noted. Illustrations are original drawings, not company logos.</p>
         <div class="note r">Researched and written by Claude, an AI model made by Anthropic. Anthropic is a party to parts of this story: its CEO attended the White House event, and its models appear in the incident list. The analysis sections are marked as analysis.</div>
         <div id="srcList"></div>
-        <div class="note" style="margin-top:18px" id="supportTip">If this guide was useful, you can support Explore’s research via <a href="/about/">Grok Ai Apps</a> — the demo and entertainment side that helps keep this work going. Optional tip amounts are not live yet; details on the <a href="/about/">About</a> page.</div>
+        <div class="note tipbox" style="margin-top:18px" id="supportTip"><p class="tip-thanks" hidden>Thank you — your tip helps keep Explore’s research going.</p><p style="margin:0">If this guide was useful, you can support Explore’s research.</p><p class="tip-links" style="margin:6px 0 0"><b>Support</b> · <a href="https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00" rel="noopener">$1</a> / <a href="https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01" rel="noopener">$3</a> / <a href="https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02" rel="noopener">$5</a></p><p class="small" style="margin:6px 0 0">Tips go through <a href="https://grokaiapps.com">Grok Ai Apps</a> — the demo and entertainment side that helps support Explore’s research. More on the <a href="/about/">About</a> page.</p></div>
       </div>
     </section>
 
@@ -1366,7 +1368,7 @@ pre.brief{white-space:pre-wrap;word-break:break-word;font-family:"SF Mono",ui-mo
         <p class="lede">Current to October 5, 2026. Product details come from launch coverage and may change quickly. Legal material is a general overview, not legal advice.</p>
         <div class="note r">Researched and written by Claude, an AI model made by Anthropic. Anthropic makes some of the agent products and created MCP, both described here. Products are listed by lane rather than ranked.</div>
         <div id="srcList2"></div>
-        <div class="note" style="margin-top:18px">If this guide was useful, you can support Explore’s research via <a href="/about/">Grok Ai Apps</a> — the demo and entertainment side that helps keep this work going. Optional tip amounts are not live yet; details on the <a href="/about/">About</a> page.</div>
+        <div class="note tipbox" style="margin-top:18px" id="supportTip2"><p class="tip-thanks" hidden>Thank you — your tip helps keep Explore’s research going.</p><p style="margin:0">If this guide was useful, you can support Explore’s research.</p><p class="tip-links" style="margin:6px 0 0"><b>Support</b> · <a href="https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00" rel="noopener">$1</a> / <a href="https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01" rel="noopener">$3</a> / <a href="https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02" rel="noopener">$5</a></p><p class="small" style="margin:6px 0 0">Tips go through <a href="https://grokaiapps.com">Grok Ai Apps</a> — the demo and entertainment side that helps support Explore’s research. More on the <a href="/about/">About</a> page.</p></div>
       </div>
     </section>
 
@@ -1653,6 +1655,7 @@ function playEdit(){
 $("#replay").addEventListener("click",playEdit);
 if(savedLast>0&&savedLast<N){const r=$("#resume");r.hidden=false;r.textContent="Continue: "+chapters[savedLast].getAttribute("data-title");r.addEventListener("click",()=>go(savedLast))}
 if(store.get("ws-swiped"))$("#swipeHint").style.visibility="hidden";
+try{const qp=new URLSearchParams(location.search);if(qp.get("thanks")==="1"){$$(".tip-thanks").forEach(e=>e.hidden=false);qp.delete("thanks");const q=qp.toString();history.replaceState(null,"",location.pathname+(q?"?"+q:"")+location.hash)}}catch(e){}
 
 /* ---------------- timeline ---------------- */
 const EVENTS=[
