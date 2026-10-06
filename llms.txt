@@ -17,5 +17,5 @@
 
 ## Lab
 
-- [SIOS](https://exploresuperintelligence.online/sios/): Silicon OS / Superintelligent OS — a compact, local-first mini-OS preview (files, keys, calendar, calculator, notes).
+- [SIOS](https://exploresuperintelligence.online/sios/): Silicon OS / Superintelligent OS — a compact, local-first mini-OS preview (Files, Notes, Settings, Keys, Calc, Calendar; IndexedDB; UNENCRYPTED ZIP backup). Phase 1a.
 - [Shipping](https://exploresuperintelligence.online/shipping/): What is live and what is coming.

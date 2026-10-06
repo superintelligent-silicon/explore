@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SIOS — Silicon OS / Superintelligent OS</title>
-  <meta name="description" content="SIOS (Silicon OS / Superintelligent OS) — local-first Files, Keys, Calc, and Calendar in the browser. Phase 0.5." />
+  <meta name="description" content="SIOS (Silicon OS / Superintelligent OS) — local-first Files, Notes, Settings, Keys, Calc, Calendar, and UNENCRYPTED ZIP backup. Phase 1a." />
   <meta name="theme-color" content="#050506" />
   <link rel="canonical" href="https://exploresuperintelligence.online/sios/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -102,7 +102,7 @@
   <main>
     <article class="sios-page">
       <a class="back" href="/">← Home</a>
-      <p class="eyebrow">Lab · Phase 0.5</p>
+      <p class="eyebrow">Lab · Phase 1a</p>
       <h1>SIOS</h1>
       <p class="expand">Silicon OS / Superintelligent OS</p>
       <p class="intro">
@@ -118,16 +118,20 @@
       </div>
 
       <div class="phase-note">
-        <strong>Honest status.</strong> Phase 0.5 — Files + Keys + Calc + Calendar — public vision, MIT license, and a
-        live in-browser desktop preview. <strong>Files</strong>, <strong>Keys</strong>, <strong>Calc</strong>, and <strong>Calendar</strong> work locally, with a local data bus (Save to Files). Keys uses on-device Web Crypto (<strong>not audited</strong>). No key collection or network upload.
+        <strong>Honest status.</strong> Phase 1a — <strong>Files</strong>, <strong>Notes</strong>, <strong>Settings</strong>,
+        <strong>Keys</strong>, <strong>Calc</strong>, and <strong>Calendar</strong> in a live in-browser shell,
+        with IndexedDB storage, strict CSP, a local data bus, and clearly labeled <strong>UNENCRYPTED ZIP</strong> backup.
+        Keys uses on-device Web Crypto PBKDF2 (600k; <strong>not audited</strong>). No accounts. No key collection or network upload from the shell.
       </div>
 
-      <p class="panel-label" style="margin-bottom:0.85rem">Planned modules</p>
+      <p class="panel-label" style="margin-bottom:0.85rem">Modules</p>
       <ul class="module-grid">
-        <li><strong>Files</strong> Live virtual FS · editor + JSON import/export</li>
-        <li><strong>Keys</strong> Live · PBKDF2+AES-GCM · not audited · local-only</li>
-        <li><strong>Calc</strong> Live in shell preview · history + JSON export</li>
-        <li><strong>Calendar</strong> Live in shell · events + JSON import/export</li>
+        <li><strong>Files</strong> Live virtual FS · IndexedDB · JSON import/export</li>
+        <li><strong>Notes</strong> Live · <code>.md</code> in Files/Notes · plain text (no HTML)</li>
+        <li><strong>Settings</strong> Live · theme · lock timeout · storage · ZIP backup</li>
+        <li><strong>Keys</strong> Live · PBKDF2 600k + AES-GCM · not audited · local-only</li>
+        <li><strong>Calc</strong> Live · history + Save to Files</li>
+        <li><strong>Calendar</strong> Live · events + JSON import/export</li>
       </ul>
 
       <p class="aside">
