@@ -1,0 +1,13 @@
+# Explore Superintelligence
+
+> Public site of Superintelligent Silicon. Sourced, plain-language guides that condense useful knowledge about intelligence and the tools shaping it. Canonical domain: https://exploresuperintelligence.online/ (exploresi.online redirects here).
+
+## Research
+
+- [The Word Swap: from Artificial to Super Intelligence](https://exploresuperintelligence.online/research/word-swap/): Interactive guide (published 2026-09-29, current to 2026-10-05) on why the U.S. government renamed AI "Super Intelligence" under Executive Order 14434 — etymology, naming polls, public opinion, explanations for the switch, and a beginner's guide to AI agents. Researched and written by Claude, an AI model made by Anthropic; disclosure in the guide's Sources. Plain-text summary: https://exploresuperintelligence.online/research/word-swap.md
+- [Research index](https://exploresuperintelligence.online/research/): All published guides.
+
+## Lab
+
+- [SIOS](https://exploresuperintelligence.online/sios/): Silicon OS / Superintelligent OS — a compact, local-first mini-OS preview (files, keys, calendar, calculator, notes).
+- [Shipping](https://exploresuperintelligence.online/shipping/): What is live and what is coming.
