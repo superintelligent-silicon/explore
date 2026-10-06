@@ -6,6 +6,10 @@
 
 - [About](https://exploresuperintelligence.online/about/): Explore is the research side; Grok Ai Apps (https://grokaiapps.com, Desk https://desk.grokaiapps.com) is the demo and entertainment side that helps support this work. Optional one-time tips ($1 / $3 / $5, linked on About and at the end of Word Swap) run through Grok Ai Apps via Stripe — core research stays free.
 
+## Threshold
+
+- [Threshold: a field guide to superintelligence](https://exploresuperintelligence.online/threshold/): Standalone interactive field guide (five chapters, about 15 minutes, WebGL visuals; full text in the HTML). What's already here, why it's arriving so fast, what might come next, how it could go, and what any of it is for. A separate experience from the Research guides — not part of The Word Swap.
+
 ## Research
 
 - [The Word Swap: from Artificial to Super Intelligence](https://exploresuperintelligence.online/research/word-swap/): Interactive guide (published 2026-09-29, current to 2026-10-05) on why the U.S. government renamed AI "Super Intelligence" under Executive Order 14434 — etymology, naming polls, public opinion, explanations for the switch, and a beginner's guide to AI agents. Researched and written by Claude, an AI model made by Anthropic; disclosure in the guide's Sources. Plain-text summary: https://exploresuperintelligence.online/research/word-swap.md

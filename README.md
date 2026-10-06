@@ -9,6 +9,10 @@ Public site for [exploresuperintelligence.online](https://exploresuperintelligen
 
 Deploy: static files to `/var/www/exploresuperintelligence.online/` on the SI droplet.
 
+## Threshold
+
+- `/threshold/` — *Threshold: a field guide to superintelligence* (standalone interactive field guide, self-contained SPA + local `three.min.js`; canonical, absolute OG/Twitter image, WebPage + WebApplication + BreadcrumbList JSON-LD added in `<head>`). Top-level experience — deliberately not under `/research/` and not tied to The Word Swap. No tip links.
+
 ## Research
 
 - `/research/` — index of guides (crawlable, CollectionPage JSON-LD)
