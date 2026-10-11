@@ -1,6 +1,6 @@
 # Threshold: a field guide to superintelligence
 
-> Plain-text companion to the interactive field guide at https://exploresuperintelligence.online/threshold/ (five chapters, about fifteen minutes; the web version adds interactive WebGL and chart visuals). Published by Explore Superintelligence, the public site of Superintelligent Silicon. Threshold is a standalone experience, separate from the Research guides.
+> Plain-text companion to the interactive field guide at https://exploresuperintelligence.online/threshold/ (five chapters, Now, Why, Next, Futures and Meaning, about fifteen minutes; the web version adds interactive WebGL and chart visuals, plus a 3D gallery of 102 technologies). Published by Explore Superintelligence, the public site of Superintelligent Silicon. Threshold is a standalone experience, separate from the Research guides.
 
 A field guide to the intelligence we're building, covering what's already here, why it's arriving this fast, what might come next, and what any of it is for.
 
@@ -16,19 +16,19 @@ Each wave of overpromising was followed by a long stretch of disappointment that
 
 ### Brilliant in some places, clumsy in others
 
-Capability doesn't rise evenly, so the same system that reaches gold-medal level in olympiad math can still fumble an errand any teenager could handle.
+Capability doesn't rise evenly, so a system that wins gold at the math olympiad can still fumble an errand any teenager could handle.
 
 Researchers call this the jagged frontier. Machines also tend to be strongest where people find things hardest and weakest at what we find effortless, a pattern known as Moravec's paradox.
 
-*Note: A rough qualitative picture as of mid-2026 rather than a benchmark score. The dashed ring marks a skilled human, and you can tap any domain.*
+*Note: A rough qualitative picture as of fall 2026 rather than a benchmark score. The dashed ring marks a skilled human, and you can tap any domain.*
 
 ### How long it can work on its own
 
-METR measures how long a task can be, timed by how long it takes a skilled person, while an AI agent still completes it half the time. In about seven years that went from a couple of seconds to a full working day.
+METR measures how long a task can be, timed by how long it takes a skilled person, while an AI agent still completes it half the time. In about seven years that went from a couple of seconds to two full working days.
 
-The length doubled roughly every seven months through 2024 and closer to every four months since. Tap any point to see which model it was.
+METR first measured the length doubling roughly every seven months, and its revised method finds it doubling about every four months since 2023. Tap any point to see which model it was.
 
-*Note: Approximate figures from METR. The 2026 estimates use their revised Time Horizon 1.1 method, and the strongest agents now sit near the top of what the benchmark can measure. At 80% reliability the horizons are several times shorter.*
+*Note: Approximate figures from METR, using its revised Time Horizon 1.1 method where available. Its spring 2026 estimate of at least 16 hours for Claude Mythos Preview is at the limit of what its current tasks can reliably measure. At 80% reliability the horizons are several times shorter.*
 
 ### Thinking is getting cheap, fast
 
@@ -44,7 +44,7 @@ The chatbots get the headlines, but some of the deepest effects so far are happe
 
 These are narrow wins built on the same underlying methods, and they compound, because a better protein model speeds up drug discovery, which speeds up the next experiment. That's the optimistic case for the whole field in miniature.
 
-*Note: Figures from the AlphaFold Protein Structure Database, papers in Nature on GNoME (2023) and GenCast (2024), the FDA's list of AI-enabled devices and Alphabet's October 2024 earnings call.*
+*Note: Figures from the AlphaFold Protein Structure Database, papers in Nature on GNoME (2023) and GenCast (2024), the FDA's list of AI-enabled devices and Google's CEO in April 2026.*
 
 ## Chapter 2: Why it's happening so fast
 
@@ -66,19 +66,19 @@ Bigger computers are only one engine. Better training methods and longer thinkin
 
 ### The largest building project in tech history
 
-Amazon, Microsoft, Alphabet and Meta spent about $230 billion on capital projects in 2024 and roughly $410 billion in 2025, and their plans for 2026 top $700 billion.
+Amazon, Microsoft, Alphabet and Meta spent about $230 billion on capital projects in 2024 and $413 billion in 2025, and by midsummer their plans for 2026 had reached about $760 billion.
 
 Most of it goes to chips, data centers and the power to run them, and analysts expect the four to pass a trillion dollars a year in 2027. The bull case is that this already turns into fast-growing cloud and AI revenue, while the bear case is that if revenue stalls it becomes one of history's great overbuilds, like the railway and fiber-optic booms.
 
-*Note: Company guidance as tallied by the Financial Times and others in spring 2026. Apollo's total cost is adjusted for inflation.*
+*Note: Company guidance as tallied by Statista after July 2026 earnings, with 2027 analyst estimates reported by CNBC. Apollo's total cost is adjusted for inflation.*
 
 ### The power problem
 
-Every answer a model gives runs on electricity, and data centers already used about 1.5% of the world's supply in 2024, a share the International Energy Agency expects to more than double by 2030.
+Every answer a model gives runs on electricity. Data centers used about 1.5% of the world's supply in 2024, their use jumped 17% in 2025, and the International Energy Agency expects it to roughly double by 2030.
 
-AI servers were about 15% of data center demand in 2024 and are the fastest-growing slice. The constraint on building is shifting from chips to power plants, transmission lines and permits, which is why AI companies are now signing long-term deals for nuclear, gas and solar power.
+AI servers were about 15% of data center demand in 2024, and the IEA expects electricity use at AI-focused data centers to triple between 2025 and 2030. The constraint on building is shifting from chips to power plants, transmission lines and permits, which is why AI companies are now signing long-term deals for nuclear, gas and solar power.
 
-*Note: IEA, Energy and AI (2025), base case. The comparison with Japan is the IEA's.*
+*Note: IEA, Energy and AI (2025) and Key Questions on Energy and AI (April 2026), base case. The comparison with Japan is the IEA's.*
 
 ### Why nobody slows down
 
@@ -90,7 +90,7 @@ It's a classic coordination problem, which is why so much of the safety debate i
 
 An AI agent is a surprisingly simple loop wrapped around a model, and what's new is how capable the model in the middle has become.
 
-The last block is the one researchers watch most closely. In 1965 the statistician I.J. Good argued that a machine able to design better machines would set off an intelligence explosion, and in late 2025 OpenAI said publicly it was aiming for an automated AI research intern by September 2026 and a fully automated researcher by 2028.
+The last block is the one researchers watch most closely. In 1965 the statistician I.J. Good argued that a machine able to design better machines would set off an intelligence explosion. OpenAI set itself a goal of an automated AI research intern by September 2026, said that month it had built one that handles tasks taking a skilled researcher a few days, and is now aiming for a fully automated researcher by March 2028.
 
 ## Chapter 3: What might come next
 
@@ -106,7 +106,7 @@ Tap a rung to see what it means and roughly where things stand. The boundaries a
 
 Here's what straight-line extrapolation of the time-horizon trend implies. Pick a doubling time and see when agents could take on a week, a month or a year of human work.
 
-Treat it as arithmetic rather than prophecy, since trends bend when they hit walls, and succeeding half the time is a long way from reliable. At 80% reliability, today's strongest agents manage closer to three or four hours.
+Treat it as arithmetic rather than prophecy, since trends bend when they hit walls, and succeeding half the time is a long way from reliable. At 80% reliability, the strongest agent METR has measured manages about three hours.
 
 *Note: Starts from METR's estimate of at least 16 hours for the strongest agent it measured in spring 2026.*
 
@@ -122,7 +122,7 @@ Slide the returns to research and one simple equation produces a slowdown, a ste
 
 Nobody knows, and confident dates in either direction deserve suspicion, but nearly every group's estimate has moved the same way.
 
-*Note: AI Impacts surveyed 2,778 published AI researchers in late 2023 and compared the answers with its 2022 survey. Metaculus aggregates thousands of forecasters on its general AI question. Lab leaders' ranges come from public interviews and essays, and the skeptic range is a broad characterization rather than a single estimate.*
+*Note: AI Impacts surveyed 1,580 published AI researchers in December 2024 and compared the answers with its 2022 survey. Metaculus aggregates thousands of forecasters on its general AI question, which stood at late 2030 in October 2026. Lab leaders' ranges come from public interviews and essays, and the skeptic range is a broad characterization rather than a single estimate.*
 
 ### What could slow it down
 
@@ -198,4 +198,4 @@ A threshold is a place you stand before you walk through, and how we cross this 
 
 ---
 
-More from Explore Superintelligence: [Home](https://exploresuperintelligence.online/) · [Research](https://exploresuperintelligence.online/research/) · [The Word Swap](https://exploresuperintelligence.online/research/word-swap/) · [SIOS](https://exploresuperintelligence.online/sios/) · [About](https://exploresuperintelligence.online/about/) · [llms.txt](https://exploresuperintelligence.online/llms.txt)
+More from Explore Superintelligence: [Home](https://exploresuperintelligence.online/) · [Have You Seen](https://exploresuperintelligence.online/have-you-seen/) · [Research](https://exploresuperintelligence.online/research/) · [The Word Swap](https://exploresuperintelligence.online/research/word-swap/) · [SIOS](https://exploresuperintelligence.online/sios/) · [About](https://exploresuperintelligence.online/about/) · [Contact](https://superintelligentsilicon.com/contact/) · [llms.txt](https://exploresuperintelligence.online/llms.txt)

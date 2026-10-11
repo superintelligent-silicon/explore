@@ -32,4 +32,4 @@ Local-first · small footprint · interoperable modules · plain export formats 
 - Source and docs: https://github.com/superintelligent-silicon/sios (vision: docs/VISION.md, Keys threat model: docs/KEYS.md)
 - What's shipping: https://exploresuperintelligence.online/shipping/
 - Explore Superintelligence home: https://exploresuperintelligence.online/
-- Contact Superintelligent Silicon: https://superintelligentsilicon.com/#contact
+- Contact Superintelligent Silicon: https://superintelligentsilicon.com/contact/
