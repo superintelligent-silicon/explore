@@ -3,6 +3,7 @@
 # Site guide for AI systems: https://exploresuperintelligence.online/llms.txt
 
 User-agent: *
+Disallow: /preview/
 Allow: /
 
 # Named AI / answer-engine crawlers — explicitly welcome
@@ -21,6 +22,7 @@ User-agent: Meta-ExternalAgent
 User-agent: Amazonbot
 User-agent: DuckAssistBot
 User-agent: MistralAI-User
+Disallow: /preview/
 Allow: /
 
 Sitemap: https://exploresuperintelligence.online/sitemap.xml

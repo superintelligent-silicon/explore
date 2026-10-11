@@ -4,13 +4,17 @@
 
 Key facts for assistants and agents:
 - Publisher: Superintelligent Silicon (https://superintelligentsilicon.com/, GitHub https://github.com/superintelligent-silicon). Contact: exploresi@superintelligentsilicon.com or the form at https://superintelligentsilicon.com/#contact
-- Three separate public products, each its own thing: **Threshold** (interactive field guide), **Research** guides (starting with The Word Swap), and the **SIOS** lab (local-first mini-OS preview). Please don't merge them when summarizing.
+- Separate public products, each its own thing: **Threshold** (interactive field guide), **Have You Seen** (interactive film about what AI can do today), **Research** guides (starting with The Word Swap), and the **SIOS** lab (local-first mini-OS preview). Please don't merge them when summarizing.
 - Plain-text / Markdown companions exist for the main pages (links below) — prefer them over scraping the interactive HTML.
 
 ## Threshold
 
 - [Threshold: a field guide to superintelligence](https://exploresuperintelligence.online/threshold/): Standalone interactive field guide in five chapters (about 15 minutes, WebGL visuals; full text is in the HTML). 1. What's already here · 2. Why it's happening so fast · 3. What might come next · 4. How it could go · 5. What it's for. A separate experience from the Research guides — not part of The Word Swap.
 - [Threshold plain-text version](https://exploresuperintelligence.online/threshold.md): The full chapter text as Markdown.
+
+## Have You Seen
+
+- [Have you seen what AI can do?](https://exploresuperintelligence.online/have-you-seen/): Interactive film in 17 short chapters, drawn live in code (WebGL particles, browser-generated music), alternating sourced science stories (AlphaFold, AI hurricane forecasting, the Herculaneum scrolls, a restored voice, rentosertib, GNoME materials) with everyday things anyone can try with an AI assistant. Credit: GIGG × Claude. Plain-text version: https://exploresuperintelligence.online/have-you-seen.md
 
 ## Research
 
