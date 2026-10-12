@@ -301,6 +301,48 @@
       *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
       .rail,.seg,.chips{scroll-behavior:auto}
     }
+    /* ===== Minimal single-viewport app layer ===== */
+    .vh{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;border:0!important}
+    html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+    body{box-sizing:border-box;height:100vh;height:100dvh;display:flex;flex-direction:column}
+    .hdr{flex:none}
+    .hdr .wrap{height:56px}
+    .hdr .nav{margin-left:auto}
+    .hdr .nav a{opacity:.62}.hdr .nav a:hover{opacity:1}
+    .hdr .si-snd{position:static;flex:none;width:34px;height:34px;margin-left:4px;background:transparent;border-color:rgba(245,245,247,.12);backdrop-filter:none;-webkit-backdrop-filter:none}
+    .menu-btn{margin-left:2px}
+    main#main:focus{outline:none}
+    main#main{flex:1;min-height:0;display:flex;flex-direction:column}
+    .hero{flex:none}
+    .hero .wrap{padding-top:clamp(6px,3vh,40px);padding-bottom:clamp(8px,2.4vh,28px)}
+    .hero .mono.gold,.paths,.lower,.chips-desk{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;margin:-1px!important;padding:0!important;border:0!important}
+    .hero h1{font-size:clamp(34px,4.6vw,64px);margin:0 0 10px}
+    .lede{margin:0;max-width:440px;font-size:clamp(14px,1.1vw,16px);opacity:.85}
+    .shelf{flex:1;min-height:0;display:flex;flex-direction:column;padding:0 0 clamp(6px,1.6vh,18px)}
+    .shelf-head{flex:none;padding-bottom:clamp(6px,1.4vh,14px)}
+    .seg{background:transparent;border-color:transparent}
+    .rail{flex:1;min-height:0;padding-bottom:4px}
+    .rail li{height:100%;min-height:0}
+    .card{height:100%}
+    .card .media{flex:1;min-height:0;aspect-ratio:auto}
+    .card .media img{width:100%;height:100%;object-fit:cover}
+    .card .body{flex:none;padding:11px 15px 13px}
+    .card .body p{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;margin:0}
+    .dots{flex:none;margin-top:8px}
+    @media (min-width:1200px){.rail li{flex-basis:calc((100% - 3*14px - 2*var(--pad))/3.4)}}
+    @media (max-width:900px){.hdr .si-snd{margin-left:auto}}
+    @media (max-width:720px){
+      .hero canvas{opacity:.5}
+      .hero h1{font-size:clamp(30px,9vw,38px)}
+      .lede{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+      .rail li{flex-basis:84%}
+    }
+    @media (max-height:700px){
+      .lede{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+      .hero h1{font-size:clamp(28px,4vw,46px);margin-bottom:0}
+      .card .body{padding:9px 14px 10px}.card .body p{font-size:13px}
+      .dots{margin-top:4px}
+    }
   </style>
   <noscript><style>
     dialog.sheet{display:block;position:static;margin:24px auto;width:min(680px,calc(100% - 32px));max-height:none;border-radius:20px}
@@ -568,6 +610,8 @@
         <li><a href="/about/#tip"><small>Optional tips</small>Support the work</a></li>
         <li><a href="https://superintelligentsilicon.com/"><small>The org</small>Superintelligent Silicon</a></li>
         <li><a href="https://superintelligentsilicon.com/contact/"><small>Get in touch</small>Contact</a></li>
+        <li><a href="https://github.com/superintelligent-silicon"><small>Code</small>GitHub</a></li>
+        <li><a href="/llms.txt"><small>For AI readers</small>llms.txt</a></li>
       </ul>
     </div>
   </dialog>

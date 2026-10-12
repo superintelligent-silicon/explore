@@ -95,7 +95,7 @@
     if(!AC||btn) return;
     btn=document.createElement("button"); btn.type="button"; btn.className="si-snd"; btn.id="si-sound-toggle";
     btn.addEventListener("click",function(){ var nv=!on; setOn(nv,true); if(nv) play("tap"); });
-    document.body.appendChild(btn); setOn(on,false);
+    var hw=document.querySelector(".hdr .wrap"), mb=hw&&hw.querySelector(".menu-btn"); if(hw) hw.insertBefore(btn,mb||null); else document.body.appendChild(btn); setOn(on,false);
   }
 
   /* ---------- interaction hooks (delegated; no coupling to page code) ---------- */
