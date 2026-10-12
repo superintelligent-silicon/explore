@@ -1,0 +1,2 @@
+# Paste under "## Articles" in /llms.txt:
+- [{{Title}}](https://exploresuperintelligence.online/articles/{{slug}}/): {{One-line description, published {{YYYY-MM-DD}}, author/disclosure}}. Plain-text version: https://exploresuperintelligence.online/articles/{{slug}}.md
