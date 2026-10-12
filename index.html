@@ -343,6 +343,34 @@
       .card .body{padding:9px 14px 10px}.card .body p{font-size:13px}
       .dots{margin-top:4px}
     }
+    /* ===== Card art + centered rail ===== */
+    .seg{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;margin:-1px!important;padding:0!important;border:0!important}
+    .shelf-head{justify-content:flex-end;padding-bottom:0}
+    .card .media.art{display:grid;place-items:center;background:
+      radial-gradient(120% 90% at 50% 38%,rgba(var(--h,236,196,89),.22) 0%,rgba(var(--h,236,196,89),.06) 38%,rgba(7,7,8,0) 70%),
+      radial-gradient(rgba(245,245,247,.07) 1px,transparent 1.2px) 0 0/16px 16px,#0b0b0d}
+    .card .media.art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,8,0) 60%,rgba(7,7,8,.6));pointer-events:none}
+    .card .media.art svg{width:min(46%,170px);height:auto;max-height:70%;filter:drop-shadow(0 0 18px rgba(236,196,89,.35));transition:transform .6s cubic-bezier(.22,.8,.2,1)}
+    .card:hover .media.art svg{transform:scale(1.05)}
+    .art .spin{transform-origin:60px 60px;animation:artSpin 18s linear infinite}
+    .art .glow{animation:artGlow 3.6s ease-in-out infinite}
+    .art .blink{animation:artGlow 1.4s steps(2,jump-none) infinite}
+    @keyframes artSpin{to{transform:rotate(360deg)}}
+    @keyframes artGlow{0%,100%{opacity:.45}50%{opacity:1}}
+    .art-threshold{--h:255,170,90}.art-sios,.art-sios-shell{--h:191,233,255}.art-word-swap{--h:236,160,120}.art-research{--h:236,210,150}.art-about{--h:220,200,255}
+    .card .badge{z-index:2}
+    .card .body h3{white-space:nowrap}
+    .card .body p{display:block;-webkit-line-clamp:unset;overflow:visible;text-wrap:balance}
+    @media (max-width:899px){
+      .shelf-head{display:none}
+      .rail{--cw:min(80vw,340px);gap:12px;padding-inline:calc((100vw - var(--cw))/2);scroll-padding-inline:0}
+      .rail li{flex:0 0 var(--cw)!important;scroll-snap-align:center;scroll-snap-stop:always}
+      .rail li .card{transition:transform .4s cubic-bezier(.22,.8,.2,1),opacity .4s,border-color .3s}
+      .rail li:not(.cur) .card{transform:scale(.94);opacity:.55}
+      .shelf{padding-top:clamp(4px,1.6vh,16px)}
+    }
+    .dots i{transition:width .3s,background .3s}
+    @media (prefers-reduced-motion:reduce){.art .spin,.art .glow,.art .blink{animation:none}.rail li .card{transition:none}}
   </style>
   <noscript><style>
     dialog.sheet{display:block;position:static;margin:24px auto;width:min(680px,calc(100% - 32px));max-height:none;border-radius:20px}
@@ -407,14 +435,14 @@
         <div class="arrows"><button type="button" data-dir="-1" aria-label="Previous cards"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" data-dir="1" aria-label="Next cards"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
       </div>
       <ul class="rail" id="rail" aria-label="Explore products and pages. Use arrow keys to move between cards.">
-        <li data-group="watch"><a class="card hys" href="/have-you-seen/" data-open="sh-hys" aria-haspopup="dialog"><div class="media"><img src="/assets/home/have-you-seen.webp" alt="" width="960" height="600" decoding="async" /><span class="badge mono">Film · 17 chapters</span></div><div class="body"><h3>Have You Seen</h3><p>Not what AI might do someday, but what people are doing with it right now.</p></div></a></li>
-        <li data-group="learn"><a class="card" href="/threshold/" data-open="sh-threshold" aria-haspopup="dialog"><div class="media"><img src="/assets/home/threshold.webp" alt="" width="960" height="600" decoding="async" /><span class="badge mono">Field guide · 5 chapters</span></div><div class="body"><h3>Threshold</h3><p>A field guide to the intelligence we're building, in five chapters.</p></div></a></li>
-        <li data-group="build"><a class="card" href="/sios/" data-open="sh-sios" aria-haspopup="dialog"><div class="media"><img src="/assets/home/sios.webp" alt="" width="960" height="600" loading="lazy" decoding="async" /><span class="badge mono">Open source · MIT</span></div><div class="body"><h3>SIOS</h3><p>A compact, local-first mini operating system in your browser.</p></div></a></li>
-        <li data-group="build"><a class="card" href="/sios/shell/" data-open="sh-shell" aria-haspopup="dialog"><div class="media"><img src="/assets/home/sios-shell.webp" alt="" width="960" height="600" loading="lazy" decoding="async" /><span class="badge mono">Live preview</span></div><div class="body"><h3>SIOS shell</h3><p>Calc, Calendar, Files, Keys, Notes and Settings, running locally.</p></div></a></li>
-        <li data-group="read"><a class="card" href="/research/word-swap/" data-open="sh-wordswap" aria-haspopup="dialog"><div class="media"><img src="/assets/home/word-swap.webp" alt="" width="960" height="600" loading="lazy" decoding="async" /><span class="badge mono">Featured research</span></div><div class="body"><h3>The Word Swap</h3><p>Why the U.S. government renamed AI “Super Intelligence.”</p></div></a></li>
-        <li data-group="read"><a class="card" href="/research/" data-open="sh-research" aria-haspopup="dialog"><div class="media"><img src="/assets/home/research.webp" alt="" width="960" height="600" loading="lazy" decoding="async" /><span class="badge mono">All guides</span></div><div class="body"><h3>Research</h3><p>Sourced, plain-language guides on intelligence and its tools.</p></div></a></li>
-        <li data-group="more"><a class="card" href="/shipping/" data-open="sh-shipping" aria-haspopup="dialog"><div class="media"><img src="/assets/home/shipping.webp" alt="" width="960" height="600" loading="lazy" decoding="async" /><span class="badge mono">Status</span></div><div class="body"><h3>Shipping</h3><p>What's built, and what's next.</p></div></a></li>
-        <li data-group="more"><a class="card" href="/about/" data-open="sh-aboutpage" aria-haspopup="dialog"><div class="media"><img src="/assets/home/about.webp" alt="" width="960" height="600" loading="lazy" decoding="async" /><span class="badge mono">Mission</span></div><div class="body"><h3>About</h3><p>Why Explore exists, and who's behind it.</p></div></a></li>
+        <li data-group="watch"><a class="card hys" href="/have-you-seen/" data-open="sh-hys" aria-haspopup="dialog"><div class="media art art-have-you-seen" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="34" stroke="rgba(236,196,89,.25)" fill="none"/><ellipse class="spin" cx="60" cy="60" rx="46" ry="14" stroke="rgba(236,196,89,.35)" fill="none"/><path d="M53 46v28l22-14z" fill="#ecc459"/></svg><span class="badge mono">Film · 17 chapters</span></div><div class="body"><h3>Have You Seen</h3><p>What people are doing with AI, right now.</p></div></a></li>
+        <li data-group="learn"><a class="card" href="/threshold/" data-open="sh-threshold" aria-haspopup="dialog"><div class="media art art-threshold" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M14 82h92" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 82a28 28 0 0 1 56 0" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path class="glow" d="M60 30v12M34 40l7 7M86 40l-7 7" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="badge mono">Field guide · 5 chapters</span></div><div class="body"><h3>Threshold</h3><p>A field guide to what we’re building.</p></div></a></li>
+        <li data-group="build"><a class="card" href="/sios/" data-open="sh-sios" aria-haspopup="dialog"><div class="media art art-sios" aria-hidden="true"><svg viewBox="0 0 120 120"><rect x="34" y="34" width="22" height="22" rx="6" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="64" y="34" width="22" height="22" rx="6" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="34" y="64" width="22" height="22" rx="6" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect class="glow" x="64" y="64" width="22" height="22" rx="6" fill="#ecc459"/></svg><span class="badge mono">Open source · MIT</span></div><div class="body"><h3>SIOS</h3><p>A local-first mini OS in your browser.</p></div></a></li>
+        <li data-group="build"><a class="card" href="/sios/shell/" data-open="sh-shell" aria-haspopup="dialog"><div class="media art art-sios-shell" aria-hidden="true"><svg viewBox="0 0 120 120"><rect x="22" y="32" width="76" height="56" rx="10" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 44h76" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 60l9 7-9 7" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path class="blink" d="M52 74h16" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="badge mono">Live preview</span></div><div class="body"><h3>SIOS shell</h3><p>Six apps, running on your device.</p></div></a></li>
+        <li data-group="read"><a class="card" href="/research/word-swap/" data-open="sh-wordswap" aria-haspopup="dialog"><div class="media art art-word-swap" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M30 48h56l-10-10M90 72H34l10 10" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><text x="60" y="66" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="15" fill="#ecc459" opacity=".9">AI · SI</text></svg><span class="badge mono">Featured research</span></div><div class="body"><h3>The Word Swap</h3><p>Why AI was renamed “Super Intelligence.”</p></div></a></li>
+        <li data-group="read"><a class="card" href="/research/" data-open="sh-research" aria-haspopup="dialog"><div class="media art art-research" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M60 40c-10-6-24-6-34 0v44c10-6 24-6 34 0 10-6 24-6 34 0V40c-10-6-24-6-34 0zM60 40v44" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path class="glow" d="M34 54h16M34 64h16M70 54h16M70 64h16" stroke="rgba(236,196,89,.5)" stroke-width="1.2" stroke-linecap="round"/></svg><span class="badge mono">All guides</span></div><div class="body"><h3>Research</h3><p>Sourced, plain-language guides.</p></div></a></li>
+        <li data-group="more"><a class="card" href="/shipping/" data-open="sh-shipping" aria-haspopup="dialog"><div class="media art art-shipping" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M60 26c12 10 16 26 12 44H48c-4-18 0-34 12-44z" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="48" r="5" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path class="glow" d="M54 78l-4 14M66 78l4 14M60 80v14" stroke="rgba(236,196,89,.6)" stroke-width="1.4" stroke-linecap="round"/></svg><span class="badge mono">Status</span></div><div class="body"><h3>Shipping</h3><p>What’s built, and what’s next.</p></div></a></li>
+        <li data-group="more"><a class="card" href="/about/" data-open="sh-aboutpage" aria-haspopup="dialog"><div class="media art art-about" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="30" stroke="rgba(236,196,89,.3)" fill="none"/><path class="spin" d="M60 26l7 27 27 7-27 7-7 27-7-27-27-7 27-7z" fill="rgba(236,196,89,.14)" stroke="#ecc459" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="badge mono">Mission</span></div><div class="body"><h3>About</h3><p>Why Explore exists, and who’s behind it.</p></div></a></li>
       </ul>
       <div class="dots" id="dots" aria-hidden="true"></div>
     </section>
@@ -705,7 +733,7 @@
       ticking=false;
       var idx = Math.round(rail.scrollLeft / step()); var max = rail.scrollWidth - rail.clientWidth;
       if (rail.scrollLeft >= max - 4) idx = items.length - 1;
-      dotEls.forEach(function(d,i){ d.classList.toggle("on", i===idx); });
+      dotEls.forEach(function(d,i){ d.classList.toggle("on", i===idx); }); items.forEach(function(li,i){ li.classList.toggle("cur", i===idx); });
       var g = items[Math.min(idx, items.length-1)].getAttribute("data-group");
       if (rail.scrollLeft >= max - 4) g = items[items.length-1].getAttribute("data-group");
       seg.forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-jump")===g); });
