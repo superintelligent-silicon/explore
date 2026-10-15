@@ -1605,9 +1605,9 @@ function chips(c, x, y, ch) {
     if (at) { c.fillStyle = C.ink2; c.fillText("@", tx, base); tx += mw("@", f); }
     c.fillStyle = C.chipInk; c.fillText(s, tx, base); cx += w;
   };
-  chip(DATE_CHIP, false); c.fillStyle = C.ink2; c.font = f; c.fillText(" · ", cx, y + ch / 2 + FS * 0.28); cx += mw(" · ", f); chip(AUTHOR, true);
+  chip(DATE_CHIP, false); c.fillStyle = C.ink2; c.font = f; c.fillText(" · ", cx, y + ch / 2 + FS * 0.28); cx += mw(" · ", f); chip(AUTHOR, false);
 }
-function chipsW() { const f = `400 ${Math.round(FS * 0.8125)}px ${SANS}`, padc = FS * 0.55; return mw(DATE_CHIP, f) + mw(AUTHOR, f) + mw("@", f) + padc * 4 + mw(" · ", f); }
+function chipsW() { const f = `400 ${Math.round(FS * 0.8125)}px ${SANS}`, padc = FS * 0.55; return mw(DATE_CHIP, f) + mw(AUTHOR, f) + padc * 4 + mw(" · ", f); }
 
 function buildBoxes(sq = 1) {
   const cw = W - 2 * M.padX, avail = H - M.padTop - M.padBot, boxes = [];
