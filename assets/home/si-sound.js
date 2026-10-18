@@ -9,24 +9,17 @@
   /* ---------- styles ---------- */
   var css=document.createElement("style");
   css.textContent=
-  ".si-splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 45%,#141210 0%,#070708 62%);color:#f5f5f7;transition:opacity .7s ease,visibility .7s;font-family:inherit}"+
+  ".si-splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:var(--bg,#f6f3ec);color:var(--ink,#1b1916);font-family:var(--ui,inherit);transition:opacity .45s ease,visibility .45s;padding:24px}"+
   ".si-splash.out{opacity:0;visibility:hidden}"+
-  ".si-splash .in{display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center}"+
-  ".si-mark{width:112px;height:112px;border-radius:50%;border:0;background:none;padding:0;cursor:pointer;position:relative;display:grid;place-items:center;-webkit-tap-highlight-color:transparent}"+
-  ".si-mark svg{width:100%;height:100%;overflow:visible}"+
-  ".si-mark .halo{position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(236,196,89,.35);animation:siPulse 2.4s ease-in-out infinite}"+
-  ".si-mark[disabled]{cursor:progress}.si-mark[disabled] .core{animation:siBreath 1.2s ease-in-out infinite}"+
-  ".si-mark:not([disabled]):hover svg,.si-mark:not([disabled]):focus-visible svg{transform:scale(1.05)}.si-mark svg{transition:transform .4s cubic-bezier(.22,.8,.2,1)}"+
-  ".si-mark .core{transform-origin:50% 50%}"+
-  ".si-cap{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,245,247,.62);min-height:1.2em;transition:opacity .4s}"+
-  ".si-skip{background:none;border:0;color:rgba(245,245,247,.38);font:inherit;font-size:12.5px;cursor:pointer;padding:6px 10px;text-decoration:underline;text-underline-offset:3px;opacity:0;transition:opacity .5s}"+
-  ".si-ready .si-skip{opacity:1}.si-skip:hover{color:rgba(245,245,247,.7)}"+
-  "@keyframes siPulse{0%,100%{transform:scale(.96);opacity:.25}50%{transform:scale(1.06);opacity:.8}}"+
-  "@keyframes siBreath{0%,100%{opacity:.45}50%{opacity:1}}"+
-  ".si-snd{position:fixed;right:14px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:60;width:38px;height:38px;border-radius:50%;border:1px solid rgba(245,245,247,.16);background:rgba(14,14,16,.72);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#ecc459;display:grid;place-items:center;cursor:pointer;transition:opacity .3s,transform .3s}"+
-  ".si-snd:hover{transform:scale(1.06)}.si-snd[aria-pressed=false]{color:rgba(245,245,247,.5)}"+
-  "@media (min-width:900px){.si-snd{bottom:22px;right:22px}}"+
-  "@media (prefers-reduced-motion:reduce){.si-mark .halo,.si-mark[disabled] .core{animation:none}.si-splash{transition:opacity .2s}}";
+  ".si-splash .in{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:320px;animation:siIn .6s cubic-bezier(.22,.8,.2,1) both}"+
+  ".si-splash .wm{font-family:var(--serif,Georgia,serif);font-size:30px;letter-spacing:-.01em;margin:14px 0 4px}"+
+  ".si-splash .sub{font-size:13.5px;color:var(--dim,#6b655b);margin:0 0 26px}"+
+  ".si-splash .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}"+
+  ".si-splash button{height:42px;padding:0 18px;border-radius:999px;font:inherit;font-size:14.5px;font-weight:500;cursor:pointer;border:1px solid var(--line2,rgba(0,0,0,.2));background:transparent;color:inherit;display:inline-flex;align-items:center;gap:8px}"+
+  ".si-splash .si-enter{background:var(--ink,#1b1916);color:var(--bg,#f6f3ec);border-color:var(--ink,#1b1916)}"+
+  ".si-splash button:hover{opacity:.88}"+
+  "@keyframes siIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}"+
+  "@media (prefers-reduced-motion:reduce){.si-splash .in{animation:none}.si-splash{transition:opacity .15s}}";
   document.head.appendChild(css);
 
   /* ---------- audio engine ---------- */
@@ -53,7 +46,7 @@
     s.connect(f); f.connect(g); g.connect(master); s.start(t0);
   }
   var S={
-    chime:function(t){ [523.25,659.25,783.99,1046.5].forEach(function(f,i){ tone(f,t+i*0.07,1.8-i*0.2,0.07,"sine"); tone(f*2,t+i*0.07,0.6,0.012,"triangle"); }); },
+    chime:function(t){ [659.25,987.77].forEach(function(f,i){ tone(f,t+i*0.09,0.9,0.04,"sine"); }); },
     tick:function(t){ tone(1760,t,0.06,0.035,"sine"); tone(880,t,0.05,0.02,"triangle"); },
     open:function(t){ noise(t,0.32,0.05,500,2400); tone(587.33,t+0.05,0.35,0.025,"sine"); },
     close:function(t){ noise(t,0.26,0.04,2200,450); tone(440,t+0.03,0.25,0.02,"sine"); },
@@ -85,7 +78,7 @@
   }
   function setOn(v,persist){
     on=!!v&&!!AC; if(persist) LS.set(on?"on":"off");
-    if(on){ init(); ctx.resume(); var t=ctx.currentTime; master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value,t); master.gain.linearRampToValueAtTime(0.9,t+0.25); startPad(); }
+    if(on){ init(); ctx.resume(); var t=ctx.currentTime; master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value,t); master.gain.linearRampToValueAtTime(0.6,t+0.25); }
     else if(ctx){ stopPad(); var t2=ctx.currentTime; master.gain.cancelScheduledValues(t2); master.gain.setValueAtTime(master.gain.value,t2); master.gain.linearRampToValueAtTime(0,t2+0.6); }
     if(btn){ btn.setAttribute("aria-pressed",on?"true":"false"); btn.setAttribute("aria-label",on?"Mute sound":"Turn sound on"); btn.innerHTML=on?ICON_ON:ICON_OFF; }
   }
@@ -106,7 +99,8 @@
     var t=e.target.closest&&e.target.closest("[role=tab],[data-jump],.rail-arrow,[data-dir]");
     if(t){ play("tick"); return; }
     if(e.target.closest&&e.target.closest(".tabbar a,.tabbar button")){ play("tabbar"); buzz(6); return; }
-    if(e.target.closest&&e.target.closest(".card,.btn,.tile")) play("tap");
+    if(e.target.closest&&e.target.closest(".theme-btn")){ play("tick"); return; }
+    if(e.target.closest&&e.target.closest(".card,.btn,.tile,.bk,.pd,.btn-p")) play("tap");
   },true);
   function buzz(ms){ if(on&&navigator.vibrate){ try{navigator.vibrate(ms);}catch(e){} } }
   /* Rail: one pitched tick per settled snap; soft bump when pushing past either end */
@@ -127,7 +121,7 @@
   document.addEventListener("keydown",function(e){ if((e.key==="ArrowLeft"||e.key==="ArrowRight")&&e.target.closest&&e.target.closest("[role=tablist]")) play("tick"); });
   document.addEventListener("pointerover",function(e){
     if(e.pointerType!=="mouse") return;
-    var c=e.target.closest&&e.target.closest(".card"); if(!c||c.contains(e.relatedTarget)) return;
+    var c=e.target.closest&&e.target.closest(".card,.bk,.pd"); if(!c||c.contains(e.relatedTarget)) return;
     var n=Date.now(); if(n-lastHover<140) return; lastHover=n; play("hover");
   });
   if(window.MutationObserver){
@@ -143,7 +137,7 @@
     addToggle();
     var sp=document.getElementById("si-splash"); if(!sp) return;
     sp.classList.add("out"); document.documentElement.style.overflow="";
-    setTimeout(function(){ sp.remove(); var m=document.getElementById("main")||document.querySelector("main"); if(m&&m.focus) { m.setAttribute("tabindex","-1"); m.focus({preventScroll:true}); } }, reduce?200:750);
+    setTimeout(function(){ sp.remove(); var m=document.getElementById("main")||document.querySelector("main"); if(m&&m.focus) { m.setAttribute("tabindex","-1"); m.focus({preventScroll:true}); } }, reduce?150:480);
   }
   /* Returning visitors who chose: skip splash (audio still needs a gesture -> unlock on first interaction). */
   if(pref){
@@ -156,15 +150,13 @@
     return;
   }
   var sp=document.createElement("div"); sp.id="si-splash"; sp.className="si-splash"; sp.setAttribute("role","dialog"); sp.setAttribute("aria-modal","true"); sp.setAttribute("aria-label","Welcome to Explore Superintelligence");
-  sp.innerHTML='<div class="in"><button class="si-mark" type="button" disabled aria-label="Enter with sound"><span class="halo" aria-hidden="true"></span>'+
-    '<svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="none" stroke="rgba(236,196,89,.45)" stroke-width=".6"/><circle cx="13" cy="13" r="6" fill="none" stroke="#ecc459" stroke-opacity=".85" stroke-width=".7"/><circle class="core" cx="13" cy="13" r="2" fill="#ecc459"/></svg></button>'+
-    '<div class="si-cap" aria-live="polite">Loading</div><button class="si-skip" type="button">Enter without sound</button></div>';
+  sp.innerHTML='<div class="in"><svg width="40" height="40" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="none" stroke="currentColor" stroke-opacity=".3"/><circle cx="13" cy="13" r="6" fill="none" stroke="var(--accent-ui,#b5862c)"/><circle cx="13" cy="13" r="2" fill="var(--accent-ui,#b5862c)"/></svg>'+
+    '<p class="wm">Explore</p><p class="sub">Superintelligent Silicon · sound is optional</p><div class="row">'+
+    '<button class="si-enter" type="button">Enter</button>'+(AC?'<button class="si-mark" type="button" aria-label="Enter with sound"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h2.5L8 3v10L4.5 10H2z" fill="currentColor"/><path d="M10.5 5.5a3.5 3.5 0 010 5M12.2 3.8a6 6 0 010 8.4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>With sound</button>':'')+'</div></div>';
   document.body.appendChild(sp); document.documentElement.style.overflow="hidden";
-  var mark=sp.querySelector(".si-mark"), cap=sp.querySelector(".si-cap");
-  function ready(){ if(!mark.disabled) return; mark.disabled=false; sp.classList.add("si-ready"); cap.textContent=AC?"Tap to enter · with sound":"Tap to enter"; mark.focus({preventScroll:true}); }
-  if(document.readyState==="complete") setTimeout(ready, reduce?0:500); else window.addEventListener("load",function(){ setTimeout(ready, reduce?0:350); });
-  setTimeout(ready,2500); /* never hold users longer than ~2.5s */
-  mark.addEventListener("click",function(){ finish(!!AC,true); });
-  sp.querySelector(".si-skip").addEventListener("click",function(){ finish(false,true); });
+  var en=sp.querySelector(".si-enter"), mark=sp.querySelector(".si-mark");
+  en.focus({preventScroll:true});
+  en.addEventListener("click",function(){ finish(false,true); });
+  if(mark) mark.addEventListener("click",function(){ finish(true,true); });
   sp.addEventListener("keydown",function(e){ if(e.key==="Escape") finish(false,false); });
 })();
