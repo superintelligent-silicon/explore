@@ -983,9 +983,12 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div style="max-width:640px;margin:48px auto;padding:0 24px;font:16px/1.6 system-ui,sans-serif;color:#e8e8ee">
 <p><strong>Threshold: a field guide to superintelligence.</strong> What's already here, why it's arriving so fast, what might come next, and what any of it is for. The interactive chapters and the 3D gallery of 102 technologies need JavaScript; the full chapter text is in this page's HTML.</p>
 <p>Chapters: 1. Now: What's already here · 2. Why: Why it's happening so fast · 3. Next: What might come next · 4. Futures: How it could go · 5. Meaning: What it's for. Plain-text version: <a href="/threshold.md" style="color:#b9c3ff">threshold.md</a>.</p>
-<p><a href="/" style="color:#b9c3ff">Explore Superintelligence</a> · <a href="/have-you-seen/" style="color:#b9c3ff">Have You Seen</a> · <a href="/research/" style="color:#b9c3ff">Research</a> · <a href="/research/word-swap/" style="color:#b9c3ff">The Word Swap</a> · <a href="/sios/" style="color:#b9c3ff">SIOS lab</a> · <a href="/about/" style="color:#b9c3ff">About</a> · <a href="https://superintelligentsilicon.com/contact/" style="color:#b9c3ff">Contact</a> · <a href="/llms.txt" style="color:#b9c3ff">llms.txt</a></p>
+<p><a href="/" style="color:#b9c3ff">Explore Superintelligence</a> · <a href="/articles/" style="color:#b9c3ff">Articles</a> · <a href="/have-you-seen/" style="color:#b9c3ff">Have You Seen</a> · <a href="/research/" style="color:#b9c3ff">Research</a> · <a href="/research/word-swap/" style="color:#b9c3ff">The Word Swap</a> · <a href="/sios/" style="color:#b9c3ff">SIOS lab</a> · <a href="/about/" style="color:#b9c3ff">About</a> · <a href="https://superintelligentsilicon.com/contact/" style="color:#b9c3ff">Contact</a> · <a href="/llms.txt" style="color:#b9c3ff">llms.txt</a></p>
 </div>
 </noscript>
+<!-- Explore v4: quiet way home (mark lives inside #hero, top-left) -->
+<style>.si-corner{position:absolute;top:calc(10px + env(safe-area-inset-top,0px));left:calc(12px + env(safe-area-inset-left,0px));z-index:6;display:flex;gap:6px;align-items:center;font:500 11px/1 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2,#cbc9c3);opacity:.7;transition:opacity .25s}.si-corner:hover,.si-corner:focus-within{opacity:1}.si-corner a{color:inherit;text-decoration:none;padding:6px 2px}.si-corner a:hover{text-decoration:underline;text-underline-offset:3px}.si-corner span{opacity:.5}@media print{.si-corner{display:none}}</style>
+
 <svg class="defs" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="iridD" x1="0" y1="0" x2="1" y2="1">
@@ -1011,6 +1014,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 
 <!-- ============ OPENING ============ -->
 <div id="hero" role="dialog" aria-modal="true" aria-labelledby="heroTitle">
+  <nav class="si-corner" aria-label="Explore Superintelligence"><a href="/">← Explore</a><span aria-hidden="true">·</span><a href="/articles/">Articles</a></nav>
   <canvas id="space" role="img" aria-label="A planet at sunrise under a field of stars and nebulae, with a slowly turning sequence of objects above it: a hundred and two frontier technologies and future concepts, from a silicon wafer, a language model, a bioprinter, cultivated meat, a construction 3D printer, a powered exoskeleton, a space-junk inspector, a hydrogen electrolyzer, a Matrioshka brain, a gate-all-around transistor and a Gaussian splat scene to DNA origami, a retinal implant, an mRNA vaccine, a robot dog, a self-driving lab, the Rubin Observatory camera, a CubeSat, a thermal battery, an AI weather model, a maglev train, a Moon lander, a tandem solar cell, a cryo-electron microscope, a surgical robot, the International Space Station, the Perseverance Mars rover, an enhanced geothermal plant, a warp bubble and a Dyson swarm around a star."></canvas>
   <canvas id="wafer" hidden aria-label="An animated silicon wafer. Drag across it to tilt the light." role="img"></canvas>
   <div class="obj-ui" id="objUi" hidden>
