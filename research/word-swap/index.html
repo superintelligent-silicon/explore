@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<!-- si-nozoom: app-like page, no accidental zoom -->
+<style id="si-nozoom">html,body{touch-action:manipulation}:where(a,button,input,select,textarea,label,summary){touch-action:manipulation}@supports (-webkit-touch-callout:none){input,textarea,select{font-size:16px!important}}</style>
+<script>(function(){var p=function(e){e.preventDefault();};["gesturestart","gesturechange","gestureend"].forEach(function(t){document.addEventListener(t,p,{passive:false});});document.addEventListener("touchmove",function(e){if(e.touches&&e.touches.length>1)e.preventDefault();},{passive:false});if(window.matchMedia&&matchMedia("(pointer: coarse)").matches)document.addEventListener("dblclick",function(e){if(!(e.target.closest&&e.target.closest("input,textarea,[contenteditable]")))e.preventDefault();},{passive:false});})();</script>
 <title>The Word Swap: from Artificial to Super Intelligence — Explore Superintelligence</title>
 <meta name="description" content="An interactive field guide to why the U.S. government renamed AI “Super Intelligence”: the etymology of artificial, intelligence, and super, the polling, the politics, and a beginner's guide to AI agents.">
 <link rel="canonical" href="https://exploresuperintelligence.online/research/word-swap/">

@@ -184,3 +184,8 @@ dialog.sheet::backdrop{background:var(--scrim);-webkit-backdrop-filter:blur(3px)
 .doc .form-banner--err,.doc .form-banner--warn{border-color:color-mix(in srgb,#c0392b 50%,transparent)}
 .doc .hp{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
 [hidden]{display:none!important}
+
+/* App-like pages (html[data-nozoom]): no accidental zoom; behaviour in si-ui.js */
+html[data-nozoom],html[data-nozoom] body{touch-action:manipulation}
+html[data-nozoom] :where(a,button,input,select,textarea,label,summary){touch-action:manipulation}
+@supports (-webkit-touch-callout:none){html[data-nozoom] input,html[data-nozoom] textarea,html[data-nozoom] select{font-size:16px!important}}

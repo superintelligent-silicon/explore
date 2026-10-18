@@ -78,3 +78,12 @@
 
     window.SIUI={open:openSheet,close:closeSheet,tab:selectTab};
   })();
+
+/* App-like pages (html[data-nozoom]): no accidental pinch or double-tap zoom. Styles live in si-v4.css. */
+(function(){
+  var d=document.documentElement; if(!d.hasAttribute("data-nozoom")) return;
+  var p=function(e){ e.preventDefault(); };
+  ["gesturestart","gesturechange","gestureend"].forEach(function(t){ document.addEventListener(t,p,{passive:false}); });
+  document.addEventListener("touchmove",function(e){ if(e.touches&&e.touches.length>1) e.preventDefault(); },{passive:false});
+  if(window.matchMedia&&matchMedia("(pointer: coarse)").matches) document.addEventListener("dblclick",function(e){ if(!(e.target.closest&&e.target.closest("input,textarea,[contenteditable]"))) e.preventDefault(); },{passive:false});
+})();

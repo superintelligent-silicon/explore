@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<!-- si-nozoom: app-like page, no accidental zoom -->
+<style id="si-nozoom">html,body{touch-action:manipulation}:where(a,button,input,select,textarea,label,summary){touch-action:manipulation}@supports (-webkit-touch-callout:none){input,textarea,select{font-size:16px!important}}</style>
+<script>(function(){var p=function(e){e.preventDefault();};["gesturestart","gesturechange","gestureend"].forEach(function(t){document.addEventListener(t,p,{passive:false});});document.addEventListener("touchmove",function(e){if(e.touches&&e.touches.length>1)e.preventDefault();},{passive:false});if(window.matchMedia&&matchMedia("(pointer: coarse)").matches)document.addEventListener("dblclick",function(e){if(!(e.target.closest&&e.target.closest("input,textarea,[contenteditable]")))e.preventDefault();},{passive:false});})();</script>
 <meta name="description" content="Have you seen what AI can do? An interactive film, drawn live in code: real science and everyday things anyone can try.">
 <meta name="theme-color" content="#141414">
 <title>Have You Seen What AI Can Do? An Interactive Film | Explore Superintelligence</title>
