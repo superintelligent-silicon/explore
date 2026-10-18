@@ -16,6 +16,13 @@ Key facts for assistants and agents:
 
 - [Have you seen what AI can do?](https://exploresuperintelligence.online/have-you-seen/): Interactive film in 17 short chapters, drawn live in code (WebGL particles, browser-generated music), alternating sourced science stories (AlphaFold, AI hurricane forecasting, the Herculaneum scrolls, a restored voice, rentosertib, GNoME materials) with everyday things anyone can try with an AI assistant. Credit: GIGG × Claude. Plain-text version: https://exploresuperintelligence.online/have-you-seen.md
 
+## Articles
+
+- [Articles](https://exploresuperintelligence.online/articles/): Directory of highly interesting, beautifully designed long reads from Explore, each with a Markdown companion at /articles/{slug}.md.
+- [Napkins Are the Backbone](https://exploresuperintelligence.online/articles/napkins-are-the-backbone/): Illustrated page-turning book (2026-10-14) by Superintelligent Silicon on whether small business is really America's backbone, who actually gets paid when small shops open and close, and what that means for AI-run businesses. Plain text: https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md
+- [The Final Merge](https://exploresuperintelligence.online/articles/final-merge/): Illustrated book (2026-10-13) by Superintelligent Silicon on the digital estates we'll leave running (archives, engines and echoes), what estate law covers and doesn't, and how to hand them over. Plain text: https://exploresuperintelligence.online/articles/final-merge.md
+- [Immortal Tombstones](https://exploresuperintelligence.online/articles/immortal-tombstones/): Illustrated book (2026-10-13) by Superintelligent Silicon on digital tombstones, AI recreations of the dead, consent, and what our own stones should say. Plain text: https://exploresuperintelligence.online/articles/immortal-tombstones.md
+
 ## Research
 
 - [The Word Swap: from Artificial to Super Intelligence](https://exploresuperintelligence.online/research/word-swap/): Interactive guide (published 2026-09-29, current to 2026-10-05) on why the U.S. government renamed AI "Super Intelligence" under Executive Order 14434 — etymology, naming polls, public opinion, explanations for the switch, and a beginner's guide to AI agents. Researched and written by Claude, an AI model made by Anthropic; disclosure in the guide's Sources.
