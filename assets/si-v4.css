@@ -122,3 +122,65 @@ dialog.sheet::backdrop{background:var(--scrim);-webkit-backdrop-filter:blur(3px)
 .btn-p:hover{opacity:.9}
 .lnk{font-size:14.5px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line2);padding-bottom:2px}
 .lnk:hover{border-color:var(--ink)}
+
+/* ---------- Doc pages (research, shipping, sios, 404, org contact) ---------- */
+.doc-main{flex:1}
+.doc{max-width:780px;margin:0 auto;padding:clamp(28px,6vh,64px) calc(var(--pad) + var(--sar)) 56px calc(var(--pad) + var(--sal))}
+.doc a{text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px;transition:text-decoration-color .2s}
+.doc a:hover{text-decoration-color:var(--ink)}
+.doc .back,.doc .back a{display:inline-block;font-size:13.5px;color:var(--muted);text-decoration:none;margin-bottom:18px}
+.doc .back:hover{color:var(--ink)}
+.doc nav[aria-label=Breadcrumb]{margin:0}
+.doc .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0 0 12px}
+.doc .eyebrow a{color:inherit}
+.doc h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,7vw,60px);line-height:1.04;letter-spacing:-.022em;margin:0;text-wrap:balance}
+.doc h1 em{font-style:italic;color:var(--accent)}
+.doc .expand{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--accent);margin:6px 0 0}
+.doc .intro,.doc .lede{font-size:17px;line-height:1.6;color:var(--muted);margin:16px 0 0;max-width:38em}
+.doc em{font-style:italic}
+.ship-block{margin-top:clamp(28px,5vh,44px)}
+.ship-block h2,.doc h2{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;letter-spacing:-.01em;margin:0 0 8px}
+.ship-block ul,.doc ul.facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ship-block li,.doc ul.facts li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.55;color:var(--muted)}
+.ship-block li>strong,.doc ul.facts li>span{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding-top:3px;line-height:1.5}
+.ship-block li b{color:var(--ink);font-weight:600}
+.doc ul.facts li a{color:var(--ink)}
+@media (max-width:600px){.ship-block li,.doc ul.facts li{grid-template-columns:1fr;gap:3px}}
+.doc .hero-actions,.doc .form-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0}
+.doc .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--line2);font-size:14.5px;font-weight:500;text-decoration:none;color:var(--ink);background:transparent;cursor:pointer}
+.doc .btn:hover{background:var(--surface2)}
+.doc .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.doc .btn.primary:hover{opacity:.9;background:var(--ink)}
+.doc .btn[disabled]{opacity:.55;cursor:progress}
+.doc .phase-note,.doc .lab-tease{margin:28px 0;padding:16px 18px;border:1px solid var(--line);border-left:3px solid var(--accent-ui);border-radius:12px;background:var(--surface);color:var(--muted);font-size:15px;line-height:1.6}
+.doc .phase-note strong,.doc .lab-tease strong{color:var(--ink)}
+.doc .lab-tease p{margin:6px 0 0}
+.doc .badge,.doc .panel-label{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0}
+.doc .module-grid{list-style:none;margin:10px 0 28px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.doc .module-grid li{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font-size:14px;color:var(--muted);line-height:1.5}
+.doc .module-grid li strong{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink);margin-bottom:2px}
+.doc code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.88em;padding:1px 5px;border-radius:5px;background:var(--surface2);color:var(--ink)}
+.doc .aside,.doc .note{font-size:14px;color:var(--dim);margin:12px 0 0;line-height:1.6}
+.doc .aside a,.doc .note a{color:var(--muted)}
+.site-ftr{border-top:1px solid var(--line)}
+.site-ftr .ftr{border-top:0;padding:18px 0 22px;flex-wrap:wrap}
+@media (max-width:759px){.site-ftr .ftr{flex-direction:column;align-items:flex-start}.site-ftr .ftr .fl{justify-content:flex-start;gap:8px 14px}}
+/* contact form */
+.doc .contact{margin-top:clamp(32px,6vh,56px);padding-top:28px;border-top:1px solid var(--line)}
+.doc .contact-lede{color:var(--muted);font-size:15.5px;margin:6px 0 20px}
+.doc .contact-form{display:grid;gap:16px;max-width:560px}
+.doc .field label{display:flex;gap:8px;align-items:baseline;font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.doc .field .req,.doc .field .opt{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.doc .field input,.doc .field select,.doc .field textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line2);border-radius:10px;padding:11px 13px;transition:border-color .2s,box-shadow .2s}
+.doc .field textarea{resize:vertical;min-height:140px;line-height:1.5}
+.doc .field input:focus,.doc .field select:focus,.doc .field textarea:focus{outline:none;border-color:var(--accent-ui);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent-ui) 22%,transparent)}
+.doc .field [aria-invalid=true]{border-color:#c0392b}
+.doc .field-error{margin:6px 0 0;font-size:13px;color:#b3261e}
+:root[data-theme=dark] .doc .field-error{color:#ff8a80}
+.doc .field-meta{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.doc .char-count{font-size:12.5px;color:var(--dim);margin-left:auto}
+.doc .form-banner{padding:12px 14px;border-radius:10px;border:1px solid var(--line2);background:var(--surface);font-size:14.5px;color:var(--ink);margin:0 0 14px}
+.doc .form-banner--ok{border-color:color-mix(in srgb,#2e7d32 50%,transparent)}
+.doc .form-banner--err,.doc .form-banner--warn{border-color:color-mix(in srgb,#c0392b 50%,transparent)}
+.doc .hp{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+[hidden]{display:none!important}

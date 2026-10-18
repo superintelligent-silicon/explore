@@ -84,7 +84,7 @@ Pulmonary fibrosis slowly scars the lungs, and the treatments we have today can 
 
 Insilico Medicine used generative AI to identify the target (TNIK) and design the molecule. In a 71-patient Phase 2a trial published in Nature Medicine in 2025, the 60 mg once-daily group's lung capacity (FVC) rose by 98.4 mL on average over 12 weeks, while the placebo group's fell by 20.3 mL. Larger trials are still needed.
 
-Sources: [Insilico Medicine, Nature Medicine publication](https://insilico.com/news/tnrecuxsc1-insilico-announces-nature-medicine) · [PubMed record](https://pubmed.ncbi.nlm.nih.gov/40461817/)
+Sources: [Insilico Medicine, Nature Medicine publication](https://insilico.com/news/tnrecuxsc1-insilico-announces-nature-medicine-publi) · [PubMed record](https://pubmed.ncbi.nlm.nih.gov/40461817/)
 
 ## 12. Before the appointment (Everyday)
 
