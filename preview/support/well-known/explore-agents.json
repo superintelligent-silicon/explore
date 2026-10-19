@@ -1,0 +1,52 @@
+{
+  "_note": "Site-specific pointer for AI agents (not a ratified standard). Human-readable guide: agents_guide.",
+  "name": "Explore Superintelligence",
+  "url": "https://exploresuperintelligence.online/",
+  "publisher": {
+    "name": "Superintelligent Silicon",
+    "url": "https://superintelligentsilicon.com/"
+  },
+  "contact": "exploresi@superintelligentsilicon.com",
+  "agents_guide": "https://exploresuperintelligence.online/preview/support/agents.md",
+  "llms_txt": "https://exploresuperintelligence.online/preview/support/llms.txt",
+  "feeds": {
+    "rss": "https://exploresuperintelligence.online/preview/support/feed.xml",
+    "json_feed": "https://exploresuperintelligence.online/preview/support/feed.json"
+  },
+  "markdown_companions": [
+    "https://exploresuperintelligence.online/articles/defrost-mode.md",
+    "https://exploresuperintelligence.online/articles/well-be-right-back.md",
+    "https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md",
+    "https://exploresuperintelligence.online/articles/final-merge.md",
+    "https://exploresuperintelligence.online/articles/immortal-tombstones.md",
+    "https://exploresuperintelligence.online/research/word-swap.md"
+  ],
+  "subscribe": {
+    "endpoint": "https://exploresuperintelligence.online/api/subscribe",
+    "method": "POST",
+    "content_type": "application/json",
+    "body": {
+      "email": "string",
+      "source": "explore-agent",
+      "human_consent": true
+    },
+    "double_opt_in": true,
+    "requires_explicit_human_consent": true,
+    "rate_limit": "5 requests per hour per IP"
+  },
+  "support": {
+    "requires_explicit_human_consent": true,
+    "stripe_payment_links": {
+      "$1": "https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00",
+      "$3": "https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01",
+      "$5": "https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02"
+    },
+    "processed_by": "Stripe through Grok Ai Apps",
+    "x_money": {
+      "handle": "@GuyinGoldGlass",
+      "url": "https://x.com/GuyinGoldGlass",
+      "availability": "where available"
+    }
+  },
+  "updated": "2026-10-18"
+}

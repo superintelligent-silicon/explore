@@ -31,67 +31,215 @@
   <meta name="twitter:image" content="https://exploresuperintelligence.online/og.png" />
   <meta name="twitter:image:alt" content="Explore Superintelligence — Useful intelligence, compressed." />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://exploresuperintelligence.online/#site",
-        "name": "Explore Superintelligence",
-        "alternateName": ["Explore SI", "exploresi.online"],
-        "url": "https://exploresuperintelligence.online/",
-        "inLanguage": "en",
-        "description": "The public research home of Superintelligent Silicon: illustrated books, plain-language guides, films, and open-source tools about superintelligence and the AI shaping it.",
-        "publisher": { "@id": "https://superintelligentsilicon.com/#org" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://exploresuperintelligence.online/#site",
+      "name": "Explore Superintelligence",
+      "alternateName": [
+        "Explore SI",
+        "exploresi.online"
+      ],
+      "url": "https://exploresuperintelligence.online/",
+      "inLanguage": "en",
+      "description": "The public research home of Superintelligent Silicon: illustrated books, plain-language guides, films, and open-source tools about superintelligence and the AI shaping it.",
+      "publisher": {
+        "@id": "https://superintelligentsilicon.com/#org"
       },
-      {
-        "@type": "Organization",
-        "@id": "https://superintelligentsilicon.com/#org",
-        "name": "Superintelligent Silicon",
-        "url": "https://superintelligentsilicon.com/",
-        "logo": { "@type": "ImageObject", "url": "https://superintelligentsilicon.com/icon-512.png", "width": 512, "height": 512 },
-        "email": "exploresi@superintelligentsilicon.com",
-        "sameAs": ["https://github.com/superintelligent-silicon"],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "general inquiries",
-          "email": "exploresi@superintelligentsilicon.com",
-          "url": "https://superintelligentsilicon.com/contact/",
-          "availableLanguage": "en"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://exploresuperintelligence.online/#page",
-        "url": "https://exploresuperintelligence.online/",
-        "name": "Explore Superintelligence",
-        "description": "The public research home of Superintelligent Silicon. Illustrated books and long reads, the Have You Seen film, the Threshold field guide, The Word Swap, and SIOS, an open-source mini operating system.",
-        "inLanguage": "en",
-        "isPartOf": { "@id": "https://exploresuperintelligence.online/#site" },
-        "about": { "@id": "https://superintelligentsilicon.com/#org" },
-        "publisher": { "@id": "https://superintelligentsilicon.com/#org" },
-        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://exploresuperintelligence.online/og.png", "width": 1200, "height": 630 },
-        "mainEntity": {
-          "@type": "ItemList",
-          "name": "Featured on Explore Superintelligence",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "url": "https://exploresuperintelligence.online/articles/", "name": "Articles: illustrated books and long reads" },
-            { "@type": "ListItem", "position": 2, "url": "https://exploresuperintelligence.online/articles/defrost-mode/", "name": "Defrost Mode" },
-            { "@type": "ListItem", "position": 3, "url": "https://exploresuperintelligence.online/articles/well-be-right-back/", "name": "We’ll Be Right Back" },
-            { "@type": "ListItem", "position": 4, "url": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone/", "name": "Napkins Are the Backbone" },
-            { "@type": "ListItem", "position": 5, "url": "https://exploresuperintelligence.online/articles/final-merge/", "name": "The Final Merge" },
-            { "@type": "ListItem", "position": 6, "url": "https://exploresuperintelligence.online/articles/immortal-tombstones/", "name": "Immortal Tombstones" },
-            { "@type": "ListItem", "position": 7, "url": "https://exploresuperintelligence.online/have-you-seen/", "name": "Have you seen what AI can do? An interactive film" },
-            { "@type": "ListItem", "position": 8, "url": "https://exploresuperintelligence.online/threshold/", "name": "Threshold: a field guide to superintelligence" },
-            { "@type": "ListItem", "position": 9, "url": "https://exploresuperintelligence.online/research/word-swap/", "name": "The Word Swap: from Artificial to Super Intelligence" },
-            { "@type": "ListItem", "position": 10, "url": "https://exploresuperintelligence.online/sios/", "name": "SIOS — Silicon OS / Superintelligent OS" },
-            { "@type": "ListItem", "position": 11, "url": "https://exploresuperintelligence.online/sios/shell/", "name": "SIOS live shell (in-browser preview)" },
-            { "@type": "ListItem", "position": 12, "url": "https://exploresuperintelligence.online/research/", "name": "Research guides" }
+      "potentialAction": [
+        {
+          "@type": "SubscribeAction",
+          "name": "Get new Explore books",
+          "description": "Follow new articles by feed, or join the free email list (double opt-in; agents need their human's explicit consent).",
+          "target": [
+            {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://exploresuperintelligence.online/feed.xml",
+              "contentType": "application/rss+xml"
+            },
+            {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://exploresuperintelligence.online/feed.json",
+              "contentType": "application/feed+json"
+            },
+            {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://exploresuperintelligence.online/api/subscribe",
+              "httpMethod": "POST",
+              "contentType": "application/json",
+              "description": "Body: {email, source: explore-agent, human_consent: true}. See https://exploresuperintelligence.online/agents.md"
+            }
           ]
+        },
+        {
+          "@type": "DonateAction",
+          "name": "Tip $1",
+          "description": "Optional one-time tip, processed by Stripe through Grok Ai Apps.",
+          "price": "1.00",
+          "priceCurrency": "USD",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00"
+          }
+        },
+        {
+          "@type": "DonateAction",
+          "name": "Tip $3",
+          "description": "Optional one-time tip, processed by Stripe through Grok Ai Apps.",
+          "price": "3.00",
+          "priceCurrency": "USD",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01"
+          }
+        },
+        {
+          "@type": "DonateAction",
+          "name": "Tip $5",
+          "description": "Optional one-time tip, processed by Stripe through Grok Ai Apps.",
+          "price": "5.00",
+          "priceCurrency": "USD",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02"
+          }
         }
+      ],
+      "subjectOf": {
+        "@type": "DigitalDocument",
+        "name": "Guide for AI agents",
+        "url": "https://exploresuperintelligence.online/agents.md",
+        "encodingFormat": "text/markdown"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://superintelligentsilicon.com/#org",
+      "name": "Superintelligent Silicon",
+      "url": "https://superintelligentsilicon.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://superintelligentsilicon.com/icon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "email": "exploresi@superintelligentsilicon.com",
+      "sameAs": [
+        "https://github.com/superintelligent-silicon"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "general inquiries",
+        "email": "exploresi@superintelligentsilicon.com",
+        "url": "https://superintelligentsilicon.com/contact/",
+        "availableLanguage": "en"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://exploresuperintelligence.online/#page",
+      "url": "https://exploresuperintelligence.online/",
+      "name": "Explore Superintelligence",
+      "description": "The public research home of Superintelligent Silicon. Illustrated books and long reads, the Have You Seen film, the Threshold field guide, The Word Swap, and SIOS, an open-source mini operating system.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://exploresuperintelligence.online/#site"
+      },
+      "about": {
+        "@id": "https://superintelligentsilicon.com/#org"
+      },
+      "publisher": {
+        "@id": "https://superintelligentsilicon.com/#org"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://exploresuperintelligence.online/og.png",
+        "width": 1200,
+        "height": 630
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Featured on Explore Superintelligence",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://exploresuperintelligence.online/articles/",
+            "name": "Articles: illustrated books and long reads"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://exploresuperintelligence.online/articles/defrost-mode/",
+            "name": "Defrost Mode"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://exploresuperintelligence.online/articles/well-be-right-back/",
+            "name": "We’ll Be Right Back"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone/",
+            "name": "Napkins Are the Backbone"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://exploresuperintelligence.online/articles/final-merge/",
+            "name": "The Final Merge"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://exploresuperintelligence.online/articles/immortal-tombstones/",
+            "name": "Immortal Tombstones"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "url": "https://exploresuperintelligence.online/have-you-seen/",
+            "name": "Have you seen what AI can do? An interactive film"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "url": "https://exploresuperintelligence.online/threshold/",
+            "name": "Threshold: a field guide to superintelligence"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "url": "https://exploresuperintelligence.online/research/word-swap/",
+            "name": "The Word Swap: from Artificial to Super Intelligence"
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "url": "https://exploresuperintelligence.online/sios/",
+            "name": "SIOS — Silicon OS / Superintelligent OS"
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "url": "https://exploresuperintelligence.online/sios/shell/",
+            "name": "SIOS live shell (in-browser preview)"
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "url": "https://exploresuperintelligence.online/research/",
+            "name": "Research guides"
+          }
+        ]
+      }
+    }
+  ]
+}
   </script>
   <script>
   /* Theme before first paint: saved choice, else system. */
@@ -104,6 +252,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/si-v4.css" />
+  <link rel="alternate" type="application/rss+xml" title="Explore Superintelligence: new articles (RSS)" href="/preview/support/feed.xml" />
+  <link rel="alternate" type="application/feed+json" title="Explore Superintelligence: new articles (JSON Feed)" href="/preview/support/feed.json" />
+  <link rel="help" type="text/markdown" title="Guide for AI agents" href="/preview/support/agents.md" />
   <style>
 /* Main grid */
 main{flex:1;min-height:0;display:flex}

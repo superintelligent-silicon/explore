@@ -97,6 +97,10 @@ rep('  ov.addEventListener("click",function(e){ e.stopPropagation(); close(); })
 tag = f'<script>var SI_SUPPORT_SRC = "{book_src}";</script>\n<script src="{asset}" defer></script>\n'
 if "</body>" in s: rep("</body>", tag + "</body>")
 else: s += "\n" + tag
+fp = "/preview/support" if prev else ""
+feeds = (f'<link rel="alternate" type="application/rss+xml" title="Explore Superintelligence: new articles (RSS)" href="{fp}/feed.xml" />\n'
+         f'<link rel="alternate" type="application/feed+json" title="Explore Superintelligence: new articles (JSON Feed)" href="{fp}/feed.json" />\n')
+rep("</head>", feeds + "</head>")
 if prev:
     s = re.sub(r'(["(])(fonts|js)/', lambda m: f'{m.group(1)}/articles/{slug}/{m.group(2)}/', s)
     s = s.replace('href="/articles/">All articles', 'href="/preview/support/articles/">All articles')

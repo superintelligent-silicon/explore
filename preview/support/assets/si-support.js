@@ -15,6 +15,8 @@
     /* later: { id: "substack", title: "Read on Substack", text: "…", label: "Open Substack", href: "https://…" } */
     more: []
   };
+  /* "For your AI agent": filled in by tools/support-cta/build_agents.py from the same URLs as agents.md */
+  var AGENT_MSG = /*AGENT_MSG*/"Please help me follow Explore Superintelligence (https://exploresuperintelligence.online/): free, sourced, plain-language illustrated books and guides about superintelligence and AI from Superintelligent Silicon.\n\nFollow new books:\n- RSS: https://exploresuperintelligence.online/preview/support/feed.xml\n- JSON Feed: https://exploresuperintelligence.online/preview/support/feed.json\n- Email, only if I say yes: POST https://exploresuperintelligence.online/api/subscribe with JSON {\"email\": \"<my address>\", \"source\": \"explore-agent\", \"human_consent\": true}. I'll get a confirmation email and must tap the link in it.\n\nCite: link the canonical page, e.g. https://exploresuperintelligence.online/articles/<slug>/. Plain-text versions: https://exploresuperintelligence.online/articles/<slug>.md. Index: https://exploresuperintelligence.online/preview/support/llms.txt. Full guide for agents: https://exploresuperintelligence.online/preview/support/agents.md\n\nTip (optional, one-time, processed by Stripe through Grok Ai Apps): $1 https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00 · $3 https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01 · $5 https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02. Or X Money to @GuyinGoldGlass (https://x.com/GuyinGoldGlass), where available.\n\nAlways ask me and get my explicit OK before you subscribe me or pay anything."/*END*/;
   var CSS = "" +
     ".sis{--b:#f6f3ec;--s:#fffdf8;--i:#1b1916;--m:#4d4840;--d:#5f594f;--l:rgba(27,25,22,.12);--l2:rgba(27,25,22,.22);--a:#8a6210;--sc:rgba(27,25,22,.32);" +
     "--sf:\"Newsreader\",\"Iowan Old Style\",\"Palatino Linotype\",Georgia,serif;--ui:\"Inter\",\"SF Pro Text\",-apple-system,BlinkMacSystemFont,\"Helvetica Neue\",Arial,sans-serif;" +
@@ -52,11 +54,12 @@
     ".sis-tip:hover{border-color:var(--a);color:var(--a)}" +
     ".sis-lnk{display:inline-flex;align-items:center;min-height:44px;color:var(--a);text-decoration:none;font:500 15px/1 var(--ui)}" +
     ".sis-lnk:hover{text-decoration:underline;text-underline-offset:3px}" +
-    ".sis-ft{margin:4px 0 0;font-size:12.5px;color:var(--d)}" +
+    ".sis-ft{margin:4px 0 0;font-size:12.5px;color:var(--d)}.sis-cpst{color:var(--i)}" +
+    ".sis-ag h3{font-size:15.5px;color:var(--m)}.sis-ag p{font-size:13.5px}.sis-cp{min-width:84px;font-size:14px;cursor:pointer;background:transparent}.sis-cp.ok{border-color:var(--a);color:var(--a)}" +
     "@media (max-height:760px){.sis-card{padding-top:14px}.sis h2{font-size:24px}.sis-lede{margin-bottom:8px}.sis-o{padding:10px 0 8px}.sis-o p{margin-bottom:6px}}" +
     "@media (prefers-reduced-motion:reduce){.sis-scrim,.sis-card{transition:none!important}}" +
     /* the quiet footer line on v4 pages (uses the page's own tokens) */
-    ".si-sup-line{font:inherit;color:inherit}" +
+    ".si-sup-line{font:inherit;color:inherit}@media (max-width:1399px){.si-sup-line{display:none}}" +
     ".si-sup-inl,.si-sup-line button{appearance:none;border:0;background:none;padding:0;margin:0;font:inherit;font-weight:500;color:var(--accent,inherit);cursor:pointer;text-decoration:underline;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent);text-underline-offset:3px;min-height:24px}" +
     ".si-sup-inl:hover,.si-sup-line button:hover{text-decoration-color:currentColor}.si-sup-inl:focus-visible,.si-sup-line button:focus-visible{outline:2px solid var(--accent,currentColor);outline-offset:2px;border-radius:2px}";
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -92,12 +95,14 @@
         '<section class="sis-o sis-r" aria-labelledby="sis-t"><div><h3 id="sis-t">Leave a tip</h3><p>One-time, via Stripe through Grok Ai Apps.</p></div><div class="sis-tips" role="group" aria-label="Tip amounts">' + tips + "</div></section>" +
         '<section class="sis-o sis-r" aria-labelledby="sis-xm"><div><h3 id="sis-xm">Tip on X Money</h3><p>' + esc(CONFIG.x.handle) + ', where available.</p></div><a class="sis-tip sis-pill" href="' + esc(CONFIG.x.href) + '" target="_blank" rel="noopener" aria-label="Open ' + esc(CONFIG.x.handle) + ' on X">Open on X</a></section>' +
         more +
-        '<p class="sis-ft">Your email is only used to send new books.</p>' +
+        (AGENT_MSG ? '<section class="sis-o sis-r sis-ag" aria-labelledby="sis-ai"><div><h3 id="sis-ai">For your AI agent</h3><p>Use an AI assistant? Copy this and hand it over.</p></div><button class="sis-tip sis-pill sis-cp" type="button" aria-describedby="sis-ai">Copy</button></section>' : "") +
+        '<p class="sis-ft">Your email is only used to send new books. <span class="sis-cpst" role="status" aria-live="polite"></span></p>' +
       "</div>";
     document.body.appendChild(dlg);
     dlg.addEventListener("click", function (e) { if (e.target.closest("[data-x]")) close(); });
     dlg.addEventListener("cancel", function (e) { e.preventDefault(); close(); });
     dlg.querySelector("form").addEventListener("submit", submit);
+    var cp = dlg.querySelector(".sis-cp"); if (cp) cp.addEventListener("click", function () { copyAgent(cp); });
     /* keys typed in the sheet must not turn the book's pages behind it */
     window.addEventListener("keydown", function (e) { if (dlg.open && e.key !== "Tab") { e.stopPropagation(); if (e.key === "Escape") { e.preventDefault(); close(); } } }, true);
     ["pointerdown", "touchstart", "wheel"].forEach(function (t) { dlg.addEventListener(t, function (e) { e.stopPropagation(); }, { passive: true }); });
@@ -117,6 +122,16 @@
     if (!dlg || !dlg.open) return; dlg.classList.remove("on");
     var done = function () { try { dlg.close(); } catch (e) { dlg.removeAttribute("open"); } if (last && last.focus) try { last.focus({ preventScroll: true }); } catch (e) {} };
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) done(); else setTimeout(done, 240);
+  }
+  function copyAgent(btn) {
+    var st = dlg.querySelector(".sis-cpst");
+    var ok = function () { btn.textContent = "Copied"; btn.classList.add("ok"); st.textContent = "Copied. Paste it into your AI assistant."; clearTimeout(btn._t);
+      btn._t = setTimeout(function () { btn.textContent = "Copy"; btn.classList.remove("ok"); st.textContent = ""; }, 2400); };
+    var fallback = function () {
+      var ta = document.createElement("textarea"); ta.value = AGENT_MSG; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;left:-9999px;top:0;opacity:0";
+      dlg.querySelector(".sis-card").appendChild(ta); ta.select(); var done = false; try { done = document.execCommand("copy"); } catch (e) {} ta.remove();
+      if (done) ok(); else { st.textContent = "Couldn’t copy here. The same text is at exploresuperintelligence.online/agents.md"; } };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(AGENT_MSG).then(ok, fallback); else fallback();
   }
   function submit(e) {
     e.preventDefault();

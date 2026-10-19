@@ -10,6 +10,7 @@ def ctx(br, w, h, scheme):
     mob = w < 700
     c = br.new_context(viewport={"width": w, "height": h}, device_scale_factor=2 if mob else 1, is_mobile=mob, has_touch=mob, color_scheme=scheme)
     c.add_init_script("try{localStorage.setItem('wb-peek','1');localStorage.removeItem('si-theme')}catch(e){}")
+    c.grant_permissions(["clipboard-read", "clipboard-write"])
     c.route("**/api/subscribe", lambda r: r.fulfill(status=200, content_type="application/json", body='{"ok":true,"confirm":true}'))
     return c
 def watch(pg, key):
@@ -45,6 +46,9 @@ with sync_playwright() as pw:
                     pg.keyboard.press("Escape"); pg.wait_for_timeout(500)
                 pg.evaluate("SISupport.open({source:SI_SUPPORT_SRC,focus:'email'})"); pg.wait_for_timeout(700)
                 pg.screenshot(path=f"{OUT}{b}-sheet-{tag}.png")
+                pg.click(".sis-cp"); pg.wait_for_timeout(400)
+                r["copy"] = pg.evaluate("(async()=>[document.querySelector('.sis-cp').textContent, document.querySelector('.sis-cpst').textContent, (await navigator.clipboard.readText()).length])()")
+                pg.screenshot(path=f"{OUT}{b}-sheet-copied-{tag}.png")
                 r["sheet"] = pg.evaluate("""(()=>{const c=document.querySelector('.sis-card').getBoundingClientRect();const d=document.querySelector('.sis-card');
                   return {top:Math.round(c.top),bottom:Math.round(c.bottom),h:Math.round(c.height),inner:d.scrollHeight-d.clientHeight,focus:document.activeElement&&document.activeElement.id,
                   small:[...document.querySelectorAll('.sis-card button,.sis-card a,.sis-card input')].filter(e=>{const r=e.getBoundingClientRect();return r.height<44}).map(e=>e.className)}})()""")
@@ -78,6 +82,9 @@ with sync_playwright() as pw:
                 pg.click("#sh-menu [data-si-support]"); pg.wait_for_timeout(800)
                 r["menuOpens"] = pg.evaluate("[document.querySelector('dialog.sis').open, document.getElementById('sh-menu').open]")
                 pg.screenshot(path=f"{OUT}{name}-sheet-{tag}.png")
+                pg.click(".sis-cp"); pg.wait_for_timeout(400)
+                r["copy"] = pg.evaluate("(async()=>[document.querySelector('.sis-cp').textContent, document.querySelector('.sis-cpst').textContent, (await navigator.clipboard.readText()).length])()")
+                pg.screenshot(path=f"{OUT}{name}-sheet-copied-{tag}.png")
                 r["sheetScroll"] = pg.evaluate("(()=>{const d=document.querySelector('.sis-card');return d.scrollHeight-d.clientHeight})()")
                 c.close()
     br.close()

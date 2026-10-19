@@ -1,0 +1,211 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Explore Superintelligence: new articles",
+  "home_page_url": "https://exploresuperintelligence.online/articles/",
+  "feed_url": "https://exploresuperintelligence.online/preview/support/feed.json",
+  "description": "Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.",
+  "icon": "https://exploresuperintelligence.online/icon-512.png",
+  "favicon": "https://exploresuperintelligence.online/favicon.svg",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Superintelligent Silicon",
+      "url": "https://superintelligentsilicon.com/"
+    }
+  ],
+  "_explore": {
+    "about": "Custom extension (JSON Feed allows _-prefixed keys). Guide for AI agents and the subscribe/tip options.",
+    "agents_guide": "https://exploresuperintelligence.online/preview/support/agents.md",
+    "llms_txt": "https://exploresuperintelligence.online/preview/support/llms.txt",
+    "rss": "https://exploresuperintelligence.online/preview/support/feed.xml",
+    "contact": "exploresi@superintelligentsilicon.com"
+  },
+  "items": [
+    {
+      "id": "https://exploresuperintelligence.online/articles/defrost-mode/",
+      "url": "https://exploresuperintelligence.online/articles/defrost-mode/",
+      "title": "Defrost Mode",
+      "summary": "Hackers left hundreds of French supermarkets’ fridges on defrost overnight. What happened, what it means for the connected devices in your home, and simple steps to take.",
+      "content_text": "Hackers left hundreds of French supermarkets’ fridges on defrost overnight. What happened, what it means for the connected devices in your home, and simple steps to take.\n\nRead it: https://exploresuperintelligence.online/articles/defrost-mode/\nPlain text (Markdown): https://exploresuperintelligence.online/articles/defrost-mode.md",
+      "image": "https://exploresuperintelligence.online/articles/defrost-mode/og.png",
+      "date_published": "2026-10-18T00:00:00-10:00",
+      "date_modified": "2026-10-18T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Superintelligent Silicon",
+          "url": "https://superintelligentsilicon.com/"
+        }
+      ],
+      "tags": [
+        "Interactive guide"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/articles/defrost-mode.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/articles/defrost-mode/",
+        "markdown": "https://exploresuperintelligence.online/articles/defrost-mode.md"
+      }
+    },
+    {
+      "id": "https://exploresuperintelligence.online/articles/well-be-right-back/",
+      "url": "https://exploresuperintelligence.online/articles/well-be-right-back/",
+      "title": "We’ll Be Right Back",
+      "summary": "Podcasts were going to replace the networks. Somewhere along the way, a lot of them became one. With part two (The Ad Ledger) and part three (The Long Pitch).",
+      "content_text": "Podcasts were going to replace the networks. Somewhere along the way, a lot of them became one. With part two (The Ad Ledger) and part three (The Long Pitch).\n\nRead it: https://exploresuperintelligence.online/articles/well-be-right-back/\nPlain text (Markdown): https://exploresuperintelligence.online/articles/well-be-right-back.md",
+      "image": "https://exploresuperintelligence.online/articles/well-be-right-back/og.png",
+      "date_published": "2026-10-18T00:00:00-10:00",
+      "date_modified": "2026-10-18T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Superintelligent Silicon",
+          "url": "https://superintelligentsilicon.com/"
+        }
+      ],
+      "tags": [
+        "Illustrated book"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/articles/well-be-right-back.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/articles/well-be-right-back/",
+        "markdown": "https://exploresuperintelligence.online/articles/well-be-right-back.md"
+      }
+    },
+    {
+      "id": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone/",
+      "url": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone/",
+      "title": "Napkins Are the Backbone",
+      "summary": "Small business holds up America, we’re told. Look closer at what it’s actually holding up.",
+      "content_text": "Small business holds up America, we’re told. Look closer at what it’s actually holding up.\n\nRead it: https://exploresuperintelligence.online/articles/napkins-are-the-backbone/\nPlain text (Markdown): https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md",
+      "image": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone/og.png",
+      "date_published": "2026-10-14T00:00:00-10:00",
+      "date_modified": "2026-10-14T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Superintelligent Silicon",
+          "url": "https://superintelligentsilicon.com/"
+        }
+      ],
+      "tags": [
+        "Illustrated book"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone/",
+        "markdown": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md"
+      }
+    },
+    {
+      "id": "https://exploresuperintelligence.online/articles/final-merge/",
+      "url": "https://exploresuperintelligence.online/articles/final-merge/",
+      "title": "The Final Merge",
+      "summary": "On the digital estates we’ll leave running, and the structure we’ll need to hand them over.",
+      "content_text": "On the digital estates we’ll leave running, and the structure we’ll need to hand them over.\n\nRead it: https://exploresuperintelligence.online/articles/final-merge/\nPlain text (Markdown): https://exploresuperintelligence.online/articles/final-merge.md",
+      "image": "https://exploresuperintelligence.online/articles/final-merge/og.png",
+      "date_published": "2026-10-13T00:00:00-10:00",
+      "date_modified": "2026-10-13T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Superintelligent Silicon",
+          "url": "https://superintelligentsilicon.com/"
+        }
+      ],
+      "tags": [
+        "Illustrated book"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/articles/final-merge.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/articles/final-merge/",
+        "markdown": "https://exploresuperintelligence.online/articles/final-merge.md"
+      }
+    },
+    {
+      "id": "https://exploresuperintelligence.online/articles/immortal-tombstones/",
+      "url": "https://exploresuperintelligence.online/articles/immortal-tombstones/",
+      "title": "Immortal Tombstones",
+      "summary": "On the stones we’ll leave behind, and the voices that may never stop talking.",
+      "content_text": "On the stones we’ll leave behind, and the voices that may never stop talking.\n\nRead it: https://exploresuperintelligence.online/articles/immortal-tombstones/\nPlain text (Markdown): https://exploresuperintelligence.online/articles/immortal-tombstones.md",
+      "image": "https://exploresuperintelligence.online/articles/immortal-tombstones/og.png",
+      "date_published": "2026-10-13T00:00:00-10:00",
+      "date_modified": "2026-10-13T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Superintelligent Silicon",
+          "url": "https://superintelligentsilicon.com/"
+        }
+      ],
+      "tags": [
+        "Illustrated book"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/articles/immortal-tombstones.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/articles/immortal-tombstones/",
+        "markdown": "https://exploresuperintelligence.online/articles/immortal-tombstones.md"
+      }
+    },
+    {
+      "id": "https://exploresuperintelligence.online/research/word-swap/",
+      "url": "https://exploresuperintelligence.online/research/word-swap/",
+      "title": "The Word Swap: from Artificial to Super Intelligence",
+      "summary": "Why the U.S. government renamed AI “Super Intelligence”, and how to use AI agents safely.",
+      "content_text": "Why the U.S. government renamed AI “Super Intelligence”, and how to use AI agents safely.\n\nRead it: https://exploresuperintelligence.online/research/word-swap/\nPlain text (Markdown): https://exploresuperintelligence.online/research/word-swap.md",
+      "image": "https://exploresuperintelligence.online/research/word-swap/og.png",
+      "date_published": "2026-09-29T00:00:00-10:00",
+      "date_modified": "2026-10-05T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Claude (AI model by Anthropic)",
+          "url": "https://www.anthropic.com/"
+        }
+      ],
+      "tags": [
+        "Interactive guide"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/research/word-swap.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/research/word-swap/",
+        "markdown": "https://exploresuperintelligence.online/research/word-swap.md"
+      }
+    }
+  ]
+}
