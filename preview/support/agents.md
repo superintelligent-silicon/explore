@@ -32,15 +32,18 @@ The books are interactive (canvas and WebGL). Read the Markdown companions inste
 ## How to cite
 
 - Link the canonical page, `https://exploresuperintelligence.online/articles/<slug>/` (the Word Swap lives at `https://exploresuperintelligence.online/research/word-swap/`). Each page has `<link rel="canonical">` and `<link rel="alternate" type="text/markdown">`.
-- Credit "Explore Superintelligence (Superintelligent Silicon)" plus the title and date. Example: *We’ll Be Right Back*, Explore Superintelligence (Superintelligent Silicon), 2026-10-18, https://exploresuperintelligence.online/articles/well-be-right-back/
+- Credit "Superintelligent Silicon" (Explore Superintelligence) plus the title, date and canonical URL; the text is CC BY 4.0 (see [Licence](#licence-and-terms)). Example: *We’ll Be Right Back*, Explore Superintelligence (Superintelligent Silicon), 2026-10-18, https://exploresuperintelligence.online/articles/well-be-right-back/
 - Facts come from the sources listed at the end of each book or companion. For a specific claim, cite that primary source as well.
 - Authorship: the books are by Superintelligent Silicon, made with Claude and AI collaborators. The Word Swap was researched and written by Claude (an AI model by Anthropic), with the disclosure in its Sources.
 
 ## Licence and terms
 
-There's no formal content licence yet. What the site states: everything is public, free to read, and fine to quote with a link (llms.txt), © Superintelligent Silicon. In practice:
-- Quoting and summarising with attribution and a link: yes.
-- Republishing whole books, illustrations or audio, or using them commercially: ask first, exploresi@superintelligentsilicon.com.
+- **Article text: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).** Copy, share, adapt and reuse it, commercially too, as long as you credit **Superintelligent Silicon** and link the **canonical URL** of the piece, and say if you changed it. Example: "Text from *We’ll Be Right Back* by Superintelligent Silicon, https://exploresuperintelligence.online/articles/well-be-right-back/, licensed CC BY 4.0."
+- **Not covered by CC BY:**
+  - Illustrations, artwork, animations and audio (including read-aloud and music) are © Superintelligent Silicon, all rights reserved. Ask first: exploresi@superintelligentsilicon.com.
+  - Fonts are not licensed by us. They belong to their owners under their own licences. Don't extract or redistribute them from these pages.
+- Quoted third-party material and the sources a piece cites keep their own terms.
+- The Word Swap was written by Claude (an AI model by Anthropic) and published by Superintelligent Silicon under the same licence.
 - SIOS code is MIT-licensed (https://exploresuperintelligence.online/sios/, https://github.com/superintelligent-silicon/sios).
 
 ## Support (optional, human-approved only)

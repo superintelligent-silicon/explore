@@ -48,5 +48,15 @@
       "availability": "where available"
     }
   },
+  "license": {
+    "text": "https://creativecommons.org/licenses/by/4.0/",
+    "name": "CC BY 4.0",
+    "attribution": "Superintelligent Silicon, with the canonical URL",
+    "not_covered": {
+      "illustrations": "all rights reserved",
+      "audio": "all rights reserved",
+      "fonts": "owners' own licences, not redistributable from this site"
+    }
+  },
   "updated": "2026-10-18"
 }

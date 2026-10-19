@@ -97,6 +97,19 @@ rep('  ov.addEventListener("click",function(e){ e.stopPropagation(); close(); })
 tag = f'<script>var SI_SUPPORT_SRC = "{book_src}";</script>\n<script src="{asset}" defer></script>\n'
 if "</body>" in s: rep("</body>", tag + "</body>")
 else: s += "\n" + tag
+# JSON-LD: CC BY 4.0 for the article text only
+import json as _json
+_m = re.search(r'(<script type="application/ld\+json">)(.*?)(</script>)', s, re.S)
+if _m:
+    _d = _json.loads(_m.group(2)); _g = _d.get("@graph", [_d]); _n = 0
+    for _node in _g:
+        if _node.get("@type") == "Article":
+            _node["license"] = "https://creativecommons.org/licenses/by/4.0/"
+            _node["copyrightHolder"] = {"@type": "Organization", "name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"}
+            _node["copyrightNotice"] = "Text © Superintelligent Silicon, licensed CC BY 4.0: attribute Superintelligent Silicon with the canonical URL. Illustrations, audio and fonts are not covered (illustrations and audio all rights reserved; fonts under their owners' licences)."
+            _n += 1
+    assert _n == 1, "Article node"
+    s = s[:_m.start(2)] + "\n" + _json.dumps(_d, ensure_ascii=False, indent=2) + "\n" + s[_m.end(2):]
 fp = "/preview/support" if prev else ""
 feeds = (f'<link rel="alternate" type="application/rss+xml" title="Explore Superintelligence: new articles (RSS)" href="{fp}/feed.xml" />\n'
          f'<link rel="alternate" type="application/feed+json" title="Explore Superintelligence: new articles (JSON Feed)" href="{fp}/feed.json" />\n')

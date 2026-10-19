@@ -54,7 +54,7 @@
     ".sis-tip:hover{border-color:var(--a);color:var(--a)}" +
     ".sis-lnk{display:inline-flex;align-items:center;min-height:44px;color:var(--a);text-decoration:none;font:500 15px/1 var(--ui)}" +
     ".sis-lnk:hover{text-decoration:underline;text-underline-offset:3px}" +
-    ".sis-ft{margin:4px 0 0;font-size:12.5px;color:var(--d)}.sis-cpst{color:var(--i)}" +
+    ".sis-ft{margin:4px 0 0;font-size:12.5px;color:var(--d)}.sis-cpst{color:var(--i)}.sis-lic{white-space:nowrap}.sis-lic a{color:inherit;text-decoration:underline;text-underline-offset:2px}" +
     ".sis-ag h3{font-size:15.5px;color:var(--m)}.sis-ag p{font-size:13.5px}.sis-cp{min-width:84px;font-size:14px;cursor:pointer;background:transparent}.sis-cp.ok{border-color:var(--a);color:var(--a)}" +
     "@media (max-height:760px){.sis-card{padding-top:14px}.sis h2{font-size:24px}.sis-lede{margin-bottom:8px}.sis-o{padding:10px 0 8px}.sis-o p{margin-bottom:6px}}" +
     "@media (prefers-reduced-motion:reduce){.sis-scrim,.sis-card{transition:none!important}}" +
@@ -96,7 +96,7 @@
         '<section class="sis-o sis-r" aria-labelledby="sis-xm"><div><h3 id="sis-xm">Tip on X Money</h3><p>' + esc(CONFIG.x.handle) + ', where available.</p></div><a class="sis-tip sis-pill" href="' + esc(CONFIG.x.href) + '" target="_blank" rel="noopener" aria-label="Open ' + esc(CONFIG.x.handle) + ' on X">Open on X</a></section>' +
         more +
         (AGENT_MSG ? '<section class="sis-o sis-r sis-ag" aria-labelledby="sis-ai"><div><h3 id="sis-ai">For your AI agent</h3><p>Use an AI assistant? Copy this and hand it over.</p></div><button class="sis-tip sis-pill sis-cp" type="button" aria-describedby="sis-ai">Copy</button></section>' : "") +
-        '<p class="sis-ft">Your email is only used to send new books. <span class="sis-cpst" role="status" aria-live="polite"></span></p>' +
+        '<p class="sis-ft">Your email is only used to send new books. <span class="sis-lic">Text <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener" title="Article text CC BY 4.0, credit Superintelligent Silicon. Illustrations, audio and fonts excluded.">CC BY 4.0</a>.</span> <span class="sis-cpst" role="status" aria-live="polite"></span></p>' +
       "</div>";
     document.body.appendChild(dlg);
     dlg.addEventListener("click", function (e) { if (e.target.closest("[data-x]")) close(); });

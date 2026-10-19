@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">
 <channel>
 <title>Explore Superintelligence: new articles</title>
 <link>https://exploresuperintelligence.online/articles/</link>
 <atom:link href="https://exploresuperintelligence.online/preview/support/feed.xml" rel="self" type="application/rss+xml" />
 <description>Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.</description>
 <language>en</language>
-<copyright>© Superintelligent Silicon</copyright>
+<copyright>Text © Superintelligent Silicon, licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); illustrations, audio and fonts not covered (all rights reserved)</copyright>
+<creativeCommons:license>https://creativecommons.org/licenses/by/4.0/</creativeCommons:license>
 <managingEditor>exploresi@superintelligentsilicon.com (Superintelligent Silicon)</managingEditor>
 <lastBuildDate>Sun, 18 Oct 2026 00:00:00 -1000</lastBuildDate>
 <ttl>720</ttl>

@@ -48,6 +48,9 @@ if kind == "home":
                   {"@type": "EntryPoint", "urlTemplate": S + "/api/subscribe", "httpMethod": "POST", "contentType": "application/json", "description": "Body: {email, source: explore-agent, human_consent: true}. See " + S + "/agents.md"}]}] + [
       {"@type": "DonateAction", "name": f"Tip {a}", "description": "Optional one-time tip, processed by Stripe through Grok Ai Apps.", "price": a.strip("$") + ".00", "priceCurrency": "USD",
        "target": {"@type": "EntryPoint", "urlTemplate": u}} for a, u in [("$1", "https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00"), ("$3", "https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01"), ("$5", "https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02")]]
+    site["license"] = "https://creativecommons.org/licenses/by/4.0/"
+    site["copyrightHolder"] = {"@id": "https://superintelligentsilicon.com/#org"}
+    site["copyrightNotice"] = "Article text © Superintelligent Silicon, licensed CC BY 4.0: attribute Superintelligent Silicon with the canonical URL. Illustrations, audio and fonts are not covered (illustrations and audio all rights reserved; fonts under their owners' licences)."
     site["subjectOf"] = {"@type": "DigitalDocument", "name": "Guide for AI agents", "url": S + "/agents.md", "encodingFormat": "text/markdown"}
     s = s[:m.start(2)] + "\n" + json.dumps(d, ensure_ascii=False, indent=2) + "\n  " + s[m.end(2):]
 if prev:

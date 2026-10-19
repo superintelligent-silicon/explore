@@ -18,7 +18,18 @@
     "agents_guide": "https://exploresuperintelligence.online/preview/support/agents.md",
     "llms_txt": "https://exploresuperintelligence.online/preview/support/llms.txt",
     "rss": "https://exploresuperintelligence.online/preview/support/feed.xml",
-    "contact": "exploresi@superintelligentsilicon.com"
+    "contact": "exploresi@superintelligentsilicon.com",
+    "license": {
+      "text": "https://creativecommons.org/licenses/by/4.0/",
+      "name": "CC BY 4.0",
+      "attribution": "Superintelligent Silicon, with the canonical URL",
+      "not_covered": [
+        "illustrations",
+        "audio",
+        "fonts"
+      ],
+      "notice": "Article text: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), attribution Superintelligent Silicon with the canonical URL. Illustrations, audio and fonts are not covered: illustrations and audio are © Superintelligent Silicon, all rights reserved; fonts belong to their owners under their own licences."
+    }
   },
   "items": [
     {
@@ -49,7 +60,9 @@
       ],
       "_explore": {
         "canonical": "https://exploresuperintelligence.online/articles/defrost-mode/",
-        "markdown": "https://exploresuperintelligence.online/articles/defrost-mode.md"
+        "markdown": "https://exploresuperintelligence.online/articles/defrost-mode.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/articles/defrost-mode/"
       }
     },
     {
@@ -80,7 +93,9 @@
       ],
       "_explore": {
         "canonical": "https://exploresuperintelligence.online/articles/well-be-right-back/",
-        "markdown": "https://exploresuperintelligence.online/articles/well-be-right-back.md"
+        "markdown": "https://exploresuperintelligence.online/articles/well-be-right-back.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/articles/well-be-right-back/"
       }
     },
     {
@@ -111,7 +126,9 @@
       ],
       "_explore": {
         "canonical": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone/",
-        "markdown": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md"
+        "markdown": "https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/articles/napkins-are-the-backbone/"
       }
     },
     {
@@ -142,7 +159,9 @@
       ],
       "_explore": {
         "canonical": "https://exploresuperintelligence.online/articles/final-merge/",
-        "markdown": "https://exploresuperintelligence.online/articles/final-merge.md"
+        "markdown": "https://exploresuperintelligence.online/articles/final-merge.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/articles/final-merge/"
       }
     },
     {
@@ -173,7 +192,9 @@
       ],
       "_explore": {
         "canonical": "https://exploresuperintelligence.online/articles/immortal-tombstones/",
-        "markdown": "https://exploresuperintelligence.online/articles/immortal-tombstones.md"
+        "markdown": "https://exploresuperintelligence.online/articles/immortal-tombstones.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/articles/immortal-tombstones/"
       }
     },
     {
@@ -204,7 +225,9 @@
       ],
       "_explore": {
         "canonical": "https://exploresuperintelligence.online/research/word-swap/",
-        "markdown": "https://exploresuperintelligence.online/research/word-swap.md"
+        "markdown": "https://exploresuperintelligence.online/research/word-swap.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/research/word-swap/"
       }
     }
   ]

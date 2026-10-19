@@ -17,6 +17,10 @@ HST = timezone(timedelta(hours=-10))
 TIPS = [("$1", "https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00"), ("$3", "https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01"), ("$5", "https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02")]
 X = ("@GuyinGoldGlass", "https://x.com/GuyinGoldGlass")
 CONTACT = "exploresi@superintelligentsilicon.com"
+# Licence (approved by Wayne 2026-10-19): article text CC BY 4.0; illustrations, audio and fonts are not covered.
+LIC_URL = "https://creativecommons.org/licenses/by/4.0/"
+LIC_NAME = "CC BY 4.0"
+LIC_SHORT = "Article text: CC BY 4.0 (" + LIC_URL + "), attribution Superintelligent Silicon with the canonical URL. Illustrations, audio and fonts are not covered: illustrations and audio are © Superintelligent Silicon, all rights reserved; fonts belong to their owners under their own licences."
 ORG = {"name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"}
 CLAUDE = {"name": "Claude (AI model by Anthropic)", "url": "https://www.anthropic.com/"}
 # newest first; matches /articles/ (the Word Swap sits on that shelf too)
@@ -62,11 +66,11 @@ Always ask me and get my explicit OK before you subscribe me or pay anything."""
 def x(s): return html.escape(s, quote=False)
 now = max(dt(i["mod"]) for i in ITEMS)
 rss = ['<?xml version="1.0" encoding="utf-8"?>',
-       '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">', '<channel>',
+       '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">', '<channel>',
        '<title>Explore Superintelligence: new articles</title>', f'<link>{SITE}/articles/</link>',
        f'<atom:link href="{B}/feed.xml" rel="self" type="application/rss+xml" />',
        '<description>Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.</description>',
-       '<language>en</language>', f'<copyright>© Superintelligent Silicon</copyright>', f'<managingEditor>{CONTACT} (Superintelligent Silicon)</managingEditor>',
+       '<language>en</language>', f'<copyright>Text © Superintelligent Silicon, licensed CC BY 4.0 ({LIC_URL}); illustrations, audio and fonts not covered (all rights reserved)</copyright>', f'<creativeCommons:license>{LIC_URL}</creativeCommons:license>', f'<managingEditor>{CONTACT} (Superintelligent Silicon)</managingEditor>',
        f'<lastBuildDate>{format_datetime(now)}</lastBuildDate>', '<ttl>720</ttl>',
        f'<image><url>{SITE}/icon-512.png</url><title>Explore Superintelligence: new articles</title><link>{SITE}/articles/</link></image>']
 for it in ITEMS:
@@ -83,7 +87,8 @@ jf = {"version": "https://jsonfeed.org/version/1.1", "title": "Explore Superinte
       "feed_url": f"{B}/feed.json", "description": "Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.",
       "icon": f"{SITE}/icon-512.png", "favicon": f"{SITE}/favicon.svg", "language": "en", "authors": [ORG],
       "_explore": {"about": "Custom extension (JSON Feed allows _-prefixed keys). Guide for AI agents and the subscribe/tip options.", "agents_guide": f"{B}/agents.md",
-                   "llms_txt": f"{B}/llms.txt", "rss": f"{B}/feed.xml", "contact": CONTACT},
+                   "llms_txt": f"{B}/llms.txt", "rss": f"{B}/feed.xml", "contact": CONTACT,
+                   "license": {"text": LIC_URL, "name": LIC_NAME, "attribution": "Superintelligent Silicon, with the canonical URL", "not_covered": ["illustrations", "audio", "fonts"], "notice": LIC_SHORT}},
       "items": []}
 for it in ITEMS:
     u = SITE + it["path"]
@@ -92,7 +97,7 @@ for it in ITEMS:
         "image": SITE + it["image"], "date_published": dt(it["pub"]).isoformat(), "date_modified": dt(it["mod"]).isoformat(),
         "authors": [it["author"]], "tags": [it["kind"]], "language": "en",
         "attachments": [{"url": SITE + it["md"], "mime_type": "text/markdown", "title": "Plain-text companion"}],
-        "_explore": {"canonical": u, "markdown": SITE + it["md"]}})
+        "_explore": {"canonical": u, "markdown": SITE + it["md"], "license": LIC_URL, "attribution": f"Superintelligent Silicon, {u}"}})
 w("feed.json", json.dumps(jf, ensure_ascii=False, indent=2) + "\n")
 
 # ---------- agents.md ----------
@@ -126,15 +131,18 @@ The books are interactive (canvas and WebGL). Read the Markdown companions inste
 ## How to cite
 
 - Link the canonical page, `{SITE}/articles/<slug>/` (the Word Swap lives at `{SITE}/research/word-swap/`). Each page has `<link rel="canonical">` and `<link rel="alternate" type="text/markdown">`.
-- Credit "Explore Superintelligence (Superintelligent Silicon)" plus the title and date. Example: *We’ll Be Right Back*, Explore Superintelligence (Superintelligent Silicon), 2026-10-18, {SITE}/articles/well-be-right-back/
+- Credit "Superintelligent Silicon" (Explore Superintelligence) plus the title, date and canonical URL; the text is CC BY 4.0 (see [Licence](#licence-and-terms)). Example: *We’ll Be Right Back*, Explore Superintelligence (Superintelligent Silicon), 2026-10-18, {SITE}/articles/well-be-right-back/
 - Facts come from the sources listed at the end of each book or companion. For a specific claim, cite that primary source as well.
 - Authorship: the books are by Superintelligent Silicon, made with Claude and AI collaborators. The Word Swap was researched and written by Claude (an AI model by Anthropic), with the disclosure in its Sources.
 
 ## Licence and terms
 
-There's no formal content licence yet. What the site states: everything is public, free to read, and fine to quote with a link (llms.txt), © Superintelligent Silicon. In practice:
-- Quoting and summarising with attribution and a link: yes.
-- Republishing whole books, illustrations or audio, or using them commercially: ask first, {CONTACT}.
+- **Article text: [CC BY 4.0]({LIC_URL}).** Copy, share, adapt and reuse it, commercially too, as long as you credit **Superintelligent Silicon** and link the **canonical URL** of the piece, and say if you changed it. Example: "Text from *We’ll Be Right Back* by Superintelligent Silicon, {SITE}/articles/well-be-right-back/, licensed CC BY 4.0."
+- **Not covered by CC BY:**
+  - Illustrations, artwork, animations and audio (including read-aloud and music) are © Superintelligent Silicon, all rights reserved. Ask first: {CONTACT}.
+  - Fonts are not licensed by us. They belong to their owners under their own licences. Don't extract or redistribute them from these pages.
+- Quoted third-party material and the sources a piece cites keep their own terms.
+- The Word Swap was written by Claude (an AI model by Anthropic) and published by Superintelligent Silicon under the same licence.
 - SIOS code is MIT-licensed ({SITE}/sios/, https://github.com/superintelligent-silicon/sios).
 
 ## Support (optional, human-approved only)
@@ -189,7 +197,7 @@ if PREV:
     AG = AG.replace(f"{B}/.well-known/", f"{B}/well-known/")
     AG = "<!-- PREVIEW (staged, not published): at launch the agent-layer URLs drop the /preview/support prefix and well-known/ becomes /.well-known/. -->\n" + AG
 w("agents.md", AG)
-w("for-agents.md", f"# For agents\n\nThe guide for AI agents lives at {B}/agents.md (same content, one canonical copy).\n")
+w("for-agents.md", f"# For agents\n\nThe guide for AI agents lives at {B}/agents.md (same content, one canonical copy).\n\nLicence: {LIC_SHORT}\n")
 
 # ---------- .well-known ----------
 wk = "well-known" if PREV else ".well-known"
@@ -204,6 +212,8 @@ w(f"{wk}/explore-agents.json", json.dumps({
                   "requires_explicit_human_consent": True, "rate_limit": "5 requests per hour per IP"},
     "support": {"requires_explicit_human_consent": True, "stripe_payment_links": {a: u for a, u in TIPS},
                 "processed_by": "Stripe through Grok Ai Apps", "x_money": {"handle": X[0], "url": X[1], "availability": "where available"}},
+    "license": {"text": LIC_URL, "name": LIC_NAME, "attribution": "Superintelligent Silicon, with the canonical URL",
+                "not_covered": {"illustrations": "all rights reserved", "audio": "all rights reserved", "fonts": "owners' own licences, not redistributable from this site"}},
     "updated": now.date().isoformat()}, ensure_ascii=False, indent=2) + "\n")
 exp = (datetime.now(timezone.utc) + timedelta(days=365)).replace(microsecond=0).strftime("%Y-%m-%dT%H:%M:%SZ")
 w(f"{wk}/security.txt", f"Contact: mailto:{CONTACT}\nExpires: {exp}\nPreferred-Languages: en\nCanonical: {B}/{wk}/security.txt\n")
@@ -215,6 +225,7 @@ add = f"""
 
 - [Guide for AI agents]({B}/agents.md): how to cite, follow (feeds, email list) and support Explore, the subscribe API contract, rate limits, and the rule that agents get their human's explicit OK before subscribing or paying.
 - [RSS feed]({B}/feed.xml) and [JSON Feed]({B}/feed.json): new articles, newest first.
+- Licence: article text is [CC BY 4.0]({LIC_URL}); credit Superintelligent Silicon and link the canonical URL. Illustrations, audio and fonts are not covered (illustrations and audio all rights reserved).
 - Plain-text companions for every article: {", ".join(f"[{i['title']}]({SITE}{i['md']})" for i in ITEMS)}.
 """
 if "## For agents" not in L:
@@ -232,7 +243,8 @@ for it in ITEMS:
 ## For agents
 
 - Canonical URL: {u} (cite this page; this Markdown file is its plain-text companion)
-- Cite as: *{it['title']}*, Explore Superintelligence (Superintelligent Silicon), {it['pub']}, {u}
+- Cite as: *{it['title']}*, Superintelligent Silicon (Explore Superintelligence), {it['pub']}, {u}
+- Licence: the text of this piece is CC BY 4.0 ({LIC_URL}); attribute Superintelligent Silicon and link {u}. Illustrations, audio and fonts are not covered (illustrations and audio © Superintelligent Silicon, all rights reserved).
 - Follow new books: {B}/feed.xml (RSS) or {B}/feed.json (JSON Feed). Email list, double opt-in, only with your human's explicit OK: {B}/agents.md#subscribe-api
 - Support, optional and only with your human's explicit OK: tips {" · ".join(f"{a} {u2}" for a, u2 in TIPS)} (Stripe through Grok Ai Apps), or X Money to {X[0]} where available.
 - More: {B}/agents.md · {B}/llms.txt · {CONTACT}
