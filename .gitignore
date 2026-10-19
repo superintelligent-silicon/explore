@@ -1,2 +1,5 @@
 .DS_Store
 *.log
+
+# Proprietary fonts (Anthropic Sans/Serif, no license): deploy by rsync only, never commit
+articles/well-be-right-back/fonts/
