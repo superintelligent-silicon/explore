@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<!-- si-nozoom: app-like page, no accidental zoom -->
+<style id="si-nozoom">html,body{touch-action:manipulation}:where(a,button,input,select,textarea,label,summary){touch-action:manipulation}@supports (-webkit-touch-callout:none){input,textarea,select{font-size:16px!important}}</style>
+<script>(function(){var p=function(e){e.preventDefault();};["gesturestart","gesturechange","gestureend"].forEach(function(t){document.addEventListener(t,p,{passive:false});});document.addEventListener("touchmove",function(e){if(e.touches&&e.touches.length>1)e.preventDefault();},{passive:false});if(window.matchMedia&&matchMedia("(pointer: coarse)").matches)document.addEventListener("dblclick",function(e){if(!(e.target.closest&&e.target.closest("input,textarea,[contenteditable]")))e.preventDefault();},{passive:false});})();</script>
+<meta name="description" content="In October 2026 hackers cooked the food in hundreds of French supermarkets by switching their fridges to defrost. What happened, what it means for the connected devices in your home, and simple steps to stay safe.">
+<meta name="theme-color" content="#141414">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://exploresuperintelligence.online/articles/defrost-mode/">
+<link rel="alternate" type="text/markdown" href="https://exploresuperintelligence.online/articles/defrost-mode.md" title="Plain-text edition">
+<meta name="author" content="Superintelligent Silicon">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Explore Superintelligence">
+<meta property="og:title" content="Defrost Mode">
+<meta property="og:description" content="Hackers switched hundreds of French supermarkets' fridges to defrost overnight. What happened, and what it means for the connected devices in your home.">
+<meta property="og:url" content="https://exploresuperintelligence.online/articles/defrost-mode/">
+<meta property="og:image" content="https://exploresuperintelligence.online/articles/defrost-mode/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Defrost Mode, an interactive guide from Explore Superintelligence">
+<meta property="article:published_time" content="2026-10-18">
+<meta property="article:modified_time" content="2026-10-18">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Defrost Mode">
+<meta name="twitter:description" content="Hackers switched hundreds of French supermarkets' fridges to defrost overnight. What happened, and what it means for the connected devices in your home.">
+<meta name="twitter:image" content="https://exploresuperintelligence.online/articles/defrost-mode/og.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "@id": "https://exploresuperintelligence.online/articles/defrost-mode/#article", "headline": "Defrost Mode", "alternativeHeadline": "The French supermarket fridge hack, and what it means for your connected home", "description": "In October 2026 hackers cooked the food in hundreds of French supermarkets by switching their fridges to defrost. What happened, what it means for the connected devices in your home, and simple steps to stay safe.", "image": {"@type": "ImageObject", "url": "https://exploresuperintelligence.online/articles/defrost-mode/og.png", "width": 1200, "height": 630}, "inLanguage": "en", "datePublished": "2026-10-18", "dateModified": "2026-10-18", "author": {"@type": "Organization", "name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"}, "contributor": {"@type": "Person", "name": "Wayne Goodwin"}, "publisher": {"@type": "Organization", "@id": "https://superintelligentsilicon.com/#org", "name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"}, "mainEntityOfPage": "https://exploresuperintelligence.online/articles/defrost-mode/", "isPartOf": {"@type": "CollectionPage", "@id": "https://exploresuperintelligence.online/articles/#page"}, "about": ["2026 French supermarket refrigeration cyberattack", "Smart home security", "Home network security", "Smart locks", "Water leak protection", "Internet of Things"], "keywords": "Danfoss, supermarket fridge hack, France cyberattack, smart home security, smart appliances, smart locks, router security, leak detection, water shutoff valve"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Explore Superintelligence", "item": "https://exploresuperintelligence.online/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://exploresuperintelligence.online/articles/"}, {"@type": "ListItem", "position": 3, "name": "Defrost Mode", "item": "https://exploresuperintelligence.online/articles/defrost-mode/"}]}]}</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+html{height:100%;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Defrost Mode</title>
+<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Self-hosted OFL fonts (Fraunces, Inter, JetBrains Mono; licences in fonts/) */
+@font-face {font-family: 'Fraunces';font-style: normal;font-weight: 400 800;font-display: swap;src: url(fonts/fraunces.woff2) format('woff2');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face {font-family: 'Inter';font-style: normal;font-weight: 400 600;font-display: swap;src: url(fonts/inter.woff2) format('woff2');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face {font-family: 'JetBrains Mono';font-style: normal;font-weight: 400 600;font-display: swap;src: url(fonts/jetbrains-mono.woff2) format('woff2');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+/* Layout: a one-screen horizontal swipe deck floating over a living 3D point cloud that morphs per chapter; frost-to-ember palette on charcoal */
+:root{
+  --ground:#141414;
+  --panel:rgba(32,31,30,.74);
+  --panel-solid:#1d1c1b;
+  --line:rgba(236,232,225,.11);
+  --line-strong:rgba(236,232,225,.22);
+  --text:#ece8e1;
+  --muted:#a29c92;
+  --frost:#8fd3f4;
+  --ember:#ff7a3c;
+  --hi:#ff6052;
+  --med:#f2b544;
+  --low:#71d19a;
+  --f-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--ground);color:var(--text);font-family:var(--f-body);font-size:15px;line-height:1.45;overflow:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-user-select:none;user-select:none}
+button:focus-visible,a:focus-visible{outline:2px solid var(--frost);outline-offset:2px;border-radius:10px}
+a{color:var(--frost)}
+#app{position:relative;height:100%;overflow:hidden}
+#cloud{position:absolute;inset:0;width:100%;height:100%;z-index:0;display:block}
+
+/* top + bottom chrome */
+.top,.bottom{position:absolute;left:0;right:0;z-index:6;display:flex;align-items:center;gap:6px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));transition:opacity .45s ease,transform .45s ease}
+.top{top:0;height:56px}
+.bottom{bottom:0;height:64px;padding-bottom:2px;background:linear-gradient(to top,rgba(20,20,20,.92) 55%,rgba(20,20,20,0))}
+.on-splash .top{opacity:0;transform:translateY(-12px);pointer-events:none}
+.on-splash .bottom{opacity:0;transform:translateY(12px);pointer-events:none}
+.brand{display:flex;align-items:center;gap:8px;flex:1;min-width:0;padding-left:4px}
+.brand svg{flex:none}
+.brand span{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ibtn{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:var(--text)}
+.ibtn:active{background:var(--line)}
+.ibtn:disabled{opacity:.28}
+.pill{height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line-strong);font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--frost);margin-block:4px}
+.prog{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px}
+.prog .lab{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--muted);font-variant-numeric:tabular-nums}
+.prog .bar{width:min(220px,60%);height:2px;background:var(--line);border-radius:2px;overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--frost),var(--ember));transition:width .55s cubic-bezier(.2,.8,.2,1)}
+
+/* deck */
+#deck{position:absolute;inset:0;z-index:2;overflow:hidden}
+#track{display:flex;height:100%;transition:transform .55s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.page{flex:0 0 100%;height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:58px 66px;touch-action:pan-y}
+.page::-webkit-scrollbar{display:none}
+.inner{max-width:540px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;gap:10px}
+.head{padding-right:30%;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--frost)}
+h1,h2{font-family:var(--f-display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(25px,7vw,34px);line-height:1.04;font-variation-settings:"opsz" 72}
+.lede{margin:0;color:var(--muted);font-size:14px;line-height:1.45;max-width:46ch}
+.small{font-size:12px;color:var(--muted);line-height:1.4}
+.mono{font-family:var(--f-mono)}
+
+/* splash */
+.splash{padding-block:24px 30px}
+.splash .inner{justify-content:flex-end;gap:14px}
+.splash h1{font-size:clamp(54px,17vw,112px);line-height:.9;font-weight:800;font-variation-settings:"opsz" 144;letter-spacing:-.03em}
+.splash h1 em{font-style:normal;color:var(--ember)}
+.splash .lede{font-size:15px;color:#c9c3b9;max-width:34ch}
+.go{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{min-height:48px;padding:0 20px;border-radius:16px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:10px}
+.btn.primary{background:var(--text);color:#141414}
+.btn.ghost{border:1px solid var(--line-strong);color:var(--text)}
+.hint{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}
+.hint i{width:7px;height:7px;border-radius:50%;background:var(--ember);box-shadow:0 0 12px var(--ember);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+/* shared rows + cards */
+.list{display:flex;flex-direction:column;gap:6px}
+.row{width:100%;min-height:44px;display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:10px;padding:6px 12px;border-radius:14px;background:var(--panel);border:1px solid var(--line);text-align:left;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .15s ease,border-color .2s}
+.row:active{transform:scale(.985)}
+.row .ic{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:rgba(143,211,244,.08);color:var(--frost)}
+.row b{display:block;font-weight:600;font-size:14px;line-height:1.25}
+.row small{display:block;color:var(--muted);font-size:12px;line-height:1.3;margin-top:1px}
+.row .chev{color:var(--muted)}
+.num{font-family:var(--f-mono);font-size:12px;color:var(--ember);font-weight:600;width:34px;text-align:center}
+
+/* tldr tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.tile{padding:8px 11px;border-radius:14px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tile .big{font-family:var(--f-display);font-weight:600;font-size:22px;line-height:1.05;font-variation-settings:"opsz" 48}
+.tile .big.e{color:var(--ember)}
+.tile .big.f{color:var(--frost)}
+.tile p{margin:3px 0 0;font-size:12px;color:var(--muted);line-height:1.3}
+.sub{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+
+/* thermometer */
+.thermo{padding:12px 14px;border-radius:16px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.thermo .readout{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.thermo .t{font-family:var(--f-display);font-size:40px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;font-variation-settings:"opsz" 96}
+.thermo .t span{font-size:18px;color:var(--muted);font-weight:400}
+.thermo .tube{position:relative;height:10px;border-radius:6px;background:rgba(255,255,255,.06);margin-top:10px;overflow:hidden}
+.thermo .tube i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:6px;background:linear-gradient(90deg,var(--frost),#ffd38a 55%,var(--ember))}
+.thermo .scale{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin-top:6px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
+.tl li{display:grid;grid-template-columns:62px 14px 1fr;gap:8px;align-items:start;padding:5px 0}
+.tl .d{font-family:var(--f-mono);font-size:11px;color:var(--frost);padding-top:2px}
+.tl .dot{width:9px;height:9px;border-radius:50%;margin-top:5px;background:var(--ember);box-shadow:0 0 0 3px rgba(255,122,60,.18)}
+.tl p{margin:0;font-size:13px;line-height:1.35}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{min-height:40px;padding:0 13px;border-radius:999px;border:1px solid var(--line-strong);font-size:12.5px;font-weight:500;display:inline-flex;align-items:center;gap:7px;background:var(--panel)}
+.chip[aria-pressed="true"]{background:var(--text);color:#141414;border-color:var(--text)}
+.chip .d{width:8px;height:8px;border-radius:50%}
+
+/* devices grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.dev{position:relative;height:72px;border-radius:14px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:6px;text-align:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity .25s,transform .25s}
+.dev svg{color:var(--text)}
+.dev span{font-size:11px;line-height:1.15;color:#d6d1c8}
+.dev i{position:absolute;top:8px;right:8px;width:7px;height:7px;border-radius:50%}
+.dev.dim{opacity:.22;transform:scale(.96)}
+.r-hi{background:var(--hi)}.r-med{background:var(--med)}.r-low{background:var(--low)}
+.legend{display:flex;gap:14px;font-size:11.5px;color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:0}
+
+/* verdict tags */
+.tag{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:999px;white-space:nowrap}
+.tag.good{color:var(--low);background:rgba(113,209,154,.12)}
+.tag.check{color:var(--med);background:rgba(242,181,68,.12)}
+.tag.avoid{color:var(--hi);background:rgba(255,96,82,.13)}
+.tag.backup,.tag.info{color:var(--frost);background:rgba(143,211,244,.1)}
+
+/* segmented */
+.seg{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
+.seg button{min-height:44px;border-radius:12px;font-weight:600;font-size:14px;color:var(--muted);transition:background .25s,color .25s}
+.seg button[aria-pressed="true"]{background:var(--text);color:#141414}
+.hype{display:flex;flex-direction:column;gap:7px}
+.hype .card{padding:10px 13px;border-radius:14px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--frost);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:rise .4s ease both}
+.hype.real .card{border-left-color:var(--ember)}
+.hype .card b{display:block;font-size:14px}
+.hype .card p{margin:2px 0 0;font-size:12.5px;color:var(--muted);line-height:1.35}
+@keyframes rise{from{transform:translateY(8px);opacity:.3}}
+
+/* wizard */
+.wiz{padding:16px;border-radius:18px;background:var(--panel);border:1px solid var(--line-strong);display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.crumbs{display:flex;gap:6px}
+.crumbs i{flex:1;height:3px;border-radius:2px;background:var(--line)}
+.crumbs i.on{background:var(--frost)}
+.wiz .q{font-family:var(--f-display);font-size:23px;line-height:1.12;font-weight:600;font-variation-settings:"opsz" 48;text-wrap:balance;min-height:78px}
+.yn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.yn button{min-height:52px;border-radius:14px;border:1px solid var(--line-strong);font-weight:600;font-size:16px}
+.yn button:active{background:var(--line)}
+.outcome{display:flex;flex-direction:column;gap:6px;animation:rise .45s ease both}
+.outcome .o{font-family:var(--f-display);font-size:30px;font-weight:800;line-height:1;font-variation-settings:"opsz" 96}
+.outcome p{margin:0;color:#d6d1c8;font-size:14px}
+.trail{display:flex;flex-direction:column;gap:4px}
+.trail div{font-size:12px;color:var(--muted)}
+.trail div b{color:var(--text);font-weight:600}
+
+/* ladder */
+.pips{display:flex;gap:3px}
+.pips i{width:7px;height:7px;border-radius:2px;background:var(--line-strong)}
+.pips i.on{background:var(--ember)}
+.callout{padding:11px 13px;border-radius:14px;border:1px dashed var(--line-strong);font-size:12.5px;color:#d6d1c8;line-height:1.4}
+.callout b{color:var(--text)}
+
+/* plan */
+.planhead{display:flex;align-items:center;gap:14px}
+.ring{position:relative;width:64px;height:64px;flex:none}
+.ring svg{transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums}
+.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}
+.tabs button{min-height:44px;border-radius:10px;font-size:12px;font-weight:600;color:var(--muted);line-height:1.1;padding:0 4px}
+.tabs button[aria-pressed="true"]{background:var(--text);color:#141414}
+.checks{display:flex;flex-direction:column;gap:6px}
+.ck{width:100%;display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;padding:9px 12px;border-radius:13px;background:var(--panel);border:1px solid var(--line);text-align:left;font-size:13px;line-height:1.35;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.ck .box{width:22px;height:22px;border-radius:7px;border:1.5px solid var(--line-strong);display:grid;place-items:center;margin-top:-1px;transition:background .2s,border-color .2s}
+.ck .box svg{opacity:0;transform:scale(.6);transition:all .2s}
+.ck[aria-checked="true"] .box{background:var(--low);border-color:var(--low)}
+.ck[aria-checked="true"] .box svg{opacity:1;transform:none}
+.ck[aria-checked="true"] span{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(162,156,146,.6)}
+
+/* diagram */
+.diag{border-radius:16px;background:var(--panel);border:1px solid var(--line);padding:8px 6px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.diag svg{display:block;width:100%;height:auto}
+.node{cursor:pointer}
+.node rect{transition:stroke .2s}
+.flow{fill:none;stroke-width:1.6;stroke-dasharray:3 9;animation:flow 1.1s linear infinite}
+.flow.in{stroke:var(--ember)}
+.flow.out{stroke:var(--frost)}
+@keyframes flow{to{stroke-dashoffset:-24}}
+
+/* sheet */
+#scrim{position:absolute;inset:0;z-index:18;background:rgba(8,8,8,.55);opacity:0;pointer-events:none;transition:opacity .3s}
+#scrim.on{opacity:1;pointer-events:auto}
+#sheet{position:absolute;left:0;right:0;bottom:0;z-index:20;max-height:80%;display:flex;flex-direction:column;background:var(--panel-solid);border-top:1px solid var(--line-strong);border-radius:24px 24px 0 0;transform:translateY(104%);transition:transform .42s cubic-bezier(.2,.8,.2,1);padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+#sheet.on{transform:none}
+#sheet .grab{width:40px;height:4px;border-radius:3px;background:var(--line-strong);margin:10px auto 4px}
+#sheet .sh{display:flex;align-items:flex-start;gap:10px;padding-block:6px 10px}
+#sheet .sh h3{flex:1;margin:0;font-family:var(--f-display);font-weight:600;font-size:23px;line-height:1.1;font-variation-settings:"opsz" 48;text-wrap:balance;padding-top:8px}
+#sheet .sb{overflow-y:auto;max-width:620px;width:100%;margin:0 auto;font-size:14px;line-height:1.5;color:#d6d1c8;display:flex;flex-direction:column;gap:12px;padding-bottom:6px;touch-action:pan-y}
+.kv{display:flex;flex-direction:column;gap:3px}
+.kv .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--frost)}
+.kv .k.e{color:var(--ember)}
+.kv p{margin:0}
+.srcs{display:flex;flex-direction:column;gap:2px}
+.srcs a{display:block;padding:8px 0;border-bottom:1px solid var(--line);color:var(--text);text-decoration:none;font-size:13.5px}
+.srcs a span{display:block;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);margin-top:2px}
+.gl{display:grid;grid-template-columns:minmax(92px,auto) 1fr;gap:8px 14px;font-size:13.5px}
+.gl dt{font-weight:600;color:var(--text)}
+.gl dd{margin:0}
+.menu{display:flex;flex-direction:column;gap:4px}
+.menu button{display:grid;grid-template-columns:40px 1fr;align-items:center;min-height:46px;padding:0 6px;border-radius:12px;text-align:left;font-size:15px}
+.menu button[aria-current="true"]{background:var(--line)}
+.menu button .mono{font-size:11px;color:var(--frost)}
+.foot{margin-top:auto;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);letter-spacing:.06em;line-height:1.5}
+
+
+/* likelihood meters */
+.mm{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.pp{display:flex;gap:3px}
+.pp i{width:7px;height:7px;border-radius:2px;background:var(--line-strong)}
+.pp i.on{background:var(--ember)}
+.pp i.af{box-shadow:0 0 0 1.5px var(--frost)}
+.mm em{font-style:normal;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.mm .tag{font-size:9.5px;padding:3px 7px}
+.meterw{display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.meterw .k{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--frost)}
+.meter{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding-top:3px}
+.meter .sg{height:10px;border-radius:5px;background:var(--line);position:relative}
+.meter .sg.on{background:var(--ember);opacity:calc(.45 + var(--k) * .14)}
+.meter .sg.af::after{content:"";position:absolute;inset:-3px;border-radius:8px;border:2px solid var(--frost)}
+.mlab{display:grid;grid-template-columns:repeat(5,1fr);font-family:var(--f-mono);font-size:9px;color:var(--muted);text-align:center}
+.mlab .n{color:var(--ember)}
+.mlab .a{color:var(--frost)}
+.mline{margin:0;font-size:13px;color:#d6d1c8}
+.mline b{color:var(--text)}
+.mline b.f{color:var(--frost)}
+.lv{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:999px;white-space:nowrap;flex:none}
+.lv0,.lv1{color:var(--low);background:rgba(113,209,154,.12)}
+.lv2{color:var(--med);background:rgba(242,181,68,.12)}
+.lv3,.lv4{color:var(--hi);background:rgba(255,96,82,.13)}
+.hype .card .ch{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+
+/* risk map */
+.rmap{display:grid;grid-template-columns:50px repeat(5,minmax(0,1fr));gap:4px;padding:8px;border-radius:16px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.rmap .ylab{display:flex;align-items:center;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.04em;color:var(--muted)}
+.rmap .xlab{font-family:var(--f-mono);font-size:9px;color:var(--muted);text-align:center;padding-top:2px}
+.rmap .cell{min-height:64px;border-radius:9px;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:4px;padding:4px}
+.rmap .c0{background:rgba(113,209,154,.06)}
+.rmap .c1{background:rgba(242,181,68,.07)}
+.rmap .c2{background:rgba(255,122,60,.1)}
+.rmap .c3{background:rgba(255,96,82,.16)}
+.rchip{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:rgba(20,20,20,.75);border:1px solid var(--line-strong);color:var(--text);will-change:transform}
+.rchip:focus-visible{outline:2px solid var(--frost);outline-offset:1px}
+.axisnote{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:.06em}
+
+/* water */
+.tiles.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tiles.three .big{font-size:20px}
+.cost{font-family:var(--f-mono);font-size:11px;color:var(--text);text-align:right;white-space:nowrap}
+.seg.three{grid-template-columns:repeat(3,1fr)}
+.tier{padding:14px;border-radius:18px;background:var(--panel);border:1px solid var(--line-strong);display:flex;flex-direction:column;gap:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);animation:rise .4s ease both}
+.tier .tn{font-family:var(--f-display);font-size:22px;font-weight:600;line-height:1.1;font-variation-settings:"opsz" 48}
+.tier .tc{font-size:11.5px;color:var(--frost);line-height:1.4}
+.inc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.inc li{display:grid;grid-template-columns:18px 1fr;gap:8px;font-size:13px;line-height:1.35}
+.inc li svg{color:var(--low);margin-top:2px}
+.cm{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cm p{margin:2px 0 0;font-size:12.5px;color:#d6d1c8;line-height:1.35}
+.k.good,.kv .k.good{color:var(--low)}
+.k.bad,.kv .k.bad{color:var(--hi)}
+.cm .k,.pc .k{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pc ul{margin:5px 0 0;padding-left:16px;font-size:13px;display:flex;flex-direction:column;gap:5px;line-height:1.35}
+@media (max-width:420px){ .pc{grid-template-columns:1fr} }
+
+@media (min-width:760px){
+  .page{padding-block:72px 90px}
+  .head{padding-right:34%}
+}
+/* publishing pass: no text label below 12px */
+.brand span,.pill,.prog .lab,.eyebrow,.hint,.sub,.thermo .scale,.tl .d,.tag,.mm .tag,.kv .k,.meterw .k,.srcs a span,.menu button .mono,.foot,.mm em,.mlab,.lv,.rmap .ylab,.rmap .xlab,.axisnote,.cost,.cm .k,.pc .k,.tier .tc,.dev span,.legend,.byline,.credit{font-size:12px}
+.mm em,.lv,.tag,.mm .tag{letter-spacing:.04em}
+.mlab{letter-spacing:0}
+.byline{font-family:var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#c9c3b9}
+.credit{color:var(--muted);line-height:1.5;margin-top:4px}
+.dev.dim{opacity:.4}
+.rmap .xlab{letter-spacing:0}
+@media (max-width:759px){
+  .rmap{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;padding:6px}
+  .rmap .ylab{grid-column:1/-1;padding:3px 2px 0;letter-spacing:.1em;text-transform:uppercase}
+  .rmap .xsp{display:none}
+  .rmap .cell{min-height:50px;padding:3px;gap:3px}
+  .rchip{width:26px;height:26px}
+}
+@media (max-width:420px){ .brand span{display:none} }
+.back{display:inline-flex;align-items:center;gap:6px;min-height:32px;align-self:flex-start;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none}
+.back:hover,.back:focus-visible{color:var(--text)}
+.menu a.menu-out{display:grid;grid-template-columns:40px 1fr;align-items:center;min-height:46px;padding:0 6px;margin-top:6px;border-top:1px solid var(--line);border-radius:0 0 12px 12px;color:var(--muted);text-decoration:none;font-size:15px}
+.menu a.menu-out:hover,.menu a.menu-out:focus-visible{color:var(--text)}
+.menu a.menu-out svg{color:var(--frost)}
+@media (prefers-reduced-motion:reduce){
+  .flow,.hint i{animation:none}
+  #track,#sheet,.prog .bar i{transition-duration:.01s}
+}
+</style>
+</head>
+<body>
+
+<div id="app" class="on-splash">
+  <canvas id="cloud" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <div class="brand" aria-label="Defrost Mode">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 2.5v19M4.2 7l15.6 10M19.8 7 4.2 17" stroke="#8fd3f4"/><path d="M12 5.5c2.6 2.3 2.6 5 0 7-2.6-2-2.6-4.7 0-7z" stroke="#ff7a3c" fill="#ff7a3c" fill-opacity=".25"/></g></svg>
+      <span>Defrost Mode</span>
+    </div>
+    <button class="pill" id="tldrBtn" type="button">TL;DR</button>
+    <button class="ibtn" id="readBtn" type="button" aria-label="Read this page aloud" aria-pressed="false" title="Read aloud" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h9M4 12h7M4 17h9"/><path d="M16.5 9.5a3.5 3.5 0 0 1 0 5M19 7a7 7 0 0 1 0 10"/></svg></button>
+    <button class="ibtn" id="soundBtn" type="button" aria-label="Sound effects"></button>
+    <button class="ibtn" id="menuBtn" type="button" aria-label="Chapters"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </header>
+
+  <main id="deck">
+    <div id="track">
+
+      <!-- 0 splash -->
+      <section class="page splash" data-id="splash" data-shape="fridge" aria-label="Cover">
+        <div class="inner">
+          <div class="eyebrow">France · night of October 11, 2026</div>
+          <h1>Defrost<br><em>Mode</em></h1>
+          <p class="lede">One night in October, hackers took over the fridges in hundreds of French supermarkets and left them on defrost until morning. Here's what happened, and what it means for the connected devices in your home.</p>
+          <div class="go">
+            <button class="btn primary" id="beginSound" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>Begin with sound</button>
+            <button class="btn ghost" id="beginQuiet" type="button">Read quietly</button>
+          </div>
+          <div class="byline">By Superintelligent Silicon · Updated Oct 18, 2026</div>
+          <div class="hint"><i></i>Tap to spread the heat · drag to turn</div>
+          <a class="back" href="/articles/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>More from Explore Superintelligence</a>
+        </div>
+      </section>
+
+      <!-- 1 tldr -->
+      <section class="page" data-id="tldr" data-shape="fridge" aria-label="The short version">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">TL;DR · 60 seconds</div>
+            <h2>The short version</h2>
+          </div>
+          <div class="tiles">
+            <div class="tile"><div class="big e">~700</div><p>of France’s ~10,000 supermarkets hit, per its finance minister</p></div>
+            <div class="tile"><div class="big e">50°C</div><p>122°F for hours; one store hit 80°C, the Guardian reports</p></div>
+            <div class="tile"><div class="big f">Old + online</div><p>Out-of-date controls that anyone online could reach</p></div>
+            <div class="tile"><div class="big f">Your home</div><p>The same weak spots: old software, shared passwords</p></div>
+          </div>
+          <div class="sub">Five things worth doing</div>
+          <div class="list" id="tldrList"></div>
+        </div>
+      </section>
+
+      <!-- 2 france -->
+      <section class="page" data-id="france" data-shape="fridge" aria-label="What happened">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">01 · What happened</div>
+            <h2>A night stuck in defrost</h2>
+            <p class="lede">Each store's fridges run on one small control computer that repair firms reach online. Attackers got in and set it to defrost all night.</p>
+          </div>
+          <div class="thermo" aria-label="Case temperature rising from minus 20 to 50 degrees Celsius">
+            <div class="readout"><div class="t" id="tval">−20<span>°C</span></div><div class="small mono" id="tf">−4°F · freezer</div></div>
+            <div class="tube"><i id="tfill"></i></div>
+            <div class="scale"><span>−20°C</span><span>0°</span><span>20°</span><span>50°C · ~6 h at Intermarché</span></div>
+          </div>
+          <ul class="tl">
+            <li><span class="d">Oct 11–12</span><span class="dot"></span><p>Overnight, fridges at Intermarché, Coopérative U, Carrefour, Monoprix, Leclerc and others are switched to defrost and left there.</p></li>
+            <li><span class="d">Oct 12</span><span class="dot"></span><p>Paris prosecutors open an inquiry, citing spoiled food and fires. Danfoss, which makes the controls, says the hit units ran old or unsupported software.</p></li>
+            <li><span class="d">Oct 13</span><span class="dot"></span><p>France's cyber-emergency team adds two more makers, Copeland and Dixell. About 700 of France's 10,000 supermarkets were hit, the finance minister says.</p></li>
+            <li><span class="d">Oct 16</span><span class="dot"></span><p>Its updated advice: allow remote access only over a private, encrypted link, and check defrost schedules.</p></li>
+            <li><span class="d">Oct 17</span><span class="dot"></span><p>One Normandy store's freezers reached 80°C, and nobody has claimed the attack, the Guardian reports.</p></li>
+          </ul>
+          <div class="chips">
+            <button class="chip" type="button" data-sheet="unknowns"><span class="d" style="background:var(--med)"></span>Confirmed vs unknown</button>
+            <button class="chip" type="button" data-sheet="exposure"><span class="d" style="background:var(--hi)"></span>2,752 were exposed</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 why -->
+      <section class="page" data-id="why" data-shape="house" aria-label="Why it worked">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">02 · Why it worked</div>
+            <h2>Easy to reach, out of date, and trusted</h2>
+            <p class="lede">None of it took a genius, and each weakness has an everyday version at home. Tap one to compare.</p>
+          </div>
+          <div class="list" id="whyList"></div>
+        </div>
+      </section>
+
+      <!-- 4 ways -->
+      <section class="page" data-id="ways" data-shape="net" aria-label="How devices get taken over">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">03 · How devices get taken over</div>
+            <h2>Five ways in, three safety nets</h2>
+          </div>
+          <div class="diag">
+            <svg viewBox="0 0 360 312" role="img" aria-label="Five ways in lead to the device, and three protective layers stand between it and harm">
+              <g font-family="Inter, system-ui, sans-serif">
+                <path class="flow in" d="M128 30 C 142 30, 140 150, 154 150"/>
+                <path class="flow in" d="M128 92 C 142 92, 140 152, 154 152"/>
+                <path class="flow in" d="M128 154 L 154 154"/>
+                <path class="flow in" d="M128 216 C 142 216, 140 156, 154 156"/>
+                <path class="flow in" d="M128 278 C 142 278, 140 158, 154 158"/>
+                <path class="flow out" d="M226 154 C 238 154, 236 70, 250 70"/>
+                <path class="flow out" d="M226 154 L 250 154"/>
+                <path class="flow out" d="M226 154 C 238 154, 236 238, 250 238"/>
+                <g class="node" data-sheet="w-account" tabindex="0" role="button" aria-label="App account"><rect x="4" y="9" width="124" height="42" rx="10" fill="rgba(255,122,60,.08)" stroke="rgba(255,122,60,.5)"/><text x="14" y="27" font-size="12" font-weight="600" fill="#ece8e1">App account</text><text x="14" y="42" font-size="10" fill="#a29c92">reused password</text></g>
+                <g class="node" data-sheet="w-shared" tabindex="0" role="button" aria-label="Shared access"><rect x="4" y="71" width="124" height="42" rx="10" fill="rgba(255,122,60,.08)" stroke="rgba(255,122,60,.5)"/><text x="14" y="89" font-size="12" font-weight="600" fill="#ece8e1">Shared access</text><text x="14" y="104" font-size="10" fill="#a29c92">family, installers, ex-owners</text></g>
+                <g class="node" data-sheet="w-cloud" tabindex="0" role="button" aria-label="Maker's online service"><rect x="4" y="133" width="124" height="42" rx="10" fill="rgba(255,122,60,.08)" stroke="rgba(255,122,60,.5)"/><text x="14" y="151" font-size="12" font-weight="600" fill="#ece8e1">Maker's servers</text><text x="14" y="166" font-size="10" fill="#a29c92">one breach, many homes</text></g>
+                <g class="node" data-sheet="w-wifi" tabindex="0" role="button" aria-label="Home Wi-Fi"><rect x="4" y="195" width="124" height="42" rx="10" fill="rgba(255,122,60,.08)" stroke="rgba(255,122,60,.5)"/><text x="14" y="213" font-size="12" font-weight="600" fill="#ece8e1">Home Wi-Fi</text><text x="14" y="228" font-size="10" fill="#a29c92">anything on your network</text></g>
+                <g class="node" data-sheet="w-integr" tabindex="0" role="button" aria-label="Linked apps"><rect x="4" y="257" width="124" height="42" rx="10" fill="rgba(255,122,60,.08)" stroke="rgba(255,122,60,.5)"/><text x="14" y="275" font-size="12" font-weight="600" fill="#ece8e1">Linked apps</text><text x="14" y="290" font-size="10" fill="#a29c92">voice assistants, add-ons</text></g>
+                <g class="node" data-sheet="w-device" tabindex="0" role="button" aria-label="The device"><rect x="154" y="112" width="72" height="84" rx="12" fill="rgba(236,232,225,.07)" stroke="#ece8e1" stroke-width="1.4"/><g transform="translate(178 124)" fill="none" stroke="#ece8e1" stroke-width="1.4" stroke-linecap="round"><rect x="3" y="0" width="18" height="30" rx="3"/><path d="M3 11h18M7 4v4M7 15v6"/></g><text x="190" y="184" font-size="11" font-weight="600" fill="#ece8e1" text-anchor="middle">Device</text></g>
+                <g class="node" data-sheet="g-arm" tabindex="0" role="button" aria-label="Arm at the machine"><rect x="250" y="44" width="106" height="52" rx="10" fill="rgba(143,211,244,.08)" stroke="rgba(143,211,244,.55)"/><text x="260" y="64" font-size="11.5" font-weight="600" fill="#ece8e1">Arm at</text><text x="260" y="79" font-size="11.5" font-weight="600" fill="#ece8e1">the machine</text></g>
+                <g class="node" data-sheet="g-hw" tabindex="0" role="button" aria-label="Hardware cutoffs"><rect x="250" y="128" width="106" height="52" rx="10" fill="rgba(143,211,244,.08)" stroke="rgba(143,211,244,.55)"/><text x="260" y="148" font-size="11.5" font-weight="600" fill="#ece8e1">Hardware</text><text x="260" y="163" font-size="11.5" font-weight="600" fill="#ece8e1">cutoffs</text></g>
+                <g class="node" data-sheet="g-sens" tabindex="0" role="button" aria-label="Independent sensors"><rect x="250" y="212" width="106" height="52" rx="10" fill="rgba(143,211,244,.08)" stroke="rgba(143,211,244,.55)"/><text x="260" y="232" font-size="11.5" font-weight="600" fill="#ece8e1">Independent</text><text x="260" y="247" font-size="11.5" font-weight="600" fill="#ece8e1">sensors</text></g>
+              </g>
+            </svg>
+          </div>
+          <p class="small">Attackers rarely break the appliance itself. They get in through an account, your network or the maker's servers, and the device does what it's told. Tap a box for a real example.</p>
+        </div>
+      </section>
+
+      <!-- 5 weak spots -->
+      <section class="page" data-id="weak" data-shape="net" aria-label="The usual weak spots">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">04 · What researchers keep finding</div>
+            <h2>The usual weak spots</h2>
+            <p class="lede">Ranked by how likely each one is. Orange shows the risk today, the blue outline after the fix.</p>
+          </div>
+          <div class="list" id="weakList"></div>
+                    <div class="chips"><button class="chip" type="button" data-sheet="method"><span class="d" style="background:var(--frost)"></span>How we rate likelihood</button></div>
+        </div>
+      </section>
+
+      <!-- 6 devices -->
+      <section class="page" data-id="devices" data-shape="house" aria-label="Device by device">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">05 · Device by device</div>
+            <h2>Risk follows heat, water and doors</h2>
+          </div>
+          <div class="chips" id="riskFilter" role="group" aria-label="Filter by risk">
+            <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-f="hi" aria-pressed="false"><span class="d r-hi"></span>High</button>
+            <button class="chip" type="button" data-f="med" aria-pressed="false"><span class="d r-med"></span>Medium</button>
+            <button class="chip" type="button" data-f="low" aria-pressed="false"><span class="d r-low"></span>Low</button>
+          </div>
+          <div class="grid" id="devGrid"></div>
+          <p class="small">Risk means the realistic chance of harm if someone misuses the device remotely, after its built-in safety parts do their job.</p>
+        </div>
+      </section>
+
+      <!-- risk map -->
+      <section class="page" data-id="riskmap" data-shape="house" aria-label="The risk map">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">06 · The risk map</div>
+            <h2>Where each device sits</h2>
+            <p class="lede">Left to right: how likely. Bottom to top: how bad. Flip to watch the fixes move each device, and tap any icon.</p>
+          </div>
+          <div class="seg" role="group" aria-label="Show ratings">
+            <button type="button" id="mapNow" aria-pressed="true">Now</button>
+            <button type="button" id="mapAfter" aria-pressed="false">After the fixes</button>
+          </div>
+          <div class="rmap" id="rmap"></div>
+          <div class="axisnote"><span>Less likely</span><span>More likely</span></div>
+          <div class="chips"><button class="chip" type="button" data-sheet="method"><span class="d" style="background:var(--frost)"></span>How we rate likelihood</button></div>
+        </div>
+      </section>
+
+      <!-- 7 locks -->
+      <section class="page" data-id="locks" data-shape="padlock" aria-label="Door locks">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">07 · Smart and keypad locks</div>
+            <h2>Most break-ins still use force</h2>
+            <p class="lede">Every lock has a known weakness, but most burglars simply kick or pry. Bars show the break-in odds now, blue after the fix.</p>
+          </div>
+          <div class="list" id="lockList"></div>
+          <button class="chip" type="button" data-sheet="doorplan" style="justify-content:center"><span class="d" style="background:var(--low)"></span>What actually secures a door</button>
+        </div>
+      </section>
+
+      <!-- 8 hype -->
+      <section class="page" data-id="hype" data-shape="net" aria-label="What to worry about">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">08 · Keeping perspective</div>
+            <h2>What to worry about</h2>
+          </div>
+          <div class="seg" role="group" aria-label="Switch view">
+            <button type="button" id="segOver" aria-pressed="true">Overhyped</button>
+            <button type="button" id="segReal" aria-pressed="false">Real</button>
+          </div>
+          <div class="hype" id="hypeList"></div>
+        </div>
+      </section>
+
+      <!-- 9 decide -->
+      <section class="page" data-id="decide" data-shape="house" aria-label="Decide">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">09 · Decide, one device at a time</div>
+            <h2>Keep, disconnect, replace or remove</h2>
+            <p class="lede">Throwing out a working fridge because it has Wi-Fi is usually a waste. Three questions settle almost every device.</p>
+          </div>
+          <div class="wiz" id="wiz"></div>
+        </div>
+      </section>
+
+      <!-- 10 dumb -->
+      <section class="page" data-id="dumb" data-shape="fridge" aria-label="Make it dumb again">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">10 · Make it dumb again</div>
+            <h2>Cut the connection, keep the appliance</h2>
+            <p class="lede">The computer inside runs the machine, so it stays. What you can remove is its link to the internet.</p>
+          </div>
+          <div class="list" id="dumbList"></div>
+          <div class="callout"><b>The catch:</b> some cycles only exist in the app. Bosch's 500-series dishwashers put Rinse, Eco and Delay Start there, so a disconnected one loses them. For most people the standard cycles are enough.</div>
+        </div>
+      </section>
+
+      <!-- water -->
+      <section class="page" data-id="water" data-shape="drop" aria-label="Water protection">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">11 · Water, the expensive one</div>
+            <h2>Stop water before it spreads</h2>
+            <p class="lede">A hacked appliance rarely floods a home, but an ordinary leak often does. Here's every way to catch one, cheapest first.</p>
+          </div>
+          <div class="tiles three">
+            <div class="tile"><div class="big e">1 in 60</div><p>insured homes file a water or freeze claim each year</p></div>
+            <div class="tile"><div class="big e">$12.5k</div><p>average claim, 2017–2021</p></div>
+            <div class="tile"><div class="big f">~24%</div><p>of all homeowner claims in 2021</p></div>
+          </div>
+          <div class="list" id="waterList"></div>
+        </div>
+      </section>
+
+      <!-- water setup -->
+      <section class="page" data-id="setup" data-shape="drop" aria-label="Pick a water setup">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">12 · Pick a water setup</div>
+            <h2>Good, better, best</h2>
+          </div>
+          <div class="seg three" id="tierTabs" role="group" aria-label="Setup level"></div>
+          <div id="tierCard"></div>
+          <div class="callout"><b>On a well or rainwater catchment?</b> Meter monitors need a utility meter, so they're out. Whole-home valves can work, but have the installer check them against the pump and pressure tank first. <b>Insurance:</b> some insurers now discount premiums for an active shutoff device, so ask yours before buying.</div>
+        </div>
+      </section>
+
+      <!-- 11 plan -->
+      <section class="page" data-id="plan" data-shape="shield" aria-label="Action plan">
+        <div class="inner">
+          <div class="planhead">
+            <div class="ring" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="rgba(236,232,225,.1)" stroke-width="5"/><circle id="ringArc" cx="32" cy="32" r="27" fill="none" stroke="url(#rg)" stroke-width="5" stroke-linecap="round" stroke-dasharray="169.6" stroke-dashoffset="169.6" style="transition:stroke-dashoffset .5s"/><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fd3f4"/><stop offset="1" stop-color="#ff7a3c"/></linearGradient></defs></svg><b id="ringTxt">0%</b></div>
+            <div class="head" style="padding-right:0;flex:1">
+              <div class="eyebrow">13 · Action plan</div>
+              <h2>Tick it off</h2>
+            </div>
+          </div>
+          <div class="tabs" id="planTabs" role="group" aria-label="Plan stage"></div>
+          <div class="checks" id="checks"></div>
+          <p class="small" id="planNote">Your ticks are saved on this device only.</p>
+        </div>
+      </section>
+
+      <!-- 12 acts up -->
+      <section class="page" data-id="actsup" data-shape="shield" aria-label="If something acts up">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">14 · If a device acts on its own</div>
+            <h2>Make it safe, then find out why</h2>
+          </div>
+          <div class="list" id="actList"></div>
+        </div>
+      </section>
+
+      <!-- 13 buy -->
+      <section class="page" data-id="buy" data-shape="shield" aria-label="Before you buy">
+        <div class="inner">
+          <div class="head">
+            <div class="eyebrow">15 · Before you buy the next one</div>
+            <h2>Seven questions before you buy</h2>
+            <p class="lede">Unless a connected feature really earns its place, the plain model is often the safer buy.</p>
+          </div>
+          <div class="list" id="buyList"></div>
+          <div class="chips">
+            <button class="chip" type="button" data-sheet="glossary" aria-label="Plain-English glossary">Glossary</button>
+            <button class="chip" type="button" data-sheet="sources">Sources</button>
+            <button class="chip" type="button" id="toStart">Back to cover</button>
+          </div>
+          <div class="foot">Updated October 18, 2026. The entry path and attacker are still unconfirmed; figures are as reported, with sources named.<div class="credit">Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Wayne Goodwin.</div></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <nav class="bottom" aria-label="Pages">
+    <button class="ibtn" id="prev" type="button" aria-label="Previous page"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="prog"><div class="lab" id="plabel">01 / 16</div><div class="bar"><i id="pbar"></i></div></div>
+    <button class="ibtn" id="next" type="button" aria-label="Next page"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </nav>
+
+  <div id="scrim"></div>
+  <div id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle">
+    <div class="grab"></div>
+    <div class="sh"><h3 id="shTitle"></h3><button class="ibtn" id="shClose" type="button" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="sb" id="shBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const store={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- icons (all drawn in code) ---------- */
+const I={
+  fridge:'<rect x="6" y="2.5" width="12" height="19" rx="2"/><path d="M6 9h12M9 5v2M9 12v3.5"/>',
+  oven:'<rect x="3" y="4" width="18" height="16" rx="2"/><rect x="6" y="9.5" width="12" height="7.5" rx="1"/><path d="M6.5 6.7h.01M9.5 6.7h.01M12.5 6.7h.01"/>',
+  counter:'<rect x="3" y="6" width="18" height="12.5" rx="2"/><rect x="5.5" y="8.5" width="9.5" height="7.5" rx="1"/><path d="M18 9.5h.01M18 13h.01M6 20.5h3M15 20.5h3"/>',
+  washer:'<rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M4 6.5h16M7 4.5h.01"/><circle cx="12" cy="14" r="4.6"/><circle cx="12" cy="14" r="2.2"/>',
+  dryer:'<rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M4 6.5h16M7 4.5h.01"/><circle cx="12" cy="14" r="4.6"/><path d="M9.6 14.6c.8-1.2 1.6 1.2 2.4 0s1.6 1.2 2.4 0"/>',
+  dish:'<rect x="4" y="2.5" width="16" height="19" rx="2"/><path d="M4 7h16M8 4.8h5M8.5 11.5v6M12 11.5v6M15.5 11.5v6"/>',
+  plug:'<rect x="6.5" y="8.5" width="11" height="8.5" rx="2.5"/><path d="M10 4.5v4M14 4.5v4M12 17v3.5"/><path d="M19.5 4.5c1.4 1.2 1.4 3 0 4.2" opacity=".7"/>',
+  heater:'<rect x="3.5" y="6" width="17" height="11.5" rx="2"/><path d="M8 9v5.5M12 9v5.5M16 9v5.5M6 20h2M16 20h2"/>',
+  tvbox:'<rect x="3" y="4" width="18" height="11" rx="1.5"/><rect x="8.5" y="17.5" width="7" height="3" rx="1"/><path d="M12 15v2.5"/>',
+  tv:'<rect x="2.5" y="4" width="19" height="12.5" rx="1.5"/><path d="M8 20.5h8M12 16.5v4"/>',
+  lock:'<rect x="5" y="10.5" width="14" height="10.5" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.5v2.5"/>',
+  camera:'<rect x="3" y="7" width="12.5" height="10" rx="2"/><path d="M15.5 10.5 21 7.5v9l-5.5-3"/>',
+  thermo:'<circle cx="12" cy="12" r="8.5"/><path d="M12 12l3.2-3.2"/><path d="M7.5 15.5h.01M16.5 15.5h.01"/>',
+  valve:'<path d="M2.5 14.5h19"/><rect x="9" y="10.5" width="6" height="8" rx="1"/><path d="M12 10.5V6.5M8.5 6.5h7"/>',
+  wifi:'<path d="M3 9.5a13 13 0 0 1 18 0M6 13a8.5 8.5 0 0 1 12 0M9 16.4a4 4 0 0 1 6 0"/><path d="M12 19.5h.01"/>',
+  users:'<circle cx="9" cy="8.5" r="3"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"/><circle cx="16.5" cy="9" r="2.4"/><path d="M15.5 14.5c2.4.1 4.2 1.6 4.8 4.2"/>',
+  key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 7l2.5 2.5M14 9l2 2"/>',
+  list:'<path d="M9 6.5h11M9 12h11M9 17.5h11"/><path d="M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/>',
+  unplug:'<path d="M7 12.5V8.5h10v4a5 5 0 0 1-10 0z"/><path d="M10 4.5v4M14 4.5v4M12 17.5v3"/><path d="M4 4l16 16" stroke-opacity=".9"/>',
+  bin:'<path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/>',
+  shield:'<path d="M12 3 5 5.8v5.4c0 4.3 2.9 7.8 7 9.3 4.1-1.5 7-5 7-9.3V5.8L12 3z"/><path d="M9 12l2.2 2.2L15.5 10"/>',
+  drop:'<path d="M12 3.5c3 3.8 5.5 6.9 5.5 10a5.5 5.5 0 0 1-11 0c0-3.1 2.5-6.2 5.5-10z"/>',
+  cloud:'<path d="M7 18.5h10a4 4 0 0 0 .6-8 6 6 0 0 0-11.4 1.6A3.3 3.3 0 0 0 7 18.5z"/>',
+  clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+  chat:'<path d="M5 18.5V6.5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9l-4 3z"/>',
+  bell:'<path d="M6.5 16.5h11l-1.3-2V10a4.2 4.2 0 0 0-8.4 0v4.5z"/><path d="M10.3 19a1.8 1.8 0 0 0 3.4 0"/>',
+  door:'<path d="M6 21V4.5A1.5 1.5 0 0 1 7.5 3h9A1.5 1.5 0 0 1 18 4.5V21M3.5 21h17"/><path d="M14.5 12.5h.01"/>',
+  reset:'<path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.7h3.7"/>',
+  eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/>',
+  router:'<rect x="3" y="13" width="18" height="6.5" rx="1.5"/><path d="M7 16.2h.01M10.5 16.2h.01M8 13l-2-6M16 13l2-6"/>',
+  chip:'<rect x="6.5" y="6.5" width="11" height="11" rx="1.5"/><path d="M9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/>',
+  tag:'<path d="M3.5 12.5V4.5h8l9 9-8 8z"/><path d="M8 8.5h.01"/>',
+  bolt:'<path d="M13 3 5.5 13.5H11l-1 7.5 7.5-10.5H12z"/>',
+  card:'<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14.5h4"/>',
+  keypad:'<rect x="5.5" y="2.5" width="13" height="19" rx="2"/><path d="M9 7h.01M12 7h.01M15 7h.01M9 10.5h.01M12 10.5h.01M15 10.5h.01M9 14h.01M12 14h.01M15 14h.01M12 17.5h.01"/>',
+  building:'<path d="M4.5 21V5l7-2.5V21M11.5 8.5l8 2.5V21M3 21h18"/><path d="M7.5 9h1M7.5 12.5h1M7.5 16h1M14.5 13.5h1M14.5 17h1"/>',
+  phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/>',
+  finger:'<path d="M7 11a5 5 0 0 1 10 0c0 3-.5 6-2 9"/><path d="M10 20c1-2.5 1.5-5.5 1.5-8.5"/><path d="M14.5 12c0 2-.2 3.8-.7 5.5"/><path d="M5 8.5a7.5 7.5 0 0 1 14 0"/>',
+  check:'<path d="M5 12.5 10 17.5 19 7.5"/>',
+  gauge:'<path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/><path d="M4 19.5h16"/>',
+  pan:'<path d="M3 15h18l-1.5 4.5h-15z"/><path d="M8 15V9h8v6"/>'
+};
+const icon=(n,s=20,sw=1.6)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]||I.list}</svg>`;
+const chev=`<svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>`;
+
+/* ---------- sound (synthesised) ---------- */
+let ac=null, soundOn=store.get("dm-sound",true);
+function actx(){ if(!ac){ try{ ac=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ ac=null; } } if(ac&&ac.state==="suspended"){ ac.resume().catch(()=>{}); } return ac; }
+function tone(f,d,type,vol,glide,delay){ if(!soundOn) return; const a=actx(); if(!a) return; const t=a.currentTime+(delay||0); const o=a.createOscillator(), g=a.createGain(); o.type=type||"sine"; o.frequency.setValueAtTime(f,t); if(glide) o.frequency.exponentialRampToValueAtTime(glide,t+d); g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(vol||.04,t+.012); g.gain.exponentialRampToValueAtTime(0.0001,t+d); o.connect(g); g.connect(a.destination); o.start(t); o.stop(t+d+.03); }
+const sfx={
+  page(){ tone(420,.16,"sine",.035,640); tone(1260,.09,"triangle",.012,null,.02); },
+  tap(){ tone(900,.05,"triangle",.025); },
+  open(){ tone(300,.22,"sine",.035,520); },
+  close(){ tone(520,.16,"sine",.028,300); },
+  heat(){ tone(140,.9,"triangle",.028,70); tone(880,.5,"sine",.018,1760,.03); tone(1320,.35,"sine",.01,2600,.08); },
+  check(){ tone(660,.08,"triangle",.035); tone(990,.12,"triangle",.03,null,.07); },
+  swell(){ tone(110,1.6,"sine",.05,165); tone(220,1.4,"triangle",.018,330,.1); tone(660,1.2,"sine",.012,990,.25); }
+};
+function paintSound(){ $("#soundBtn").innerHTML = soundOn
+  ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>'
+  : '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l5 4V6L8 10H4z"/><path d="M17 9.5l4.5 5M21.5 9.5 17 14.5"/></svg>';
+  $("#soundBtn").setAttribute("aria-pressed", soundOn?"true":"false"); }
+
+/* ---------- 3D point cloud ---------- */
+const N = (Math.min(innerWidth,innerHeight) < 500) ? 2200 : 3200;
+const cv=$("#cloud"), g=cv.getContext("2d");
+let W=0,H=0;
+function resize(){ const dpr=Math.min(2,window.devicePixelRatio||1); W=cv.clientWidth; H=cv.clientHeight; cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr); g.setTransform(dpr,0,0,dpr,0,0); }
+function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function face(r,cx,cy,cz,w,h,d){ const A=[w*h,w*h,w*d,w*d,h*d,h*d]; let u=r()*(A[0]+A[1]+A[2]+A[3]+A[4]+A[5]), f=0; while(f<5&&u>A[f]){u-=A[f];f++;}
+  let x=(r()-.5)*w,y=(r()-.5)*h,z=(r()-.5)*d; if(f===0)z=d/2; else if(f===1)z=-d/2; else if(f===2)y=h/2; else if(f===3)y=-h/2; else if(f===4)x=w/2; else x=-w/2; return [cx+x,cy+y,cz+z]; }
+function edge(r,cx,cy,cz,w,h,d){ const ax=Math.floor(r()*3), t=r()-.5, s1=r()<.5?-1:1, s2=r()<.5?-1:1; let p;
+  if(ax===0) p=[t*w,s1*h/2,s2*d/2]; else if(ax===1) p=[s1*w/2,t*h,s2*d/2]; else p=[s1*w/2,s2*h/2,t*d]; return [cx+p[0],cy+p[1],cz+p[2]]; }
+const SHAPES={
+  fridge(r){ const w=.95,h=1.9,d=.8,u=r();
+    if(u<.33) return edge(r,0,0,0,w,h,d);
+    if(u<.64) return face(r,0,0,0,w,h,d);
+    if(u<.72) return [(r()-.5)*w, .38, d/2];
+    if(u<.81){ const top=r()<.4; const y=top? .52+r()*.32 : -.66+r()*.9; return [.33+(r()-.5)*.03, y, d/2+.06]; }
+    if(u<.85){ const x=-.3+r()*.25, y=.62+r()*.16; return [x,y,d/2+.005]; }
+    const ys=[-.58,-.08,.66]; return [(r()-.5)*w*.84, ys[Math.floor(r()*3)], (r()-.5)*d*.78]; },
+  house(r){ const u=r();
+    if(u<.24) return edge(r,0,-.35,0,1.6,1,1.2);
+    if(u<.48) return face(r,0,-.35,0,1.6,1,1.2);
+    if(u<.76){ const t=r(), s=r()<.5?-1:1; return [(r()-.5)*1.72, .15+.7*t, s*.66*(1-t)]; }
+    if(u<.86){ const x=r()<.5?-.8:.8, y=.15+r()*.7, lim=.6*(1-(y-.15)/.7); return [x,y,(r()-.5)*2*lim]; }
+    if(r()<.5){ const per=r()*4; let x,y; if(per<1){x=-.16+.32*per;y=-.3;} else if(per<2){x=.16;y=-.3-(per-1)*.55;} else if(per<3){x=.16-.32*(per-2);y=-.85;} else {x=-.16;y=-.85+(per-3)*.55;} return [x,y,.6]; }
+    const wx=r()<.5?-.52:.52, s=.24, per=r()*4; let x,y; if(per<1){x=wx-s/2+s*per;y=-.12;} else if(per<2){x=wx+s/2;y=-.12-s*(per-1);} else if(per<3){x=wx+s/2-s*(per-2);y=-.12-s;} else {x=wx-s/2;y=-.12-s+s*(per-3);} return [x,y,.6]; },
+  net(r){ const u=r();
+    if(u<.52){ const th=r()*Math.PI*2, ph=Math.acos(2*r()-1), R=.85; return [R*Math.sin(ph)*Math.cos(th), R*Math.cos(ph), R*Math.sin(ph)*Math.sin(th)]; }
+    if(u<.84){ const ring=Math.floor(r()*3), a=r()*Math.PI*2, R=1.22, tilt=[.35,-.7,1.15][ring], rz=ring*1.05; const x=R*Math.cos(a), z=R*Math.sin(a); const y2=-z*Math.sin(tilt), z2=z*Math.cos(tilt); return [x*Math.cos(rz)-y2*Math.sin(rz), x*Math.sin(rz)+y2*Math.cos(rz), z2]; }
+    const nodes=[[1.22,0,0],[-1.1,.3,.4],[0,1.15,.4],[.2,-1.1,-.5],[.7,.6,-.9],[-.6,-.7,.9]]; const n=nodes[Math.floor(r()*nodes.length)];
+    if(r()<.45){ const t=.3+r()*.7; return [n[0]*t,n[1]*t,n[2]*t]; } const q=.09; return [n[0]+(r()-.5)*q,n[1]+(r()-.5)*q,n[2]+(r()-.5)*q]; },
+  padlock(r){ const u=r();
+    if(u<.27) return edge(r,0,-.42,0,1.2,.95,.42);
+    if(u<.58) return face(r,0,-.42,0,1.2,.95,.42);
+    if(u<.9){ const R=.4, tr=.075, b=r()*Math.PI*2; let cx,cy,nx,ny;
+      if(r()<.32){ const side=r()<.5?-1:1; cx=side*R; cy=.06+r()*.26; nx=side; ny=0; }
+      else { const a=r()*Math.PI; cx=R*Math.cos(a); cy=.32+R*Math.sin(a)*1.15; nx=Math.cos(a); ny=Math.sin(a); }
+      return [cx+tr*Math.cos(b)*nx, cy+tr*Math.cos(b)*ny, tr*Math.sin(b)]; }
+    if(r()<.6){ const a=r()*Math.PI*2; return [.09*Math.cos(a), -.32+.09*Math.sin(a), .215]; } return [(r()-.5)*.06, -.43-r()*.22, .215]; },
+  drop(r){ const u=r();
+    if(u<.82){ let t,k=0; do{ t=r(); k++; }while(r()>Math.sin(Math.PI*t)*Math.pow(t,.55)*1.4&&k<30);
+      const rad=.72*Math.sin(Math.PI*t)*Math.pow(t,.55)*1.25, a=r()*Math.PI*2, y=1.15-2.05*t; return [rad*Math.cos(a), y, rad*Math.sin(a)]; }
+    const ring=Math.floor(r()*3), R=.55+ring*.38, a=r()*Math.PI*2; return [R*Math.cos(a), -1.05, R*Math.sin(a)]; },
+  shield(r){ const inside=(x,y)=> y>=0 ? (Math.abs(x)<=.8 && y<=.9-.12*x*x) : Math.abs(x)<=.8*Math.sqrt(Math.max(0,1-y*y));
+    const u=r();
+    if(u<.38){ const t=r(); let x,y; if(t<.3){ x=(r()*2-1)*.8; y=.9-.12*x*x; } else if(t<.5){ x=(r()<.5?-1:1)*.8; y=r()*.82; } else { const yy=-r(); x=(r()<.5?-1:1)*.8*Math.sqrt(1-yy*yy); y=yy; } return [x,y,(r()<.5?-1:1)*.13]; }
+    if(u<.8){ let x,y,k=0; do{ x=(r()*2-1)*.8; y=r()*1.9-1; k++; }while(!inside(x,y)&&k<40); return [x*.93,y*.93,(r()<.5?-1:1)*.13]; }
+    if(r()<.35){ const k=r(); return [-.36+.26*k, .06-.27*k, .2]; } const k=r(); return [-.1+.52*k, -.21+.62*k, .2]; }
+};
+const shapeData={};
+Object.keys(SHAPES).forEach((k,si)=>{ const r=rng(1234+si*977), a=new Float32Array(N*3); for(let i=0;i<N;i++){ const p=SHAPES[k](r); a[3*i]=p[0]; a[3*i+1]=p[1]; a[3*i+2]=p[2]; } shapeData[k]=a; });
+const P=new Float32Array(shapeData.fridge), T=new Float32Array(shapeData.fridge), heat=new Float32Array(N), ph=new Float32Array(N);
+for(let i=0;i<N;i++) ph[i]=Math.random()*6.283;
+const SX=new Float32Array(N), SY=new Float32Array(N), SK=new Float32Array(N);
+const BIG={x:.5,y:.29,s:.27,a:1}, SMALL={x:.84,y:.115,s:.095,a:.95};
+let view=Object.assign({},BIG), viewT=Object.assign({},BIG);
+function setShape(name,big){ if(shapeData[name]) T.set(shapeData[name]); viewT=Object.assign({}, big?BIG:SMALL); if(!big && W>=760){ viewT.s=.12; viewT.y=.16; } }
+const NB=12, buckets=[]; for(let b=0;b<NB;b++) buckets.push(new Int32Array(N));
+const bcount=new Int32Array(NB);
+const cols=[]; (function(){ const c0=[143,211,244], c1=[255,214,150], c2=[255,104,48]; for(let b=0;b<NB;b++){ const t=b/(NB-1); let c; if(t<.5){ const k=t/.5; c=c0.map((v,i)=>Math.round(v+(c1[i]-v)*k)); } else { const k=(t-.5)/.5; c=c1.map((v,i)=>Math.round(v+(c2[i]-v)*k)); } cols.push(c); } })();
+let rot=.6, rotV=0, last=performance.now(), waves=[];
+function frame(now){
+  const dt=Math.min(.05,(now-last)/1000); last=now;
+  const ease=Math.min(1,dt*3.2);
+  view.x+=(viewT.x-view.x)*ease; view.y+=(viewT.y-view.y)*ease; view.s+=(viewT.s-view.s)*ease; view.a+=(viewT.a-view.a)*ease;
+  rot+=(reduce?.04:.3)*dt+rotV; rotV*=.9;
+  const m=Math.min(1,dt*2.6);
+  for(let j=0;j<N*3;j++) P[j]+=(T[j]-P[j])*m;
+  if(waves.length){ waves=waves.filter(w=>now-w.t0<3200);
+    for(const w of waves){ const r=(now-w.t0)/1000*1.7, r0=r-.32; const ox=w.o[0],oy=w.o[1],oz=w.o[2];
+      for(let i=0;i<N;i++){ const dx=P[3*i]-ox, dy=P[3*i+1]-oy, dz=P[3*i+2]-oz, d=Math.sqrt(dx*dx+dy*dy+dz*dz); if(d<r&&d>r0) heat[i]=1; } } }
+  const dec=Math.pow(.62,dt); for(let i=0;i<N;i++) heat[i]*=dec;
+  g.clearRect(0,0,W,H);
+  const cy=Math.cos(rot), sy=Math.sin(rot), tilt=.3, cxr=Math.cos(tilt), sxr=Math.sin(tilt);
+  const unit=Math.min(W,H)*view.s, ox=W*view.x, oy=H*view.y, f=3.6, tt=now*.001;
+  bcount.fill(0);
+  for(let i=0;i<N;i++){
+    const j=3*i, jit=reduce?0:Math.sin(tt*1.3+ph[i])*.006;
+    const x=P[j]+jit, y=P[j+1], z=P[j+2]+jit;
+    const X=x*cy+z*sy, Z0=-x*sy+z*cy, Y=y*cxr-Z0*sxr, Z=y*sxr+Z0*cxr;
+    const k=f/(f+Z); SX[i]=ox+X*unit*k; SY[i]=oy-Y*unit*k; SK[i]=k;
+    const b=Math.min(NB-1,(heat[i]*(NB-.01))|0); buckets[b][bcount[b]++]=i;
+  }
+  g.globalCompositeOperation="lighter";
+  const base=Math.max(.9,Math.min(2.6,unit*.019));
+  for(let b=0;b<NB;b++){ const n=bcount[b]; if(!n) continue; const c=cols[b], al=(b===0? .62 : .78+b*.02)*view.a;
+    g.fillStyle=`rgba(${c[0]},${c[1]},${c[2]},${al.toFixed(3)})`; const arr=buckets[b];
+    for(let q=0;q<n;q++){ const i=arr[q], s=base*SK[i]*(b?1.25:1); g.fillRect(SX[i]-s/2,SY[i]-s/2,s,s); } }
+  g.globalCompositeOperation="source-over";
+  requestAnimationFrame(frame);
+}
+function spreadAt(x,y){ let best=-1,bd=1e12; for(let i=0;i<N;i++){ const dx=SX[i]-x, dy=SY[i]-y, d=dx*dx+dy*dy; if(d<bd){bd=d;best=i;} }
+  if(best<0) return; waves.push({o:[P[3*best],P[3*best+1],P[3*best+2]],t0:performance.now()}); if(waves.length>4) waves.shift(); sfx.heat(); }
+
+/* ---------- data ---------- */
+/* ---------- data (v2: written for everyone with connected devices) ---------- */
+const TLDR=[
+  {ic:"list",b:"Make a list",s:"Every connected device, its app, and who else can sign in.",to:"plan"},
+  {ic:"unplug",b:"Disconnect what you don't use",s:"No connection means no remote risk, and it costs nothing.",to:"dumb"},
+  {ic:"key",b:"Lock down the rest",s:"A unique password and two-step sign-in for every account.",to:"plan"},
+  {ic:"bin",b:"Retire the risky stuff",s:"No-name streaming boxes, recalled heaters, heaters on smart plugs.",to:"devices"},
+  {ic:"drop",b:"Add backups that don't need the internet",s:"Leak sensors that shut off the water, a fridge alarm, smoke alarms.",to:"water"}
+];
+const WHY=[
+  {ic:"wifi",b:"Reachable from anywhere",fr:"The controls had login pages on the open internet, so repair firms could adjust them from anywhere.",rent:"Smart devices that take orders from anyone, anywhere, who has the password."},
+  {ic:"clock",b:"Out-of-date software",fr:"Danfoss says the units that were hit ran old software or were no longer supported.",rent:"Appliances last ten years or more, but makers often stop sending security fixes much sooner."},
+  {ic:"key",b:"Weak sign-in",fr:"Security firm Claroty found a hidden backup login on one Danfoss model, based on the date and fixed in a later update; no one has tied it to this attack. An expert quoted by the Guardian said many freezers seemed to be running on a default password.",rent:"Reused passwords, factory-default passwords, and no two-step sign-in."},
+  {ic:"users",b:"Access through someone else",fr:"Retailers point to the outside contractors who maintain their refrigeration, not the stores themselves.",rent:"Installers, past housemates or a previous owner who can still open the app."},
+  {ic:"bolt",b:"A normal command nobody questioned",fr:"Defrost is a routine setting, so the systems ran it for hours overnight. Early findings suggest alarms were switched off first, the Guardian reports.",rent:"A device that can be started remotely, in a home where nobody is around to notice."},
+  {ic:"bell",b:"Warnings not acted on",fr:"The U.S. cyber agency CISA warned about a Danfoss flaw in 2025, Claroty published research in August 2026, and fixes existed.",rent:"Update prompts and recall notices that get ignored or land in spam."}
+];
+const WEAK=[
+  {b:"Cheap gadgets that arrive infected",s:"Off-brand streaming boxes, projectors, tablets, photo frames",lk:3,la:0,im:1,fix:"Swap off-brand boxes, projectors and frames for major brands.",d:"The FBI warned in June 2025 that a criminal network called BadBox 2.0 had infected more than a million devices, many of them at the factory. They quietly pass criminals' internet traffic through the owner's connection. Warning signs: unknown brands, and streaming boxes sold as \"unlocked\" or promising free content."},
+  {b:"Weak or shared passwords",s:"Appliance apps, locks, cameras, thermostats",lk:3,la:1,im:2,fix:"A unique password and two-step sign-in for every account, and a separate login for each person where the app allows it.",d:"Reused passwords, no two-step sign-in, and one account shared by everyone. A single stolen password then controls every device on it."},
+  {b:"Old accounts still linked",s:"Thermostats, locks, alarms, doorbells",lk:3,la:1,im:2,fix:"When you move in, or change installers, remove the old accounts, and check each app's list of users now and then.",d:"When a home changes hands, the old account often stays attached. Homebuyers have reported thermostats adjusting themselves because the seller was still linked, and alarm systems they couldn't control."},
+  {b:"Security updates that end early",s:"Smart washers, dishwashers, fridges, TVs",lk:4,la:1,im:1,fix:"Check how long updates are promised before you buy, and disconnect or replace a device once they stop.",d:"The UK consumer group Which? found most appliance makers wouldn't commit to a support period. Some promised only two years; Miele promised ten. Big appliances usually last 10 to 11 years, so support ending first is close to certain."},
+  {b:"One cheap gadget, many brand names",s:"Budget plugs, bulbs, heaters, switches",lk:2,la:0,im:1,fix:"Swap them for known brands, or for gear that works without an online account.",d:"One test of cheap smart plugs found the same default password, 12345678, on every unit, unencrypted traffic, and a way to load malicious software for under £5. Dozens of brands often share one factory's design."},
+  {b:"Building controls left online",s:"Heating, pool, gate and building systems",lk:1,la:1,im:2,fix:"If you live or work in a shared building, ask the manager whether these controls can be reached from the internet, and ask them to close that off.",d:"This is the closest thing to the French case: a login page anyone can find, running old software. In apartment blocks and offices these systems usually belong to the building, so the fix is a question rather than a setting."}
+];
+const DEV=[
+  {id:"plug",ic:"plug",n:"Smart plug on a heater",r:"hi",lk:2,la:0,im:2,w:"A heater, iron, kettle or coffee maker switched on for hours with nobody home.",s:"Nothing. A smart plug just switches power and has no idea what's plugged into it.",a:"Never put anything that heats on a smart plug."},
+  {id:"heater",ic:"heater",n:"Smart space heater",r:"hi",lk:2,la:0,im:2,w:"Turns itself on, and could start a fire.",s:"Depends on the brand. Govee recalled about 512,500 heaters that could overheat because of their wireless controls, and Atomi about 99,400 that could switch on by themselves.",a:"Check the U.S. product-safety recall list (CPSC) and stop using any recalled model."},
+  {id:"tvbox",ic:"tvbox",n:"Off-brand streaming box",r:"hi",lk:3,la:0,im:1,w:"Quietly used to pass criminals' traffic through your internet connection, with a foothold on your network.",s:"Nothing, when the malware came installed at the factory.",a:"Swap it for a major-brand streaming stick or the TV's own apps."},
+  {id:"lock",ic:"lock",n:"Smart lock",r:"hi",lk:3,la:1,im:2,w:"The door unlocked, or extra codes added.",s:"Only the account's security and how codes are managed.",a:"Give each person their own code, check the lock's activity history, and delete codes nobody needs."},
+  {id:"camera",ic:"camera",n:"Camera or doorbell",r:"hi",lk:2,la:1,im:2,w:"A stranger watching a live view of your home.",s:"Only the account's security.",a:"Turn on two-step sign-in and remove shared users you don't recognise."},
+  {id:"router",ic:"router",n:"Wi-Fi router",r:"hi",lk:2,la:1,im:2,w:"A default admin password lets someone change settings, watch traffic, or reach every device on your network.",s:"Only its admin password and its updates.",a:"Change the admin password, keep it updated, turn off remote admin, and use a separate network for visitors and smart devices."},
+  {id:"counter",ic:"counter",n:"Countertop smart oven",r:"med",lk:2,la:0,im:2,w:"Heats up empty or with clutter inside. Three June ovens preheated themselves overnight to 400°F or more in 2019.",s:"Lighter safety rules than built-in ranges.",a:"Unplug it when you're away."},
+  {id:"fridge",ic:"fridge",n:"Fridge and freezer",r:"med",lk:1,la:0,im:1,w:"Temperature raised or defrost forced, so food spoils quietly.",s:"Very little, because warm is a valid setting.",a:"Disconnect it if you don't use the app, and add a cheap standalone temperature alarm."},
+  {id:"thermo",ic:"thermo",n:"Thermostat",r:"med",lk:2,la:1,im:1,w:"Heating or cooling switched off while you're away, so damp, mold or frozen pipes can follow.",s:"Usually nothing beyond the lowest and highest settings.",a:"Turn on temperature alerts, set limits, and remove old users."},
+  {id:"tv",ic:"tv",n:"Smart TV",r:"med",lk:3,la:1,im:1,w:"Aging software and old logins left signed in.",s:"Major brands send updates for a few years.",a:"Keep it updated and sign out of accounts you no longer use."},
+  {id:"oven",ic:"oven",n:"Built-in range",r:"low",lk:0,la:0,im:2,w:"Preheated remotely with something left inside.",s:"A U.S. safety standard (UL 858) requires remote use to be switched on by hand at the range, and many brands block remote starts on the cooktop entirely.",a:"Leave remote mode off, and don't store things in the oven."},
+  {id:"dryer",ic:"dryer",n:"Dryer",r:"low",lk:0,la:0,im:1,w:"Runs with a lint-choked vent.",s:"Remote start has to be switched on at the machine with the door shut, and a heat cutoff switch works whatever the app says.",a:"Clean the lint trap and vent regularly, and leave remote mode off."},
+  {id:"washer",ic:"washer",n:"Washer",r:"low",lk:0,la:0,im:1,w:"Runs a cycle; leaks if a hose fails.",s:"Remote start must be switched on at the machine, opening the door cancels it, and the overflow controls work on their own.",a:"Braided steel hoses, a leak sensor and an automatic shutoff valve."},
+  {id:"dish",ic:"dish",n:"Dishwasher",r:"low",lk:0,la:0,im:0,w:"Runs a cycle.",s:"A float switch shuts off the water and drains it if the level rises too far.",a:"A leak sensor under the sink."},
+  {id:"valve",ic:"valve",n:"Water shutoff valve",r:"low",lk:1,la:0,im:0,w:"Water shut off, or alerts silenced.",s:"It can only close or reopen the supply.",a:"Keep it, and protect its app login like a door lock's."}
+];
+const RISKNAME={hi:"High risk",med:"Medium risk",low:"Low risk"};
+const LOCKS=[
+  {ic:"phone",b:"Name-brand smart lock",ex:"Schlage, Yale, August, Kwikset, Master Lock",v:"good",vl:"Good pick",lk:1,la:0,k:"A 2025 study of Master Lock's D1000 found shared access that kept working about nine months after it was taken away. The company planned fixes.",real:"Codes and app access that never really expire.",ver:"Keep it updated, and test that deleted codes actually stop working."},
+  {ic:"finger",b:"No-name smart lock",ex:"Marketplace fingerprint and tap-card locks",v:"avoid",vl:"Avoid",lk:2,la:0,k:"Researchers at Secura removed one model's fingerprint reader with two screws and added their own fingerprint in about five minutes. Its tap cards could be copied.",real:"Weak hardware and cards that can be cloned.",ver:"Replace it with a name-brand lock."},
+  {ic:"keypad",b:"Push-button keypad lock",ex:"Kaba Simplex (now dormakaba)",v:"check",vl:"Check it",lk:2,la:1,k:"In 2010 Kaba learned that a magnet costing about $30 could open several Simplex models, and in 2011 it offered owners a free fix kit.",real:"Codes lots of people know, because changing one takes a tool.",ver:"Confirm the magnet fix is fitted, and change the code when people move on."},
+  {ic:"card",b:"Hotel and apartment card locks",ex:"dormakaba Saflok",v:"check",vl:"Check it",lk:2,la:1,k:"The 2024 \"Unsaflok\" research showed one card could be used to make a pair that opens every door at a property. More than 3 million doors at 13,000 properties were affected, and only about 36% had been updated by March 2024.",real:"Systems that haven't been updated. The deadbolt doesn't stop a forged card.",ver:"Ask the building whether the upgrade is done, and use the chain or swing bar when you're inside."},
+  {ic:"key",b:"Plain keyed deadbolt",ex:"Any brand",v:"backup",vl:"Backup",lk:2,la:1,k:"It can be picked or bumped, and keys get copied.",real:"Short screws in the strike plate, so a kick tears the frame.",ver:"Fit a four-screw strike plate with 3-inch screws, and keep it as your backup lock."}
+];
+const HYPE={
+  over:[["A hacker flooding your home through the washer","Remote start must be switched on at the machine, and the overflow controls work without the Wi-Fi.",0],["Remote dryer fires","The heat cutoff trips on temperature, not on what the app says. Lint and blocked vents are still the real cause.",0],["Someone targeting your home in particular","Attacks like France's find a whole class of exposed, out-of-date devices and hit them all at once.",1],["The ESP32 chip \"backdoor\"","A real 2025 finding about a common Wi-Fi chip, but abusing it needs code already running on the device.",0]],
+  real:[["Quiet sabotage","A warm fridge, heating switched off or a silenced alarm does damage nobody notices until later.",2],["Devices with no safety layer","Smart plugs and cheap smart heaters do whatever they're told.",2],["Locks and cameras","A lock or camera account is a key, and a window into your home.",3],["A whole product line hit at once","The French attack reached hundreds of stores at once because they ran the same out-of-date controls.",2],["Faults with nobody home","Remote features fail on their own, and an empty home lets a small fault run for days.",3]]
+};
+const L=["Rare","Unlikely","Possible","Likely","Expected"], IMN=["Minor","Moderate","Severe"];
+const WATER=[
+  {id:"siren",ic:"bell",b:"Leak alarms with a siren",s:"Sounds an alarm · works offline",cost:"Low",stops:false,off:true,how:"A battery puck on the floor that sounds a loud alarm when it touches water. No app, no Wi-Fi.",pros:["Nothing to set up and nothing to hack","Keeps working through power and internet outages","Cheap enough to put everywhere"],cons:["Only helps if someone hears it","Doesn't stop the water","Only detects water right where it sits"],fit:"Fine where someone will hear it, but no help when nobody's home.",hk:"Nothing to take over."},
+  {id:"smart",ic:"wifi",b:"Smart leak sensors",s:"Phone alerts and a siren",cost:"~$50 for 4",stops:false,off:false,how:"Battery sensors that alert your phone and sound a siren. Some connect to Wi-Fi directly and others through a small hub; YoLink's hub-and-four-sensor kit sells for about $50, and its sensors run about five years on AAA batteries.",pros:["Inexpensive and quick to place","Alerts reach you while you're away","Some kits can trigger a shutoff valve or cut power to the washer"],cons:["Doesn't stop the water on its own","Phone alerts need Wi-Fi and internet","Batteries to change, and false alarms where water splashes","Someone still has to respond, and fast"],fit:"The baseline for most homes, with alerts going to someone who can get there quickly.",hk:"Someone could silence alerts or send false ones: annoying, not dangerous."},
+  {id:"appliance",ic:"washer",b:"Appliance shutoffs",s:"Stops one appliance · works offline",cost:"~$290 each",stops:true,off:true,how:"A floor sensor wired to motorized valves on one appliance's water lines. FloodStop's washer version closes both the hot and cold lines and sounds an alarm, with no Wi-Fi involved, and there are versions for water heaters.",pros:["Stops the water at the source within seconds","No internet and nothing to hack","Covers the usual culprits: washers and water heaters"],cons:["Protects one appliance only","Needs a plug-in adapter, and a reset after it trips","Won't help with a burst pipe or a toilet"],fit:"An old washer or water heater, or a home whose main valve is too stiff for a valve robot.",hk:"Nothing to take over, since it has no network connection."},
+  {id:"robot",ic:"valve",b:"Valve robot on the main",s:"Shuts off the whole home · works offline",cost:"$239–400",stops:true,off:true,how:"A motor that clamps onto your existing quarter-turn main water valve and pairs with leak sensors around the home. YoLink's kit is $239 and fits valves from ½\" to 2\" in about 15 minutes; Elexa's Guardian kit is $400 with three sensors. The sensors close the valve directly, even when the internet is down.",pros:["No plumber and no pipe cutting","Shuts off the whole home when any sensor gets wet","Works offline, with battery backup available","Easy to remove or move"],cons:["Only fits lever-style ball valves, and an old, stiff valve may not turn","Only catches leaks where a sensor sits","Slow leaks inside walls go unseen","The app and alerts still need a hub and internet"],fit:"The best value for most homes.",hk:"At worst the water gets shut off, or someone unpairs sensors so a real leak goes unreported."},
+  {id:"flow",ic:"drop",b:"Whole-home smart valve",s:"Watches water flow, tests for drips",cost:"$500–800+",stops:true,off:true,how:"Replaces the main shutoff and watches water flow and pressure. Moen Flo ($500 to $800 by pipe size) and Phyn Plus ($579) run a nightly test that briefly closes the supply and checks for a pressure drop, which catches slow leaks anywhere in the pipes. Flo's optional $5 a month plan covers up to $5,000 of an insurance deductible.",pros:["Catches leaks anywhere, including inside walls and running toilets","Shuts off on its own when the flow looks like a burst pipe","Flo can still shut off if the Wi-Fi drops","Some insurers now discount premiums for one"],cons:["A plumber has to fit it on the main pipe","Needs an outlet and has no battery, so add a small backup battery","False shutoffs while it learns; in one review a midday shower cut the water","Only works on 2.4 GHz Wi-Fi"],fit:"The strongest protection, set to Away mode when you travel.",hk:"At worst the water is shut off or alerts are silenced, so protect its login like a door lock's."},
+  {id:"meter",ic:"gauge",b:"Water use monitor",s:"Reads the meter · no shutoff",cost:"~$200",stops:false,off:false,how:"Flume straps onto the water meter, reads usage every minute, and alerts you to unusual flow, like water running while you're away. No plumbing, batteries last two to three years, no subscription.",pros:["No plumbing, and it installs in minutes","Spots running toilets and irrigation leaks across the whole home","Away alerts when you travel"],cons:["Can't shut anything off","Needs a standard, reachable water meter, which rules out wells and many apartments","Alerts need internet"],fit:"A cheap add-on to the Good or Better setup if your home has its own meter.",hk:"Someone could see your water use, which shows when you're away."}
+];
+const TIERS=[
+  {id:"good",t:"Good",name:"Sensors and sirens",cost:"From about $50 for a hub and four sensors, plus hoses and drip pans",inc:["Braided steel hoses on the washer, toilets, sinks and fridge","Drip pans under the washer and water heater","Smart leak sensors with sirens at the washer, water heater, dishwasher, fridge, toilets and sinks","Alerts going to someone who can respond quickly","Everyone at home knows where the main water shutoff is, and it turns"],catches:"Leaks where you put sensors, as long as someone responds.",misses:"Everything when nobody responds in time, plus hidden leaks in walls. It never stops the water."},
+  {id:"better",t:"Better",name:"Sensors that shut off the water",cost:"About $239 to $400 for a valve robot kit, no plumber, on top of Good",inc:["Everything in Good","A motor fitted to your existing main valve","Sensors paired directly to it, so it closes even with the internet down","Battery backup in the valve motor","Appliance shutoffs on the washer or water heater if the main valve is old or stiff"],catches:"Leaks where sensors sit, stopped within seconds, even offline.",misses:"Slow leaks between sensors and inside walls, and a main valve too stiff to turn."},
+  {id:"best",t:"Best",name:"Whole-home monitoring",cost:"$500 to $800 for the valve by pipe size, plus a plumber; optional $5 a month plan",inc:["A smart main valve, such as Moen Flo or Phyn Plus, with nightly drip tests","Leak sensors linked to it","A small backup battery for the valve","Away mode when you travel, and a Home mode tuned so a long shower doesn't cut the water","A call to your insurer about discounts"],catches:"Leaks anywhere, including slow drips in walls and running toilets.",misses:"Needs a plumber and power, can shut off by mistake while it learns, and needs checking against any well pump or pressure tank."}
+];
+const DUMB=[
+  {b:"Never connect it",e:0,how:"Skip the app setup, or never give it the Wi-Fi password.",lose:"Remote features only.",rev:"Yes"},
+  {b:"Disconnect and unregister",e:1,how:"Remove it from the app account, reset its Wi-Fi settings, then change your Wi-Fi password so it can't rejoin. About ten minutes.",lose:"Remote features only.",rev:"Yes"},
+  {b:"Block it at the router",e:1,how:"Use your router's app or device list to cut that appliance off from the internet.",lose:"Remote features, and over time its updates.",rev:"Yes"},
+  {b:"Turn the radio off",e:2,how:"Some models have a Wi-Fi off switch in settings or a service menu. Many don't, and on some the radio comes back after a reset.",lose:"Remote features.",rev:"Yes"},
+  {b:"Unplug the Wi-Fi module",e:3,how:"On many appliances the Wi-Fi is a small separate board. GE sells its Connect Module as a plug-in part, and LG and Samsung list Wi-Fi boards as separate parts. A technician can disconnect it.",lose:"Remote features. Some models show an error code, and it may affect the warranty.",rev:"Usually, by plugging it back in"}
+];
+const PLAN=[
+  {id:"week",t:"This week",items:["List every connected device, which app runs it, and who else can sign in. Include doorbells, cameras, thermostats, TVs and the router.","Disconnect any appliance whose smart features you don't use.","Give every account its own password and turn on two-step sign-in.","Remove people who no longer need access: past housemates, installers, previous owners.","Take anything that heats off smart plugs, and stop using recalled smart heaters.","Replace off-brand streaming boxes with a major brand or the TV's own apps.","Update every app, device and the router."]},
+  {id:"month",t:"This month",items:["Put smart devices on a separate Wi-Fi network from your phones and laptops; many routers call it a guest network.","Change the router's admin password, and turn off remote admin and UPnP (a setting that lets devices open their own way in from the internet).","Leak sensors at the washer, dishwasher, water heater and sinks, ideally tied to an automatic water shutoff.","Braided steel hoses on the washer, toilets, sinks and fridge, and drip pans under the washer and water heater.","A standalone fridge and freezer temperature alarm.","Smoke, carbon monoxide and heat alarms that alert your phone.","Choose alarms and valves with battery backup, so a power cut doesn't silence them.","Reinforce outside door frames: four-screw strike plates with 3-inch screws.","Ask your insurer, in writing, whether damage from a hacked device is covered."]},
+  {id:"retire",t:"Retire",items:["Devices that no longer get updates and can't simply be disconnected.","Anything on a recall list, including Govee and Atomi smart heaters.","Off-brand streaming boxes, projectors and photo frames, especially \"unlocked\" ones.","No-name smart plugs, bulbs, switches and fingerprint locks."]},
+  {id:"ongoing",t:"Keep it up",items:["When someone no longer needs access, delete their code or account, and check it really stops working.","Change the guest Wi-Fi password now and then.","Check for updates and recalls a couple of times a year.","Review who can sign in to each app.","Look at the router's device list for anything you don't recognise.","Check activity history for use while nobody was home.","Test leak sensors and the shutoff valve, and swap weak batteries."]}
+];
+const ACT=[
+  {ic:"bolt",b:"Make it safe first",s:"Switch it off at the breaker or unplug it, and shut off the water if it's leaking."},
+  {ic:"eye",b:"Read the history",s:"Check the app's activity log for commands nobody sent, and screenshot what you find."},
+  {ic:"key",b:"Lock the account",s:"Change the password, turn on two-step sign-in, and sign out every other session and user."},
+  {ic:"reset",b:"Reset and rethink",s:"Factory reset, update, and only reconnect it if you need the smart features."},
+  {ic:"chat",b:"Tell someone",s:"Report it to the maker, and keep the screenshots for your insurer."}
+];
+const BUY=[
+  ["Does it work fully with Wi-Fi off?","Every cycle works from the buttons, with no app-only modes."],
+  ["How many years of security updates are promised?","A stated period, in writing. Miele's ten years is the benchmark; some brands promise two."],
+  ["Does remote start need switching on at the machine every time?","Yes, and opening the door cancels it."],
+  ["Can it work locally, without the maker's servers?","Look for Matter or Thread, newer standards that let devices work through a hub at home. Wemo's Thread devices kept working after Belkin shut its servers on January 31, 2026."],
+  ["Does the maker publish security warnings?","A public page of security notices, and a way to report flaws."],
+  ["For streaming boxes: is it a major brand?","Roku, Apple TV, Fire TV, Chromecast, or the TV's own apps."],
+  ["Does it carry the U.S. Cyber Trust Mark?","A new U.S. label for devices that meet basic security standards. It isn't widely on shelves yet; the FCC named ioXt to run it in April 2026, after UL Solutions withdrew."]
+];
+const SHEETS={
+  unknowns:{t:"Confirmed vs unknown",h:()=>`<p class="small mono">Updated October 18, 2026</p>`+kv([["Equipment","Confirmed. Danfoss store controls (AK-SM and AK-SC models), and from October 13 controls from Copeland and its Dixell brand, according to France's cyber-emergency team, CERT-FR."],["Scale","About 700 of France's roughly 10,000 supermarkets, Finance Minister Roland Lescure told lawmakers, as AP reported on October 13. Early counts were 300 to 350."],["Condition","Danfoss says the hit units ran old software or were no longer supported."],["How they got in","Unknown. Claroty published Danfoss flaws in August, but no official source has tied them to this attack.",1],["Who did it","Unknown. As of October 17, no individual or group had claimed it, the Guardian reported.",1],["Still going?","Possibly. CERT-FR's October 16 update says attacks on these controls are probably still running.",1],["Heat and fires","Intermarché says its fridges ran at 50°C for six hours. The Guardian reported one Normandy store's freezers reached 80°C, and sprinklers caused water damage in some stores. The Paris prosecutor reported fires; some coverage blames defrost heaters left running, which isn't officially confirmed."],["Beyond France","Unclear. Albert Heijn's parent company had a separate security incident the same day, with no established link."]])},
+  exposure:{t:"Exposed online",h:()=>`<p>On October 12, Predicta Lab's Baptiste Robert counted <b>2,752</b> Danfoss systems reachable from the internet, <b>1,590</b> of them in France. Shodan, a search engine for internet-connected devices, was tracking <b>more than 4,500</b>.</p><p>Exposed doesn't mean hacked, or even vulnerable. It means the login page could be reached by anyone, which is what an attack like this needs.</p><p>France's cyber-emergency team told stores to take these controls off the public internet. The same idea works at home: a device you never need to reach from outside shouldn't be reachable from outside.</p>`},
+  doorplan:{t:"What actually secures a door",h:()=>`<div class="list">${[
+    ["Reinforce the frame","A heavy-duty strike plate with four 3-inch screws into the wall stud does more against a kick than any lock upgrade."],
+    ["Make access expire","Give each person their own code, and delete it when they no longer need it."],
+    ["Buy a grade, not a brand","Look for a BHMA Grade 1 or 2 deadbolt on outside doors."],
+    ["Keep a mechanical backup","A key or keyed deadbolt means a dead battery or a hacked lock isn't your last line."],
+    ["Use the chain or swing bar","Especially in hotels and apartments with card locks, as the Unsaflok researchers recommend."]
+  ].map((x,i)=>`<div class="row" style="grid-template-columns:34px 1fr"><span class="num">${i+1}</span><div><b>${x[0]}</b><small>${x[1]}</small></div></div>`).join("")}</div>`},
+  "w-account":{t:"App account",h:()=>`<p>In 2017 Check Point found a flaw in LG's SmartThinQ sign-in that let attackers take over accounts and every linked appliance, from ovens to washers. LG fixed it within two months.</p><p>Today the bigger risk is plainer: one reused password, leaked from some other site, opens every appliance on the account.</p>`},
+  "w-shared":{t:"Shared access",h:()=>`<p>In France, retailers pointed to the outside contractors who maintain their fridges, not the stores themselves.</p><p>At home, the same app login is often shared by family, an installer or a house-sitter, and sometimes by a previous owner who was never removed.</p>`},
+  "w-cloud":{t:"Maker's servers",h:()=>`<p>Most apps reach your appliance through the manufacturer's servers rather than directly. One break-in there can reach every device on that service at once.</p>`},
+  "w-wifi":{t:"Home Wi-Fi",h:()=>`<p>Anything on your Wi-Fi can talk to the other devices on it: a visitor's phone, an infected laptop, a cheap gadget.</p><p>Putting smart devices on their own network, which many routers call a guest network, keeps them apart from your phones and laptops.</p>`},
+  "w-integr":{t:"Linked apps",h:()=>`<p>June blamed a link with Amazon's Alexa for one of its ovens preheating overnight. University of Michigan researchers used a smart-home add-on with more permissions than it needed to add their own code to a door lock.</p>`},
+  "w-device":{t:"The device itself",h:()=>`<p>The controls in France worked exactly as designed and followed a command that looked normal. So any device that can be controlled remotely should be judged by what it would do if the wrong person sent a normal-looking command.</p>`},
+  "g-arm":{t:"Switched on at the machine",h:()=>`<p>A U.S. safety standard (UL 858) requires smart ranges to have remote use switched on by hand at the appliance. Washers and dryers need a button press with the door closed, and opening the door cancels remote start.</p>`},
+  "g-hw":{t:"Hardware cutoffs",h:()=>`<p>A dryer's heat cutoff switches and a dishwasher's float switch react to temperature and water level, whatever the app says. They're why remote fires and floods are unlikely on name-brand machines.</p>`},
+  "g-sens":{t:"Independent sensors",h:()=>`<p>Leak sensors tied to an automatic shutoff valve, fridge and freezer alarms, and smoke alarms that reach a real person all catch trouble even when the device itself has been fooled.</p>`},
+  method:{t:"How we rate likelihood",h:()=>`<p>Each rating is our judgment of the chance that a device or weak spot gets misused in a typical home over the next few years, based on the incidents and research cited here. There's no public data on how often home devices are actually compromised, so treat these as a guide to priorities, not as odds.</p>`+kv([["Rare","Needs unusual skill or a chain of failures, with no known cases in homes."],["Unlikely","Shown in research or isolated cases, but the conditions are uncommon."],["Possible","Has happened in real homes, and many homes have the conditions for it."],["Likely","The conditions are common, so it's more likely than not over a few years."],["Expected","It happens unless you act. Security updates ending is the clearest case."]])+kv([["Impact",`<b>Minor</b> is an inconvenience, <b>Moderate</b> is money or privacy lost, and <b>Severe</b> means fire, flooding, a break-in or a safety risk.`,1]])},
+  glossary:{t:"Plain-English glossary",h:()=>`<dl class="gl">${[
+    ["Defrost cycle","A routine pause in cooling that melts ice off a fridge's coils, normally for minutes, not hours."],["Controller","The small computer that runs a machine, like a store's fridges or your thermostat."],["Firmware","The built-in software that runs a device. Updates fix security holes."],["End of support","The maker has stopped fixing it. It may still work, but known holes stay open."],["Maker's servers","The company's online service. Most apps reach your device through it."],["Two-step sign-in","Logging in needs a second proof, usually a code sent to your phone."],["Remote start","Starting a machine from an app. Most major appliances need a button press first."],["Separate network","A second Wi-Fi just for smart devices, so they can't reach your phone and laptop."],["Router admin password","The password for your router's settings, separate from the Wi-Fi password."],["UPnP","A router setting that lets devices open their own way in from the internet. Safer off."],["Matter, Thread","Newer standards that let devices from different brands work together at home."],["Botnet","Thousands of hijacked devices controlled together."],["Strike plate","The metal plate in the door frame that the bolt slides into."]
+  ].map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join("")}</dl>`},
+  sources:{t:"Sources",h:()=>`<div class="srcs">${[
+    ["Reuters via The Star: hackers heat French supermarket fridges","https://www.thestar.com.my/tech/tech-news/2026/10/12/french-supermarket-chain-intermarche-hit-by-cyberattack-150-stores-targeted"],
+    ["BleepingComputer: refrigerators shut down (Predicta Lab and Shodan counts)","https://www.bleepingcomputer.com/news/security/cyberattack-shuts-down-refrigerators-at-french-supermarkets/"],
+    ["The Record: refrigeration disrupted at hundreds of stores","https://therecord.media/cyberattack-disrupts-refridgeration-in-france"],
+    ["CBC: Danfoss on outdated and end-of-life units","https://www.cbc.ca/news/business/france-fridge-hack-smart-devices-food-system-9.7379613"],
+    ["Technology.org: Copeland and Dixell also hit","https://www.technology.org/2026/10/14/french-supermarket-fridge-hack-copeland-dixell-anssi/"],
+    ["CERT-FR alert CERTFR-2026-ALE-012 (Oct 12, updated Oct 13 and Oct 16)","https://www.cert.cyber.gouv.fr/alerte/CERTFR-2026-ALE-012/"],
+    ["SecurityWeek: attack widens to Copeland and Dixell","https://www.securityweek.com/supermarket-refrigeration-attack-widens-to-copeland-dixell-controllers/"],
+    ["AP: about 700 of France's 10,000 supermarkets affected","https://apnews.com/article/france-cyberattack-supermarkets-refrigeration-systems-78a813a8efd466b360655339f96083dc"],
+    ["The Guardian: who hacked France's supermarket fridges? (Oct 17)","https://www.theguardian.com/world/2026/oct/17/who-hacked-frances-supermarket-fridges"],
+    ["Baptiste Robert (Predicta Lab): 2,752 Danfoss systems online","https://x.com/fs0c131y/status/2109693461800857775"],
+    ["Claroty Team82: Danfoss controller research","https://claroty.com/team82/research/freeze-the-controller-defrost-the-food-uncovering-vulnerabilities-in-danfoss-refrigeration-controllers"],
+    ["CISA advisory ICSA-25-140-03","https://www.cisa.gov/news-events/ics-advisories/icsa-25-140-03"],
+    ["Intertek: UL 858 smart range requirements","https://cdn.intertek.com/www-intertek-com/dms-legacy/UL-858-SUN-Rev-4-18-2022-ED-4-18-2025-Amendment-1.pdf"],
+    ["LG: washer remote control and door opening","https://www.lg.com/bd/support/product-help/CT40008239-20154476579716"],
+    ["Check Point: HomeHack","https://blog.checkpoint.com/security/homehack-how-hackers-could-have-taken-control-of-lgs-iot-home-appliances/"],
+    ["Consumer Reports: Atomi heater recall","https://www.consumerreports.org/appliances/appliance-recalls/atomi-space-heaters-recalled-for-fire-and-burn-hazards-a9581235556"],
+    ["UPI: Govee heater recall","https://www.upi.com/Top_News/US/2024/11/08/Govee-space-heater-recall/4911731078927/"],
+    ["BleepingComputer: FBI on BadBox 2.0","https://www.bleepingcomputer.com/news/security/fbi-badbox-20-android-malware-infects-millions-of-consumer-devices/"],
+    ["Which?: smart appliance support periods","https://www.which.co.uk/policy-and-insight/article/smart-tvs-and-washing-machines-may-be-abandoned-by-brands-after-two-years-which-finds-av8Mv4T4BjPj"],
+    ["ISPreview: cheap smart plug flaws","https://www.ispreview.co.uk/index.php/2021/05/security-researchers-find-vulnerabilities-in-uk-wifi-smart-plugs.html"],
+    ["Jeff Geerling: Bosch cycles behind the cloud","https://www.jeffgeerling.com/blog/2025/i-wont-connect-my-dishwasher-your-stupid-cloud/"],
+    ["Belkin: Wemo support ending","https://www.belkin.com/support/wemo"],
+    ["Unsaflok: Saflok card lock research","https://unsaflok.com/"],
+    ["NYT via Security Laboratories: Kaba Simplex magnet suit","https://www.securitylaboratories.org/wp-content/uploads/2020/05/Kaba-Faces-Suit-Over-Push-Button-Locks-Breached-With-Magnet-The-New-York-Times.pdf"],
+    ["USENIX WOOT 2025: Master Lock smart lock flaws","https://www.usenix.org/system/files/woot25-diao.pdf"],
+    ["Secura: smart lock and alarm flaws","https://secura.com/services/iot/consumer-products/security-concerns-in-popular-smart-home-devices"],
+    ["St. Petersburg Police: burglary prevention","https://police.stpete.org/crimePreventionTips/residentialBurglaryPrevention.html"],
+    ["ConsumerAffairs: water damage claim statistics (Triple-I data)","https://consumeraffairs.com/homeowners/water-damage-insurance-claims-statistics.html"],
+    ["TechHive: Moen Flo review (archived)","https://web.archive.org/web/20260713040733/https://www.techhive.com/article/2333181/flo-smart-water-monitor-shutoff-review.html"],
+    ["TechHive: Phyn Plus 2nd gen review (archived)","https://web.archive.org/web/20260713040848/https://www.techhive.com/article/1369351/phyn-plus-2nd-gen-smart-valve-review.html"],
+    ["TechHive: Elexa Guardian leak prevention (archived)","https://web.archive.org/web/20230925140210/https://www.techhive.com/article/583111/elexa-guardian-leak-prevention-system.html"],
+    ["Smart Home Compared: YoLink valve kit","https://smarthomecompared.com/water-shutoff-valves/yolink-valve-controller-2-with-evo-valve-operator"],
+    ["Tech Enhanced Life: offline leak shutoff with YoLink","https://www.techenhancedlife.com/solutions/detect-water-leaks-shutoff-water-alert-me"],
+    ["Android Central: Flume 2 review","https://www.androidcentral.com/flume-2-review"],
+    ["Absolute Automation: FloodStop for washers","https://www.absoluteautomation.com/products/floodstop-fs34h90-for-washing-machines-3-4-water-line"],
+    ["This Old House: best water leak detectors","https://www.thisoldhouse.com/shop/best-water-leak-detector"],
+    ["Coverager: Stand and Moen insurance program","https://coverager.com/stand-and-moen-launch-smart-water-leak-program-with-insurance-discounts/"],
+    ["FCC: ioXt named Cyber Trust Mark administrator","https://docs.fcc.gov/public/attachments/DOC-420764A1.txt"]
+  ].map(x=>`<a href="${x[1]}" target="_blank" rel="noopener">${x[0]}<span>${new URL(x[1]).hostname.replace(/^www\./,"")}</span></a>`).join("")}</div>`}
+};
+function pips(now,after){ return `<span class="pp">${[0,1,2,3,4].map(i=>`<i class="${i<=now?"on":""}${i===after?" af":""}"></i>`).join("")}</span>`; }
+function mini(now,after,label){ return `<span class="mm" aria-label="Likelihood ${L[now]} now, ${L[after]} after the fix">${label||""}${pips(now,after)}<em>${L[now]}</em></span>`; }
+function meter(now,after,im){ const same=now===after;
+  return `<div class="meterw"><div class="k">Likelihood of compromise</div><div class="meter">${L.map((n,i)=>`<div class="sg${i<=now?" on":""}${i===after?" af":""}" style="--k:${i}"></div>`).join("")}</div><div class="mlab">${L.map((n,i)=>`<span class="${i===now?"n":i===after?"a":""}">${n}</span>`).join("")}</div><p class="mline"><b>${L[now]}</b> now${same?(now<=1?", already low":", and the fix mainly limits the damage"):` → <b class="f">${L[after]}</b> after the fix`} · Impact <b>${IMN[im]}</b></p></div>`; }
+function kv(pairs){ return pairs.map(p=>`<div class="kv"><div class="k${p[2]?" e":""}">${p[0]}</div><p>${p[1]}</p></div>`).join(""); }
+
+/* ---------- render lists ---------- */
+const pagesEls=$$(".page"), NP=pagesEls.length, idx={}; pagesEls.forEach((p,i)=>idx[p.dataset.id]=i);
+$("#tldrList").innerHTML=TLDR.map((x,i)=>`<button class="row" type="button" data-go="${x.to}"><span class="ic">${icon(x.ic,18)}</span><span><b>${x.b}</b><small>${x.s}</small></span>${chev}</button>`).join("");
+$("#whyList").innerHTML=WHY.map((x,i)=>`<button class="row" type="button" data-why="${i}"><span class="ic">${icon(x.ic,18)}</span><span><b>${x.b}</b><small>${x.rent}</small></span>${chev}</button>`).join("");
+$("#weakList").innerHTML=WEAK.map((x,i)=>`<button class="row" type="button" data-weak="${i}"><span class="num">#${i+1}</span><span><b>${x.b}</b><small>${x.s}</small></span>${mini(x.lk,x.la)}</button>`).join("");
+$("#devGrid").innerHTML=DEV.map((x,i)=>`<button class="dev" type="button" data-dev="${i}" data-r="${x.r}" aria-label="${x.n}, ${RISKNAME[x.r]}"><i class="r-${x.r}"></i>${icon(x.ic,26,1.5)}<span>${x.n}</span></button>`).join("");
+$("#lockList").innerHTML=LOCKS.map((x,i)=>`<button class="row" type="button" data-lock="${i}"><span class="ic">${icon(x.ic,18)}</span><span><b>${x.b}</b><small>${x.ex}</small></span><span class="mm" aria-label="${x.vl}. Break-in likelihood ${L[x.lk]} now, ${L[x.la]} after the fix"><span class="tag ${x.v}">${x.vl}</span>${pips(x.lk,x.la)}</span></button>`).join("");
+$("#waterList").innerHTML=WATER.map((x,i)=>`<button class="row" type="button" data-water="${i}"><span class="ic">${icon(x.ic,18)}</span><span><b>${x.b}</b><small>${x.s}</small></span><span class="cost">${x.cost}</span></button>`).join("");
+$("#dumbList").innerHTML=DUMB.map((x,i)=>`<button class="row" type="button" data-dumb="${i}"><span class="num">${i+1}</span><span><b>${x.b}</b><small>${x.lose}</small></span><span class="pips" aria-label="Effort ${x.e} of 3">${[1,2,3].map(n=>`<i class="${n<=x.e?"on":""}"></i>`).join("")}</span></button>`).join("");
+$("#actList").innerHTML=ACT.map((x,i)=>`<div class="row" style="grid-template-columns:34px 1fr"><span class="num">${i+1}</span><span><b>${x.b}</b><small>${x.s}</small></span></div>`).join("");
+$("#buyList").innerHTML=BUY.map((x,i)=>`<button class="row" type="button" data-buy="${i}" style="min-height:44px;padding-block:6px"><span class="ic" style="width:28px;height:28px">${icon("tag",15)}</span><span><b style="font-size:13px;font-weight:500">${x[0]}</b></span>${chev}</button>`).join("");
+
+/* ---------- sheet ---------- */
+const sheet=$("#sheet"), scrim=$("#scrim"); let lastFocus=null;
+function openSheet(title,html){ lastFocus=document.activeElement; $("#shTitle").textContent=title; $("#shBody").innerHTML=html; $("#shBody").scrollTop=0; sheet.classList.add("on"); scrim.classList.add("on"); sfx.open(); setTimeout(()=>$("#shClose").focus({preventScroll:true}),60); }
+function closeSheet(){ if(!sheet.classList.contains("on")) return; sheet.classList.remove("on"); scrim.classList.remove("on"); sfx.close(); if(lastFocus&&lastFocus.focus) lastFocus.focus({preventScroll:true}); }
+$("#shClose").addEventListener("click",closeSheet); scrim.addEventListener("click",closeSheet);
+function menuSheet(){ const names=pagesEls.map(p=>p.getAttribute("aria-label"));
+  openSheet("Chapters",`<div class="menu">${names.map((n,i)=>`<button type="button" data-go="${pagesEls[i].dataset.id}" ${i===cur?'aria-current="true"':""}><span class="mono">${i===0?"··":String(i).padStart(2,"0")}</span>${n}</button>`).join("")}<a class="menu-out" href="/articles/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>All articles on Explore Superintelligence</a></div>`); }
+
+/* ---------- interactions ---------- */
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-go],[data-why],[data-weak],[data-dev],[data-lock],[data-dumb],[data-buy],[data-sheet],[data-water]");
+  if(!t) return;
+  if(t.dataset.go){ closeSheet(); go(idx[t.dataset.go]); return; }
+  if(t.dataset.why!=null){ const x=WHY[+t.dataset.why]; openSheet(x.b, kv([["In the French stores",x.fr],["At home",x.rent,1]])); return; }
+  if(t.dataset.weak!=null){ const x=WEAK[+t.dataset.weak]; openSheet(x.b, meter(x.lk,x.la,x.im)+`<div class="kv"><div class="k">Worst offenders</div><p>${x.s}</p></div><p>${x.d}</p>`+kv([["The fix",x.fix,1]])); return; }
+  if(t.dataset.dev!=null){ const x=DEV[+t.dataset.dev]; openSheet(x.n, meter(x.lk,x.la,x.im)+kv([["Worst realistic outcome",x.w,1],["What normally stops it",x.s],["The fix",x.a]])); return; }
+  if(t.dataset.lock!=null){ const x=LOCKS[+t.dataset.lock]; openSheet(x.b, `<div class="small">${x.ex} · <span class="tag ${x.v}">${x.vl}</span></div>`+meter(x.lk,x.la,2)+kv([["Documented weakness",x.k],["The real-world weak point",x.real,1],["The fix",x.ver]])); return; }
+  if(t.dataset.water!=null){ const x=WATER[+t.dataset.water]; openSheet(x.b, `<div class="chips"><span class="tag ${x.stops?"good":"check"}">${x.stops?"Stops water":"Alerts only"}</span><span class="tag ${x.off?"good":"check"}">${x.off?"Works offline":"Needs internet"}</span><span class="tag info">${x.cost}</span></div>`+kv([["How it works",x.how]])+`<div class="pc"><div><div class="k good">Pluses</div><ul>${x.pros.map(p=>`<li>${p}</li>`).join("")}</ul></div><div><div class="k bad">Minuses</div><ul>${x.cons.map(p=>`<li>${p}</li>`).join("")}</ul></div></div>`+kv([["Best for",x.fit],["If someone took it over",x.hk,1]])); return; }
+  if(t.dataset.dumb!=null){ const x=DUMB[+t.dataset.dumb]; openSheet(x.b, kv([["How",x.how],["What you give up",x.lose,1],["Reversible",x.rev]])); return; }
+  if(t.dataset.buy!=null){ const x=BUY[+t.dataset.buy]; openSheet(x[0], kv([["Good answer",x[1]]])); return; }
+  if(t.dataset.sheet){ const s=SHEETS[t.dataset.sheet]; if(s) openSheet(s.t, s.h()); }
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"){ closeSheet(); return; }
+  if(sheet.classList.contains("on")) return;
+  if((e.key==="Enter"||e.key===" ")&&e.target.classList&&e.target.classList.contains("node")){ e.preventDefault(); e.target.dispatchEvent(new MouseEvent("click",{bubbles:true})); return; }
+  if(e.key==="ArrowRight") go(cur+1); else if(e.key==="ArrowLeft"&&cur>1) go(cur-1);
+});
+$("#riskFilter").addEventListener("click",e=>{ const b=e.target.closest("[data-f]"); if(!b) return; sfx.tap(); $$("#riskFilter [data-f]").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false")); const f=b.dataset.f; $$("#devGrid .dev").forEach(d=>d.classList.toggle("dim", f!=="all"&&d.dataset.r!==f)); });
+function paintHype(k){ $("#segOver").setAttribute("aria-pressed",k==="over"?"true":"false"); $("#segReal").setAttribute("aria-pressed",k==="real"?"true":"false"); const el=$("#hypeList"); el.className="hype"+(k==="real"?" real":""); el.innerHTML=HYPE[k].map((x,i)=>`<div class="card" style="animation-delay:${i*50}ms"><div class="ch"><b>${x[0]}</b><span class="lv lv${x[2]}">${L[x[2]]}</span></div><p>${x[1]}</p></div>`).join(""); }
+$("#segOver").addEventListener("click",()=>{ sfx.tap(); paintHype("over"); }); $("#segReal").addEventListener("click",()=>{ sfx.tap(); paintHype("real"); }); paintHype("over");
+
+/* risk map */
+(function(){
+  const map=$("#rmap"); let h="";
+  [2,1,0].forEach(im=>{ h+=`<div class="ylab">${IMN[im]}</div>`; for(let li=0;li<5;li++){ const sev=li+2*im, c=sev<=2?"c0":sev<=4?"c1":sev<=6?"c2":"c3"; h+=`<div class="cell ${c}" data-li="${li}" data-im="${im}"></div>`; } });
+  h+=`<div class="xsp"></div>`+L.map(n=>`<div class="xlab">${n}</div>`).join("");
+  map.innerHTML=h;
+  const chips=DEV.map((x,i)=>{ const b=document.createElement("button"); b.type="button"; b.className="rchip"; b.dataset.dev=i; b.setAttribute("aria-label",x.n); b.innerHTML=icon(x.ic,16,1.6); return b; });
+  let mode="now";
+  function place(m,animate){
+    const first=animate?chips.map(c=>c.getBoundingClientRect()):null;
+    chips.forEach((c,i)=>{ const x=DEV[i], li=m==="now"?x.lk:x.la; map.querySelector(`.cell[data-li="${li}"][data-im="${x.im}"]`).appendChild(c); c.setAttribute("aria-label",`${x.n}: ${L[li]}, impact ${IMN[x.im]}`); });
+    if(animate&&!reduce){ chips.forEach((c,i)=>{ const a=first[i], b=c.getBoundingClientRect(), dx=a.left-b.left, dy=a.top-b.top; if(!dx&&!dy) return;
+      c.style.transition="none"; c.style.transform=`translate(${dx}px,${dy}px)`; c.getBoundingClientRect();
+      c.style.transition=`transform .7s cubic-bezier(.2,.8,.2,1) ${i*18}ms`; c.style.transform=""; }); }
+    $("#mapNow").setAttribute("aria-pressed",m==="now"?"true":"false"); $("#mapAfter").setAttribute("aria-pressed",m==="after"?"true":"false");
+  }
+  place(mode,false);
+  $("#mapNow").addEventListener("click",()=>{ if(mode==="now") return; mode="now"; sfx.tap(); place(mode,true); });
+  $("#mapAfter").addEventListener("click",()=>{ if(mode==="after") return; mode="after"; sfx.check(); place(mode,true); });
+})();
+
+/* water tiers */
+let tier="better";
+function paintTier(){ $("#tierTabs").innerHTML=TIERS.map(x=>`<button type="button" data-tier="${x.id}" aria-pressed="${x.id===tier}">${x.t}</button>`).join("");
+  const x=TIERS.find(t=>t.id===tier);
+  $("#tierCard").innerHTML=`<div class="tier"><div><div class="tn">${x.name}</div><div class="tc mono">${x.cost}</div></div><ul class="inc">${x.inc.map(i=>`<li>${icon("check",14,2.2)}<span>${i}</span></li>`).join("")}</ul><div class="cm"><div><div class="k good">Catches</div><p>${x.catches}</p></div><div><div class="k bad">Misses</div><p>${x.misses}</p></div></div></div>`; }
+$("#tierTabs").addEventListener("click",e=>{ const b=e.target.closest("[data-tier]"); if(!b) return; tier=b.dataset.tier; sfx.tap(); paintTier(); });
+paintTier();
+
+/* wizard */
+const Q=[ "Is it off-brand, recalled, or something that heats running on a smart plug?", "Do you actually use its smart features?", "Is the maker still sending it security updates?" ];
+const OUT={
+  remove:{o:"Remove it now",c:"var(--hi)",p:"Cheap, risky and easy to replace. That covers no-name streaming boxes, recalled heaters and smart plugs running anything that heats."},
+  disconnect:{o:"Disconnect it",c:"var(--frost)",p:"The right answer for most appliances. Keep the machine and cut its connection; the next chapter shows how."},
+  replace:{o:"Replace it",c:"var(--med)",p:"Or disconnect it and live without the feature. A device that stays online without updates never gets its holes fixed."},
+  keep:{o:"Keep it, locked down",c:"var(--low)",p:"Give it a unique password with two-step sign-in, keep it updated, and put it on a separate Wi-Fi network if you can."}
+};
+let wz={step:0,ans:[]};
+function paintWiz(){ const el=$("#wiz"); const crumbs=`<div class="crumbs">${[0,1,2].map(i=>`<i class="${i<wz.ans.length||(i===wz.step&&!wz.out)?"on":""}"></i>`).join("")}</div>`;
+  const trail=wz.ans.length?`<div class="trail">${wz.ans.map((a,i)=>`<div>${Q[i]} <b>${a?"Yes":"No"}</b></div>`).join("")}</div>`:"";
+  if(wz.out){ const o=OUT[wz.out]; el.innerHTML=crumbs+`<div class="outcome"><div class="eyebrow">Your answer</div><div class="o" style="color:${o.c}">${o.o}</div><p>${o.p}</p></div>`+trail+`<div class="yn"><button type="button" id="wzReset">Next device</button><button type="button" data-go="${wz.out==="disconnect"?"dumb":"plan"}">${wz.out==="disconnect"?"How to disconnect":"Open the plan"}</button></div>`; $("#wzReset").addEventListener("click",()=>{ wz={step:0,ans:[]}; sfx.tap(); paintWiz(); }); return; }
+  el.innerHTML=crumbs+`<div class="eyebrow">Question ${wz.step+1} of 3</div><div class="q">${Q[wz.step]}</div><div class="yn"><button type="button" data-a="1">Yes</button><button type="button" data-a="0">No</button></div>`+trail;
+  el.querySelectorAll("[data-a]").forEach(b=>b.addEventListener("click",()=>{ const a=b.dataset.a==="1"; wz.ans.push(a); sfx.tap();
+    if(wz.step===0) wz.out=a?"remove":null; else if(wz.step===1) wz.out=a?null:"disconnect"; else wz.out=a?"keep":"replace";
+    if(!wz.out) wz.step++; paintWiz(); })); }
+paintWiz();
+
+/* plan checklist */
+let done=store.get("dm-done",{}), tab="week";
+const total=PLAN.reduce((s,g)=>s+g.items.length,0);
+function paintPlan(){ $("#planTabs").innerHTML=PLAN.map(g=>{ const n=g.items.filter((_,i)=>done[g.id+i]).length; return `<button type="button" data-tab="${g.id}" aria-pressed="${g.id===tab}">${g.t}<br><span class="mono" style="font-size:12px">${n}/${g.items.length}</span></button>`; }).join("");
+  const g=PLAN.find(x=>x.id===tab); $("#checks").innerHTML=g.items.map((t,i)=>`<button class="ck" type="button" role="checkbox" aria-checked="${!!done[g.id+i]}" data-ck="${g.id+i}"><span class="box">${icon("check",14,2.4).replace('stroke="currentColor"','stroke="#141414"')}</span><span>${t}</span></button>`).join("");
+  const n=Object.keys(done).filter(k=>done[k]).length, pct=Math.round(n/total*100); $("#ringArc").setAttribute("stroke-dashoffset",(169.6*(1-n/total)).toFixed(1)); $("#ringTxt").textContent=pct+"%"; }
+$("#planTabs").addEventListener("click",e=>{ const b=e.target.closest("[data-tab]"); if(!b) return; tab=b.dataset.tab; sfx.tap(); paintPlan(); });
+$("#checks").addEventListener("click",e=>{ const b=e.target.closest("[data-ck]"); if(!b) return; const k=b.dataset.ck; done[k]=!done[k]; if(!done[k]) delete done[k]; store.set("dm-done",done); if(done[k]) sfx.check(); else sfx.tap(); paintPlan(); });
+paintPlan();
+
+/* thermometer */
+let thermoRun=0;
+function runThermo(){ const id=++thermoRun, t0=performance.now(), dur=reduce?10:2600;
+  (function step(now){ if(id!==thermoRun) return; const k=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-k,3), c=-20+70*e, f=c*9/5+32;
+    $("#tval").innerHTML=`${c<0?"−":""}${Math.abs(Math.round(c))}<span>°C</span>`; $("#tf").textContent=`${Math.round(f)<0?"−":""}${Math.abs(Math.round(f))}°F · ${c<-5?"freezer":c<10?"thawing":"defrost locked on"}`;
+    $("#tfill").style.width=(e*100).toFixed(1)+"%"; if(k<1) requestAnimationFrame(step); else sfx.heat(); })(performance.now()); }
+const enter={ france:runThermo };
+
+/* ---------- navigation ---------- */
+const app=$("#app"), deck=$("#deck"), track=$("#track");
+let cur=0;
+window.__DM={get cur(){ return cur; }, pages:pagesEls, next:function(){ if(cur<NP-1) go(cur+1); }, last:function(){ return cur>=NP-1; }};
+function place(){ track.style.transform=`translate3d(${-cur*deck.clientWidth}px,0,0)`; }
+function go(i,silent){ i=Math.max(0,Math.min(NP-1,i|0)); const changed=i!==cur; cur=i; place();
+  app.classList.toggle("on-splash",i===0);
+  $("#plabel").textContent=String(i).padStart(2,"0")+" / "+String(NP-1).padStart(2,"0");
+  $("#pbar").style.width=(i/(NP-1)*100)+"%";
+  $("#prev").disabled=i<=1; $("#next").disabled=i>=NP-1;
+  pagesEls.forEach((p,k)=>{ p.setAttribute("aria-hidden",k===i?"false":"true"); if(k===i) p.removeAttribute("inert"); else p.setAttribute("inert",""); });
+  setShape(pagesEls[i].dataset.shape, i===0);
+  if(changed&&!silent) sfx.page();
+  if(changed){ pagesEls[i].scrollTop=0; const h=enter[pagesEls[i].dataset.id]; if(h) h(); store.set("dm-page",i); }
+}
+$("#prev").addEventListener("click",()=>go(cur-1));
+$("#next").addEventListener("click",()=>go(cur+1));
+$("#menuBtn").addEventListener("click",menuSheet);
+$("#tldrBtn").addEventListener("click",()=>go(idx.tldr));
+$("#toStart").addEventListener("click",()=>go(0));
+$("#soundBtn").addEventListener("click",()=>{ soundOn=!soundOn; store.set("dm-sound",soundOn); paintSound(); if(soundOn) sfx.tap(); });
+$("#beginSound").addEventListener("click",()=>{ soundOn=true; store.set("dm-sound",true); paintSound(); actx(); sfx.swell(); go(idx.tldr,true); });
+$("#beginQuiet").addEventListener("click",()=>{ soundOn=false; store.set("dm-sound",false); paintSound(); go(idx.tldr,true); });
+
+/* swipe + tap-to-spread */
+const INTER="button,a,input,label,.node,#sheet";
+let sx=0,sy=0,lx=0,pid=null,down=false,moved=false,horiz=false,suppress=false;
+deck.addEventListener("pointerdown",e=>{ if(e.button>0) return; down=true; pid=e.pointerId; sx=lx=e.clientX; sy=e.clientY; moved=false; horiz=false; });
+deck.addEventListener("pointermove",e=>{ if(!down||e.pointerId!==pid) return; const dx=e.clientX-sx, dy=e.clientY-sy;
+  if(!moved&&(Math.abs(dx)>9||Math.abs(dy)>9)){ moved=true; horiz=Math.abs(dx)>Math.abs(dy); }
+  if(moved&&horiz){ if(cur===0){ rotV+=(e.clientX-lx)*.0025; } else { track.style.transition="none"; const edge=(cur===1&&dx>0)||(cur===NP-1&&dx<0)?.3:.92; track.style.transform=`translate3d(${-cur*deck.clientWidth+dx*edge}px,0,0)`; } }
+  lx=e.clientX; });
+function endDrag(e,cancel){ if(!down) return; down=false; track.style.transition=""; const dx=(e?e.clientX:sx)-sx, dy=(e?e.clientY:sy)-sy;
+  if(cancel){ place(); return; }
+  if(!moved){ if(!e.target.closest(INTER)) spreadAt(e.clientX,e.clientY); return; }
+  if(horiz&&cur!==0&&Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)){ suppress=true; const n=cur+(dx<0?1:-1); if(n>=1&&n<NP) go(n); else place(); }
+  else { if(horiz) suppress=true; place(); } }
+deck.addEventListener("pointerup",e=>{ if(e.pointerId===pid) endDrag(e,false); });
+deck.addEventListener("pointercancel",()=>endDrag(null,true));
+deck.addEventListener("click",e=>{ if(suppress){ e.stopPropagation(); e.preventDefault(); suppress=false; } },true);
+$$(".page").forEach(p=>p.addEventListener("scroll",()=>{ if(down) moved=true; },{passive:true}));
+
+window.addEventListener("resize",()=>{ resize(); track.style.transition="none"; place(); requestAnimationFrame(()=>track.style.transition=""); });
+
+/* boot */
+paintSound(); resize(); go(0,true); requestAnimationFrame(frame);
+setTimeout(()=>{ if(cur===0){ const k=Math.floor(N*.42); waves.push({o:[P[3*k],P[3*k+1],P[3*k+2]],t0:performance.now()}); } },900);
+})();
+</script>
+<script id="read-aloud">
+/* Read aloud: Web Speech API. Reads the open info sheet, or else the current page, then turns the page. */
+(function(){
+  "use strict";
+  var ss=window.speechSynthesis, btn=document.getElementById("readBtn");
+  if(!btn||!ss||typeof SpeechSynthesisUtterance==="undefined") return;
+  btn.hidden=false;
+  var css=document.createElement("style"); css.textContent=
+   "#readBtn{position:relative}#readBtn::after{content:'';position:absolute;inset:6px;border-radius:12px;border:1.5px solid var(--frost);opacity:0;pointer-events:none}"+
+   "#readBtn.on{color:var(--frost)}#readBtn.on::after{animation:raPulse 1.6s ease-in-out infinite}@keyframes raPulse{0%{opacity:.7;transform:scale(.9)}70%{opacity:0;transform:scale(1.15)}100%{opacity:0}}"+
+   "@media (prefers-reduced-motion:reduce){#readBtn.on::after{animation:none;opacity:.7}}";
+  document.head.appendChild(css);
+  var IC_SPK=btn.innerHTML;
+  var IC_STOP='<svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="1.5" fill="currentColor"/></svg>';
+  var voice=null;
+  function pick(){ var v=ss.getVoices().filter(function(x){ return /^en(-|_|$)/i.test(x.lang); }); if(!v.length) return;
+    function score(x){ var n=x.name, s=0; if(/premium/i.test(n)) s+=60; if(/enhanced/i.test(n)) s+=50; if(/natural|neural/i.test(n)) s+=45; if(/samantha|ava|zoe|serena|daniel|karen|moira/i.test(n)) s+=30; if(/google/i.test(n)) s+=25; if(/en-US/i.test(x.lang)) s+=6; if(/en-GB/i.test(x.lang)) s+=4; if(x.localService) s+=2; if(/compact|eloquence|novelty|bad news|bells|bubbles|cellos|whisper|zarvox|trinoids|albert|jester|organ|boing|superstar|wobble/i.test(n)) s-=80; return s; }
+    v.sort(function(a,b){ return score(b)-score(a); }); voice=v[0]; }
+  pick(); if(ss.addEventListener) ss.addEventListener("voiceschanged",pick); else ss.onvoiceschanged=pick;
+  function say(t){ return String(t||"")
+    .replace(/TL;DR/g,"T L D R").replace(/·/g,". ").replace(/−/g,"minus ").replace(/→/g," to ")
+    .replace(/(\d)°C/g,"$1 degrees Celsius").replace(/(\d)°F/g,"$1 degrees Fahrenheit").replace(/°/g," degrees")
+    .replace(/~/g,"about ").replace(/(\d)–(\d)/g,"$1 to $2").replace(/\s*\n+\s*/g,". ").replace(/\s+\./g,".").replace(/\.\s*\./g,".").replace(/\s+/g," ").trim(); }
+  function sheetOpen(){ var sh=document.getElementById("sheet"); return !!(sh&&sh.classList.contains("on")); }
+  function pageText(){
+    if(sheetOpen()) return document.getElementById("shTitle").textContent+".\n"+document.getElementById("shBody").innerText;
+    var D=window.__DM; if(!D) return ""; var p=D.pages[D.cur]; if(!p) return "";
+    var parts=[];
+    [].forEach.call(p.querySelectorAll(".inner > *"),function(el){
+      if(el.matches(".go,.hint")) return;
+      if(el.id==="rmap"){ var r=[].map.call(el.querySelectorAll(".rchip"),function(c){ return c.getAttribute("aria-label"); }); if(r.length) parts.push("On the map. "+r.join(". ")+"."); return; }
+      if(el.matches(".diag")){ parts.push([].map.call(el.querySelectorAll(".node"),function(n){ return n.getAttribute("aria-label"); }).join(". ")+"."); return; }
+      if(el.matches(".planhead")){ parts.push(el.querySelector("h2").textContent+"."); return; }
+      if(el.matches(".tabs")) return;
+      if(el.matches(".chips")&&el.querySelector("[data-sheet],#toStart")) return;
+      parts.push(el.innerText);
+    });
+    if(D.cur===0) parts.unshift(document.title+".");
+    return parts.join("\n");
+  }
+  var speaking=false, readingPage=-1, readingSheet=false, gen=0;
+  function chunks(t){ return (t.match(/[^.!?]+[.!?]*["”’)]*\s*/g)||[t]).reduce(function(a,s){ if(a.length&&(a[a.length-1]+s).length<220) a[a.length-1]+=s; else a.push(s); return a; },[]).map(function(s){ return s.trim(); }).filter(function(s){ return /[a-z0-9]/i.test(s); }); }
+  function setUI(on){ speaking=on; btn.classList.toggle("on",on); btn.innerHTML=on?IC_STOP:IC_SPK; btn.setAttribute("aria-pressed",on?"true":"false"); btn.setAttribute("aria-label",on?"Stop reading":"Read this page aloud"); }
+  function stop(){ gen++; ss.cancel(); setUI(false); }
+  function readNow(){
+    var my=++gen; ss.cancel();
+    readingSheet=sheetOpen(); readingPage=window.__DM?window.__DM.cur:-1;
+    var parts=chunks(say(pageText())); if(!parts.length){ setUI(false); return; }
+    setUI(true);
+    parts.forEach(function(p,i){ var u=new SpeechSynthesisUtterance(p); if(voice){ u.voice=voice; u.lang=voice.lang; } else u.lang="en-US"; u.rate=0.98; u.pitch=1;
+      if(i===parts.length-1) u.onend=function(){ if(my!==gen) return; var D=window.__DM;
+        if(!readingSheet&&D&&!D.last()){ D.next(); setTimeout(function(){ if(my===gen) readNow(); },900); } else setUI(false); };
+      u.onerror=function(e){ if(my===gen&&e.error!=="interrupted"&&e.error!=="canceled") setUI(false); };
+      ss.speak(u); });
+  }
+  btn.addEventListener("click",function(e){ e.stopPropagation(); if(speaking) stop(); else readNow(); });
+  /* Reader turned the page or opened/closed a sheet while speaking: follow it. */
+  setInterval(function(){ if(!speaking) return; var sh=sheetOpen(); if(sh!==readingSheet||(!sh&&window.__DM&&window.__DM.cur!==readingPage)) readNow(); },400);
+  addEventListener("pagehide",function(){ ss.cancel(); });
+  document.addEventListener("visibilitychange",function(){ if(document.hidden&&speaking) stop(); });
+})();
+</script>
+
+</body>
+</html>
