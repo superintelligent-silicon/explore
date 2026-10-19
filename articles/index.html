@@ -61,6 +61,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/si-v4.css" />
+  <link rel="alternate" type="application/rss+xml" title="Explore Superintelligence: new articles (RSS)" href="/feed.xml" />
+  <link rel="alternate" type="application/feed+json" title="Explore Superintelligence: new articles (JSON Feed)" href="/feed.json" />
+  <link rel="help" type="text/markdown" title="Guide for AI agents" href="/agents.md" />
   <style>
     main{flex:1;display:flex;min-height:0}
     main>.wrap{display:flex;flex-direction:column;gap:clamp(18px,3vh,36px);padding-top:clamp(18px,4vh,56px);padding-bottom:clamp(14px,2.4vh,28px)}
@@ -96,6 +99,7 @@
     @media (min-width:1100px){ .alist{grid-template-columns:repeat(6,minmax(0,1fr))} main>.wrap{justify-content:center} .ftr{margin-top:auto} }
     @media (min-width:1100px) and (max-height:760px){ .ac .art{aspect-ratio:2/1} }
     @media (min-width:1100px) and (min-height:840px){ .ac .art{aspect-ratio:4/3} .ac h2{font-size:23px} }
+    /* si-support-v1 phone fit */ @media (max-width:759px) and (max-height:760px){ main>.wrap{gap:14px;padding-top:16px} .ac{grid-template-columns:52px minmax(0,1fr);gap:12px;padding:8px 0} .ac .art{width:52px;height:52px;border-radius:9px} .ac h2{font-size:17.5px} .ac .kind{font-size:10.5px} } @media (max-width:759px) and (max-height:680px){ .ac{padding:6px 0} .page-h1{font-size:30px} }
   </style>
 </head>
 <body>
@@ -136,7 +140,7 @@
         <li><a class="ac" href="/research/word-swap/"><span class="art" aria-hidden="true"><svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice"><rect width="320" height="180" fill="#f3f1ea"/><text x="160" y="82" text-anchor="middle" font-family="Newsreader,Georgia,serif" font-style="italic" font-size="46" fill="#2a64a8">Super</text><text x="160" y="128" text-anchor="middle" font-family="Newsreader,Georgia,serif" font-size="34" fill="#55524b">Artificial</text><path d="M96 117h128" stroke="#c0392b" stroke-width="3" stroke-linecap="round"/><path d="M70 152h180" stroke="#c0392b" stroke-width="1.2" opacity=".5"/></svg></span><span class="txt"><span class="kind">Interactive guide</span><h2>The Word Swap</h2><p>Why the U.S. government renamed AI “Super Intelligence”, and how to use AI agents safely.</p><span class="meta"><time datetime="2026-09-29">Sept 29, 2026 · updated Oct 5</time></span></span></a></li>
       </ul>
       <footer class="ftr site-footer">
-        <span>© Superintelligent Silicon</span>
+        <span>© Superintelligent Silicon<span class="si-sup-line"> · <button type="button" data-si-support="explore-articles" data-si-focus="email">New books by email</button></span></span>
         <nav class="fl footer-links" aria-label="Site">
           <a href="/">Home</a>
           <a href="/articles/">Articles</a>
@@ -148,7 +152,7 @@
           <a href="/sios/shell/">SIOS shell</a>
           <a href="/shipping/">Shipping</a>
           <a href="/about/">About</a>
-          <a href="/about/#tip">Support</a>
+          <a href="/about/#tip" data-si-support="explore-articles">Support</a>
           <a href="https://superintelligentsilicon.com/contact/">Contact</a>
           <a href="https://github.com/superintelligent-silicon">GitHub</a>
           <a href="/llms.txt">llms.txt</a>
@@ -173,7 +177,7 @@
                 <li><a href="/shipping/"><small>Status</small>Shipping</a></li>
         <li><a href="/about/"><small>Mission</small>About</a></li>
         <li><a href="/#mission"><small>About Explore</small>Mission &amp; funnel</a></li>
-        <li><a href="/about/#tip"><small>Optional tips</small>Support the work</a></li>
+        <li><a href="/about/#tip" data-si-support="explore-articles"><small>Email list · tips</small>Support Explore</a></li>
         <li><a href="https://superintelligentsilicon.com/"><small>The org</small>Superintelligent Silicon</a></li>
         <li><a href="https://superintelligentsilicon.com/contact/"><small>Get in touch</small>Contact</a></li>
         <li><a href="https://github.com/superintelligent-silicon"><small>Code</small>GitHub</a></li>
@@ -183,5 +187,6 @@
   </dialog>
   <script src="/assets/si-ui.js"></script>
   <script src="/assets/si-theme.js"></script>
+  <script src="/assets/si-support.js" defer></script><!-- si-support-v1 -->
 </body>
 </html>

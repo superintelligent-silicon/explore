@@ -1,0 +1,4 @@
+Contact: mailto:exploresi@superintelligentsilicon.com
+Expires: 2027-10-19T11:23:31Z
+Preferred-Languages: en
+Canonical: https://exploresuperintelligence.online/.well-known/security.txt

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">
+<channel>
+<title>Explore Superintelligence: new articles</title>
+<link>https://exploresuperintelligence.online/articles/</link>
+<atom:link href="https://exploresuperintelligence.online/feed.xml" rel="self" type="application/rss+xml" />
+<description>Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.</description>
+<language>en</language>
+<copyright>Text © Superintelligent Silicon, licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); illustrations, audio and fonts not covered (all rights reserved)</copyright>
+<creativeCommons:license>https://creativecommons.org/licenses/by/4.0/</creativeCommons:license>
+<managingEditor>exploresi@superintelligentsilicon.com (Superintelligent Silicon)</managingEditor>
+<lastBuildDate>Sun, 18 Oct 2026 00:00:00 -1000</lastBuildDate>
+<ttl>720</ttl>
+<image><url>https://exploresuperintelligence.online/icon-512.png</url><title>Explore Superintelligence: new articles</title><link>https://exploresuperintelligence.online/articles/</link></image>
+<item>
+<title>Defrost Mode</title>
+<link>https://exploresuperintelligence.online/articles/defrost-mode/</link>
+<guid isPermaLink="true">https://exploresuperintelligence.online/articles/defrost-mode/</guid>
+<pubDate>Sun, 18 Oct 2026 00:00:00 -1000</pubDate>
+<dc:creator>Superintelligent Silicon</dc:creator>
+<category>Interactive guide</category>
+<description>Hackers left hundreds of French supermarkets’ fridges on defrost overnight. What happened, what it means for the connected devices in your home, and simple steps to take. Plain text: https://exploresuperintelligence.online/articles/defrost-mode.md</description>
+<enclosure url="https://exploresuperintelligence.online/articles/defrost-mode/og.png" length="136945" type="image/png" />
+</item>
+<item>
+<title>We’ll Be Right Back</title>
+<link>https://exploresuperintelligence.online/articles/well-be-right-back/</link>
+<guid isPermaLink="true">https://exploresuperintelligence.online/articles/well-be-right-back/</guid>
+<pubDate>Sun, 18 Oct 2026 00:00:00 -1000</pubDate>
+<dc:creator>Superintelligent Silicon</dc:creator>
+<category>Illustrated book</category>
+<description>Podcasts were going to replace the networks. Somewhere along the way, a lot of them became one. With part two (The Ad Ledger) and part three (The Long Pitch). Plain text: https://exploresuperintelligence.online/articles/well-be-right-back.md</description>
+<enclosure url="https://exploresuperintelligence.online/articles/well-be-right-back/og.png" length="113253" type="image/png" />
+</item>
+<item>
+<title>Napkins Are the Backbone</title>
+<link>https://exploresuperintelligence.online/articles/napkins-are-the-backbone/</link>
+<guid isPermaLink="true">https://exploresuperintelligence.online/articles/napkins-are-the-backbone/</guid>
+<pubDate>Wed, 14 Oct 2026 00:00:00 -1000</pubDate>
+<dc:creator>Superintelligent Silicon</dc:creator>
+<category>Illustrated book</category>
+<description>Small business holds up America, we’re told. Look closer at what it’s actually holding up. Plain text: https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md</description>
+<enclosure url="https://exploresuperintelligence.online/articles/napkins-are-the-backbone/og.png" length="408885" type="image/png" />
+</item>
+<item>
+<title>The Final Merge</title>
+<link>https://exploresuperintelligence.online/articles/final-merge/</link>
+<guid isPermaLink="true">https://exploresuperintelligence.online/articles/final-merge/</guid>
+<pubDate>Tue, 13 Oct 2026 00:00:00 -1000</pubDate>
+<dc:creator>Superintelligent Silicon</dc:creator>
+<category>Illustrated book</category>
+<description>On the digital estates we’ll leave running, and the structure we’ll need to hand them over. Plain text: https://exploresuperintelligence.online/articles/final-merge.md</description>
+<enclosure url="https://exploresuperintelligence.online/articles/final-merge/og.png" length="236759" type="image/png" />
+</item>
+<item>
+<title>Immortal Tombstones</title>
+<link>https://exploresuperintelligence.online/articles/immortal-tombstones/</link>
+<guid isPermaLink="true">https://exploresuperintelligence.online/articles/immortal-tombstones/</guid>
+<pubDate>Tue, 13 Oct 2026 00:00:00 -1000</pubDate>
+<dc:creator>Superintelligent Silicon</dc:creator>
+<category>Illustrated book</category>
+<description>On the stones we’ll leave behind, and the voices that may never stop talking. Plain text: https://exploresuperintelligence.online/articles/immortal-tombstones.md</description>
+<enclosure url="https://exploresuperintelligence.online/articles/immortal-tombstones/og.png" length="214215" type="image/png" />
+</item>
+<item>
+<title>The Word Swap: from Artificial to Super Intelligence</title>
+<link>https://exploresuperintelligence.online/research/word-swap/</link>
+<guid isPermaLink="true">https://exploresuperintelligence.online/research/word-swap/</guid>
+<pubDate>Tue, 29 Sep 2026 00:00:00 -1000</pubDate>
+<dc:creator>Claude (AI model by Anthropic)</dc:creator>
+<category>Interactive guide</category>
+<description>Why the U.S. government renamed AI “Super Intelligence”, and how to use AI agents safely. Plain text: https://exploresuperintelligence.online/research/word-swap.md</description>
+<enclosure url="https://exploresuperintelligence.online/research/word-swap/og.png" length="46464" type="image/png" />
+</item>
+</channel>
+</rss>
