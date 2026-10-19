@@ -185,6 +185,7 @@ body { background: var(--room); color: var(--room-ink); overflow: hidden; font-f
 
 <div id="err" role="status" hidden></div>
 <div id="intro" aria-label="The Final Merge cover screen">
+  <nav class="intro-nav" aria-label="Explore Superintelligence"><a href="/">Explore</a><span aria-hidden="true">/</span><a href="/articles/">Articles</a></nav>
   <div class="intro-in">
     <span class="intro-k">Superintelligent Silicon · October 2026</span>
     <h1 class="intro-t">The Final Merge</h1>
@@ -214,6 +215,7 @@ body { background: var(--room); color: var(--room-ink); overflow: hidden; font-f
   <div class="ch-body">
     <div class="scrub"><label for="scrub-r"><span id="scrub-n">Page 1 of 1</span><span id="scrub-t"></span></label><input type="range" id="scrub-r" min="1" max="1" value="1"></div>
     <ul class="ch-list" id="ch-list"></ul>
+    <nav class="ch-out" aria-label="Leave the book"><a href="/articles/">All articles</a><span aria-hidden="true">·</span><a href="/">Explore home</a></nav>
   </div>
 </div>
 <div id="src-sheet" role="dialog" aria-modal="true" aria-labelledby="src-h">
@@ -1653,6 +1655,7 @@ function buildWorld() {
     addEventListener("pointermove", e => { ptr.x = e.clientX / innerWidth - 0.5; ptr.y = e.clientY / innerHeight - 0.5; }, { passive: true });
     function frame() {
       requestAnimationFrame(frame);
+      if (document.hidden || window.LedgerOpen) { clockT.getDelta(); return; } /* si-stability-v1 */
       try {
         const dt = Math.min(clockT.getDelta(), 0.05);
         uni.uTime.value += dt;
@@ -2107,7 +2110,7 @@ function getBase(i) {
   }
   L = { text: cv, under: pg.stains && pg.stains.length ? buildUnder(pg) : null };
   baseCache.set(i, L);
-  if (baseCache.size > 5) { let far = null, fd = -1; for (const kk of baseCache.keys()) { const d = Math.abs(kk - idx); if (d > fd) { fd = d; far = kk; } } if (far !== null && far !== i) baseCache.delete(far); }
+  if (baseCache.size > 5) { let far = null, fd = -1; for (const kk of baseCache.keys()) { const d = Math.abs(kk - idx); if (d > fd) { fd = d; far = kk; } } if (far !== null && far !== i) { const o = baseCache.get(far); baseCache.delete(far); if (o) [o.text, o.under].forEach(z => { if (z) z.width = z.height = 0; }); } }
   return L;
 }
 let renderCv = null;
@@ -2210,7 +2213,7 @@ function animPage(i, t) {
     const x1 = Math.min(PW, Math.ceil((rx + rw + 1) * s)), y1 = Math.min(PH, Math.ceil((ry + rh + 1) * s));
     if (x1 <= x0 || y1 <= y0) continue;
     const key = (x1 - x0) + "x" + (y1 - y0); let pc = POOL.get(key);
-    if (!pc) { if (POOL.size > 24) POOL.clear(); const cv = document.createElement("canvas"); cv.width = x1 - x0; cv.height = y1 - y0; pc = { cv, cx: cv.getContext("2d") }; POOL.set(key, pc); }
+    if (!pc) { if (POOL.size > 24) { for (const q of POOL.values()) q.cv.width = q.cv.height = 0; POOL.clear(); } const cv = document.createElement("canvas"); cv.width = x1 - x0; cv.height = y1 - y0; pc = { cv, cx: cv.getContext("2d") }; POOL.set(key, pc); }
     const c = pc.cx;
     c.setTransform(1, 0, 0, 1, 0, 0); c.globalCompositeOperation = "source-over"; c.globalAlpha = 1;
     c.clearRect(0, 0, x1 - x0, y1 - y0);
@@ -2321,7 +2324,7 @@ function getTex(i) {
   if (texCache.size > 4) { let far = null, fd = -1; for (const k of texCache.keys()) { const d = Math.abs(k - idx); if (d > fd) { fd = d; far = k; } } if (far !== null && far !== i) { gl.deleteTexture(texCache.get(far)); texCache.delete(far); } }
   return t;
 }
-function clearTex() { flatCache = null; grainPat = null; baseCache.clear(); if (!gl) return; for (const t of texCache.values()) gl.deleteTexture(t); texCache.clear(); }
+function clearTex() { if (flatCache && flatCache.cv) flatCache.cv.width = flatCache.cv.height = 0; flatCache = null; grainPat = null; for (const o of baseCache.values()) [o.text, o.under].forEach(z => { if (z) z.width = z.height = 0; }); baseCache.clear(); if (!gl) return; for (const t of texCache.values()) gl.deleteTexture(t); texCache.clear(); }
 
 /* ---------------- state ---------------- */
 let idx = 0, curl = null, anim = null, R0 = 50;
@@ -2569,7 +2572,7 @@ function peek() {
 let lastAnim = 0;
 function animLoop(now) {
   requestAnimationFrame(animLoop);
-  if (reduce || !gl || !N || document.hidden || !opened) return;
+  if (reduce || !gl || !N || document.hidden || !opened || window.LedgerOpen) return;
   if (now - lastAnim < 33) return;
   lastAnim = now;
   const t = now / 1000, vis = curl ? [curl.k, curl.under] : [idx];
@@ -2720,7 +2723,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if
     '<ul class="tl-l">'+CFG.points.map(function(p,i){ return '<li class="tl-c" style="animation-delay:'+(reduce?0:260+i*80)+'ms"><canvas aria-hidden="true" data-i="'+i+'"></canvas><p><b>'+p.h+'.</b> <span>'+p.t+'</span></p></li>'; }).join("")+
     '</ul><p class="tl-fol">'+CFG.fol+'</p></div></div>';
   var page=ov.querySelector(".tl-page"), inner=ov.querySelector(".tl-in"), illo=ov.querySelector(".tl-illo"), paper=ov.querySelector(".tl-paper"), icons=[].slice.call(ov.querySelectorAll(".tl-c canvas"));
-  var dpr=Math.min(window.devicePixelRatio||1,3), raf=0, t0=0, ir=10, iw=0, ih=0, last=null, PW=0, PH=0;
+  var dpr=Math.min(window.devicePixelRatio||1,2), raf=0, t0=0, ir=10, iw=0, ih=0, last=null, PW=0, PH=0;
   function rect(){
     var sh=document.querySelector(".sheet"), r=sh&&sh.getBoundingClientRect();
     if(r&&r.width>100&&r.height>100&&getComputedStyle(sh).display!=="none"&&getComputedStyle(sh).visibility!=="hidden") return {x:r.left,y:r.top,w:r.width,h:r.height,shadow:getComputedStyle(sh).boxShadow};
@@ -2851,5 +2854,57 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if
     if(tl!==readingTL || (!tl&&window.__RA&&window.__RA.idx!==readingPage)) readNow(); },400);
   addEventListener("pagehide",function(){ ss.cancel(); });
   document.addEventListener("visibilitychange",function(){ if(document.hidden&&speaking) stop(); });
+})();
+</script>
+<style id="si-stability">
+/* si-stability-v1: mobile fit, magazine culling, way back */
+.app { height: 100%; height: 100dvh; }
+.lg-slot.lg-far > .lg-page { visibility: hidden; content-visibility: hidden; box-shadow: none; }
+#intro { padding: calc(46px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+#intro .intro-in { transform: translateY(var(--iy, 12vh)) scale(var(--is, 1)); }
+#intro.out .intro-in { transform: translateY(var(--iy, 12vh)) scale(calc(var(--is, 1) * 1.04)); }
+#intro .book-label, #intro .lg-launch { min-height: 44px; }
+#intro .intro-k { text-wrap: balance; }
+.intro-nav { position: absolute; z-index: 2; top: calc(2px + env(safe-area-inset-top, 0px)); left: max(8px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; pointer-events: auto; cursor: auto; font: 500 10.5px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+.intro-nav a { color: var(--room-ink-2); text-decoration: none; padding: 16px 8px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; transition: color .2s; }
+.intro-nav a:hover, .intro-nav a:focus-visible { color: var(--room-ink); }
+.intro-nav span { color: var(--room-ink-3, rgba(236,235,230,.36)); }
+#intro.out .intro-nav { pointer-events: none; }
+.ch-body { grid-template-rows: auto 1fr auto; }
+.ch-out { display: flex; justify-content: center; align-items: center; gap: 4px; padding: 2px 16px calc(6px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--room-edge); font: 500 12.5px/1 var(--sans); }
+.ch-out a { color: var(--room-ink-2); text-decoration: none; padding: 0 10px; min-height: 44px; display: inline-flex; align-items: center; }
+.ch-out a:hover, .ch-out a:focus-visible { color: var(--room-ink); }
+.ch-out span { color: var(--room-ink-3, rgba(236,235,230,.36)); }
+.lg-top a.lg-btn { text-decoration: none; display: inline-flex; align-items: center; }
+.lg-top .lg-mast b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 400px) { .lg-top .lg-btn { padding-inline: 7px; min-width: 40px; } #ledger .lg-mast b { font-size: 14px; letter-spacing: .1em; } #annex .lg-mast b { font-size: 16px; letter-spacing: .03em; } }
+@media (orientation: landscape) and (max-height: 520px) {
+  #intro .intro-in { grid-template-columns: minmax(0, 1fr) auto; column-gap: 36px; max-width: 820px; align-items: center; }
+  #intro .intro-in > * { grid-column: 1; }
+  #intro .intro-in > .book { grid-column: 2; grid-row: 1 / span 3; }
+  #intro .intro-in > .lg-launches { grid-column: 2; grid-row: 4 / span 2; flex-direction: column; align-items: stretch; }
+  #intro .intro-t { font-size: min(84px, 15vh); }
+}
+</style>
+<script id="si-stability-js">
+/* fit the cover screen to whatever is visible (Safari's bars, the home indicator, landscape) without scrolling */
+(function () {
+  var intro = document.getElementById("intro"), inn = intro && intro.querySelector(".intro-in"); if (!inn) return;
+  var nav = intro.querySelector(".intro-nav");
+  if (nav) ["pointerdown", "touchstart", "click"].forEach(function (t) { nav.addEventListener(t, function (e) { e.stopPropagation(); }, { passive: true }); });
+  var raf = 0;
+  function fit() {
+    raf = 0; var cs = getComputedStyle(intro);
+    var av = intro.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom), aw = intro.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    var h = inn.offsetHeight, w = inn.offsetWidth; if (!h || !w || av < 50) return;
+    var sc = Math.max(0.62, Math.min(1, av / h, aw / w)), free = av - h * sc;
+    intro.style.setProperty("--is", sc.toFixed(3));
+    intro.style.setProperty("--iy", Math.max(0, Math.min(innerHeight * 0.12, free / 2 - 2)).toFixed(1) + "px");
+  }
+  function q() { if (!raf) raf = requestAnimationFrame(fit); }
+  fit(); addEventListener("resize", q); addEventListener("orientationchange", q); addEventListener("load", q);
+  if (window.visualViewport) visualViewport.addEventListener("resize", q);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(q);
+  setTimeout(q, 600);
 })();
 </script>

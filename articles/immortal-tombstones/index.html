@@ -118,12 +118,12 @@ body.reading .reader { position: fixed; inset: 0; width: auto; height: auto; cli
     <button id="prev" aria-label="Previous page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <button class="count" id="count" aria-label="Back to contents">1 of 1</button>
     <button id="next" aria-label="Next page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-    <button id="readbtn" class="textbtn" aria-label="Read as plain text" title="Read as plain text">Text</button>
+    <span class="it-right"><button id="readbtn" class="textbtn" aria-label="Read as plain text" title="Read as plain text">Text</button><a class="it-home" href="/articles/" aria-label="All articles on Explore Superintelligence" title="All articles"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5v15M8.5 4.5v15M13 6l4.6 13.3M3 19.5h18"/></svg></a></span>
   </div>
 </div>
 <article id="reader" class="reader" aria-label="Immortal Tombstones, text version" lang="en">
 <div class="inner">
-<div class="closebar"><button type="button">Back to the book</button></div>
+<div class="closebar"><nav class="cb-out" aria-label="Leave the book"><a href="/articles/">All articles</a><span aria-hidden="true">·</span><a href="/">Explore home</a></nav><button type="button">Back to the book</button></div>
 <h1>Immortal Tombstones</h1>
 <p class="meta">By Superintelligent Silicon · Oct 5, 2026</p>
 <p class="dek">On the stones we’ll leave behind, and the voices that may never stop talking.</p>
@@ -2114,13 +2114,13 @@ function getTex(i) {
   if (t) return t;
   const cv = renderPage(i);
   t = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, t);
-  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cv);
+  gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, cv); cv.width = cv.height = 0;
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
   texCache.set(i, t);
-  if (texCache.size > 6) {
+  if (texCache.size > 4) {
     let far = null, fd = -1;
     for (const k of texCache.keys()) { const d = Math.abs(k - idx); if (d > fd) { fd = d; far = k; } }
     if (far !== null && far !== i) { gl.deleteTexture(texCache.get(far)); texCache.delete(far); }
@@ -2197,7 +2197,7 @@ function layout() {
   H = Math.floor(Math.min(sh - (sw < 500 ? 16 : 40), W * 1.75));
   if (H < W * 1.15) W = Math.floor(Math.max(280, H / 1.15));
   px = Math.round((sw - W) / 2); py = Math.round((sh - H) / 2);
-  dpr = Math.min(window.devicePixelRatio || 1, 3);
+  dpr = Math.min(window.devicePixelRatio || 1, 2); /* si-stability-v1 */
   cvs.width = Math.round(sw * dpr); cvs.height = Math.round(sh * dpr);
   Object.assign(sheet.style, { left: px + "px", top: py + "px", width: W + "px", height: H + "px" });
   document.querySelector(".bar").style.setProperty("--pw", W + "px");
@@ -2380,6 +2380,8 @@ requestAnimationFrame(animLoop);
 /* ---------------- boot ---------------- */
 const ctx2d = gl ? null : cvs.getContext("2d");
 if (gl) { try { initGL(); } catch (err) { console.error(err); } }
+cvs.addEventListener("webglcontextlost", e => { e.preventDefault(); texCache.clear(); }, false);
+cvs.addEventListener("webglcontextrestored", () => { try { initGL(); } catch (err) { console.error(err); } texCache.clear(); draw(); prefetch(); }, false);
 let rt;
 addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { if (!anim) layout(); }, 150); });
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { readColors(); clearTex(); draw(); });
@@ -2431,7 +2433,7 @@ Promise.race([fontsReady, new Promise(r => setTimeout(r, 3000))]).then(() => {
     '<ul class="tl-l">'+CFG.points.map(function(p,i){ return '<li class="tl-c" style="animation-delay:'+(reduce?0:260+i*80)+'ms"><canvas aria-hidden="true" data-i="'+i+'"></canvas><p><b>'+p.h+'.</b> <span>'+p.t+'</span></p></li>'; }).join("")+
     '</ul><p class="tl-fol">'+CFG.fol+'</p></div></div>';
   var page=ov.querySelector(".tl-page"), inner=ov.querySelector(".tl-in"), illo=ov.querySelector(".tl-illo"), paper=ov.querySelector(".tl-paper"), icons=[].slice.call(ov.querySelectorAll(".tl-c canvas"));
-  var dpr=Math.min(window.devicePixelRatio||1,3), raf=0, t0=0, ir=10, iw=0, ih=0, last=null, PW=0, PH=0;
+  var dpr=Math.min(window.devicePixelRatio||1,2), raf=0, t0=0, ir=10, iw=0, ih=0, last=null, PW=0, PH=0;
   function rect(){
     var sh=document.querySelector(".sheet"), r=sh&&sh.getBoundingClientRect();
     if(r&&r.width>100&&r.height>100&&getComputedStyle(sh).display!=="none"&&getComputedStyle(sh).visibility!=="hidden") return {x:r.left,y:r.top,w:r.width,h:r.height,shadow:getComputedStyle(sh).boxShadow};
@@ -2564,6 +2566,20 @@ Promise.race([fontsReady, new Promise(r => setTimeout(r, 3000))]).then(() => {
   document.addEventListener("visibilitychange",function(){ if(document.hidden&&speaking) stop(); });
 })();
 </script>
+<style id="si-stability">
+.bar .it-right { position: absolute; right: max(16px, calc((100% - var(--pw, 100%)) / 2)); top: 50%; transform: translateY(-50%); display: flex; align-items: center; gap: 2px; }
+.bar .it-right .textbtn { position: static; transform: none; }
+.bar .it-home { position: relative; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; color: var(--ink-2); transition: background .2s, color .2s; }
+.bar .it-home::after { content: ""; position: absolute; inset: -7px -10px -7px 0; }
+.bar .it-home:hover { background: color-mix(in srgb, var(--ink) 7%, transparent); color: var(--ink); }
+.bar .it-home:focus-visible { outline: 2px solid var(--ink-2); outline-offset: 2px; }
+.bar .textbtn { position: static; }
+.reader .closebar { align-items: center; gap: 12px; }
+.reader .cb-out { margin-right: auto; display: flex; align-items: center; gap: 2px; font: 500 13px/1 var(--sans); }
+.reader .cb-out a { color: var(--ink-2); text-decoration: none; padding: 0 8px; min-height: 40px; display: inline-flex; align-items: center; }
+.reader .cb-out a:first-child { padding-left: 0; }
+.reader .cb-out span { color: var(--ink-2); opacity: .6; }
+</style>
 </body>
 </html>
 
