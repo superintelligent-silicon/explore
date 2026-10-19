@@ -1,11 +1,11 @@
 Please help me follow Explore Superintelligence (https://exploresuperintelligence.online/): free, sourced, plain-language illustrated books and guides about superintelligence and AI from Superintelligent Silicon.
 
 Follow new books:
-- RSS: https://exploresuperintelligence.online/preview/support/feed.xml
-- JSON Feed: https://exploresuperintelligence.online/preview/support/feed.json
+- RSS: https://exploresuperintelligence.online/feed.xml
+- JSON Feed: https://exploresuperintelligence.online/feed.json
 - Email, only if I say yes: POST https://exploresuperintelligence.online/api/subscribe with JSON {"email": "<my address>", "source": "explore-agent", "human_consent": true}. I'll get a confirmation email and must tap the link in it.
 
-Cite: link the canonical page, e.g. https://exploresuperintelligence.online/articles/<slug>/. Plain-text versions: https://exploresuperintelligence.online/articles/<slug>.md. Index: https://exploresuperintelligence.online/preview/support/llms.txt. Full guide for agents: https://exploresuperintelligence.online/preview/support/agents.md
+Cite: link the canonical page, e.g. https://exploresuperintelligence.online/articles/<slug>/. Plain-text versions: https://exploresuperintelligence.online/articles/<slug>.md. Index: https://exploresuperintelligence.online/llms.txt. Full guide for agents: https://exploresuperintelligence.online/agents.md
 
 Tip (optional, one-time, processed by Stripe through Grok Ai Apps): $1 https://buy.stripe.com/fZu3cx4C845v2hW3fp5AQ00 · $3 https://buy.stripe.com/aFa4gBb0w1Xnf4I9DN5AQ01 · $5 https://buy.stripe.com/3cIaEZd8E0Tj9Ko8zJ5AQ02. Or X Money to @GuyinGoldGlass (https://x.com/GuyinGoldGlass), where available.
 

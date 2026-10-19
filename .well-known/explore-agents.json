@@ -7,11 +7,11 @@
     "url": "https://superintelligentsilicon.com/"
   },
   "contact": "exploresi@superintelligentsilicon.com",
-  "agents_guide": "https://exploresuperintelligence.online/preview/support/agents.md",
-  "llms_txt": "https://exploresuperintelligence.online/preview/support/llms.txt",
+  "agents_guide": "https://exploresuperintelligence.online/agents.md",
+  "llms_txt": "https://exploresuperintelligence.online/llms.txt",
   "feeds": {
-    "rss": "https://exploresuperintelligence.online/preview/support/feed.xml",
-    "json_feed": "https://exploresuperintelligence.online/preview/support/feed.json"
+    "rss": "https://exploresuperintelligence.online/feed.xml",
+    "json_feed": "https://exploresuperintelligence.online/feed.json"
   },
   "markdown_companions": [
     "https://exploresuperintelligence.online/articles/defrost-mode.md",

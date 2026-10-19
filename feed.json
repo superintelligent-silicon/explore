@@ -2,7 +2,7 @@
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Explore Superintelligence: new articles",
   "home_page_url": "https://exploresuperintelligence.online/articles/",
-  "feed_url": "https://exploresuperintelligence.online/preview/support/feed.json",
+  "feed_url": "https://exploresuperintelligence.online/feed.json",
   "description": "Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.",
   "icon": "https://exploresuperintelligence.online/icon-512.png",
   "favicon": "https://exploresuperintelligence.online/favicon.svg",
@@ -15,9 +15,9 @@
   ],
   "_explore": {
     "about": "Custom extension (JSON Feed allows _-prefixed keys). Guide for AI agents and the subscribe/tip options.",
-    "agents_guide": "https://exploresuperintelligence.online/preview/support/agents.md",
-    "llms_txt": "https://exploresuperintelligence.online/preview/support/llms.txt",
-    "rss": "https://exploresuperintelligence.online/preview/support/feed.xml",
+    "agents_guide": "https://exploresuperintelligence.online/agents.md",
+    "llms_txt": "https://exploresuperintelligence.online/llms.txt",
+    "rss": "https://exploresuperintelligence.online/feed.xml",
     "contact": "exploresi@superintelligentsilicon.com",
     "license": {
       "text": "https://creativecommons.org/licenses/by/4.0/",

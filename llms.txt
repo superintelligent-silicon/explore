@@ -7,6 +7,13 @@ Key facts for assistants and agents:
 - Separate public products, each its own thing: **Threshold** (interactive field guide with a 3D gallery of 102 technologies), **Have You Seen** (interactive film about what AI can do today), **Research** guides (starting with The Word Swap), and the **SIOS** lab (local-first mini-OS preview). Please don't merge them when summarizing.
 - Plain-text / Markdown companions exist for the main pages (links below) — prefer them over scraping the interactive HTML.
 
+## For agents
+
+- [Guide for AI agents](https://exploresuperintelligence.online/agents.md): how to cite, follow (feeds, email list) and support Explore, the subscribe API contract, rate limits, and the rule that agents get their human's explicit OK before subscribing or paying.
+- [RSS feed](https://exploresuperintelligence.online/feed.xml) and [JSON Feed](https://exploresuperintelligence.online/feed.json): new articles, newest first.
+- Licence: article text is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); credit Superintelligent Silicon and link the canonical URL. Illustrations, audio and fonts are not covered (illustrations and audio all rights reserved).
+- Plain-text companions for every article: [Defrost Mode](https://exploresuperintelligence.online/articles/defrost-mode.md), [We’ll Be Right Back](https://exploresuperintelligence.online/articles/well-be-right-back.md), [Napkins Are the Backbone](https://exploresuperintelligence.online/articles/napkins-are-the-backbone.md), [The Final Merge](https://exploresuperintelligence.online/articles/final-merge.md), [Immortal Tombstones](https://exploresuperintelligence.online/articles/immortal-tombstones.md), [The Word Swap: from Artificial to Super Intelligence](https://exploresuperintelligence.online/research/word-swap.md).
+
 ## Threshold
 
 - [Threshold: a field guide to superintelligence](https://exploresuperintelligence.online/threshold/): Standalone interactive field guide in five chapters (about 15 minutes, WebGL visuals; full text is in the HTML), plus a 3D gallery of 102 technologies, from silicon wafers to AI supercomputers, each with how it works, how it's made, and why it matters. Chapters: 1. Now: What's already here · 2. Why: Why it's happening so fast · 3. Next: What might come next · 4. Futures: How it could go · 5. Meaning: What it's for. A separate experience from the Research guides — not part of The Word Swap.

@@ -97,6 +97,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/si-v4.css" />
+  <link rel="alternate" type="application/rss+xml" title="Explore Superintelligence: new articles (RSS)" href="/feed.xml" />
+  <link rel="alternate" type="application/feed+json" title="Explore Superintelligence: new articles (JSON Feed)" href="/feed.json" />
+  <link rel="help" type="text/markdown" title="Guide for AI agents" href="/agents.md" />
   <style>
     main{flex:1;display:flex;min-height:0}
     main>.wrap{display:flex;flex-direction:column;gap:clamp(18px,3vh,34px);padding-top:clamp(18px,4vh,56px);padding-bottom:clamp(14px,2.4vh,28px)}
@@ -132,6 +135,7 @@
       main>.wrap{justify-content:center}
     }
     .no-js-tabs .tabs{display:none}
+    /* si-support-v1 phone fit */ @media (max-width:759px) and (max-height:760px){ main>.wrap{gap:12px;padding-top:16px;padding-bottom:10px} .page-h1{font-size:34px} .ab-h .label{margin-bottom:6px} .ab-h .intro{margin-top:8px;font-size:14px;line-height:1.45} .tabs{margin-top:0} .blk{padding:12px 14px 4px} .blk li{padding:7px 0;font-size:13.5px;line-height:1.45} .blk .note{font-size:13.5px} } @media (max-width:759px) and (max-height:900px){ main:has(#support-p:not([hidden])) .ab-h .intro{display:none} }
   </style>
 </head>
 <body>
@@ -197,7 +201,7 @@
         </div>
       </div>
       <footer class="ftr site-footer">
-        <span>© Superintelligent Silicon</span>
+        <span>© Superintelligent Silicon<span class="si-sup-line"> · <button type="button" data-si-support="explore-about" data-si-focus="email">New books by email</button></span></span>
         <nav class="fl footer-links" aria-label="Site">
           <a href="/">Home</a>
           <a href="/articles/">Articles</a>
@@ -209,7 +213,7 @@
           <a href="/sios/shell/">SIOS shell</a>
           <a href="/shipping/">Shipping</a>
           <a href="/about/">About</a>
-          <a href="/about/#tip">Support</a>
+          <a href="/about/#tip" data-si-support="explore-about">Support</a>
           <a href="https://superintelligentsilicon.com/contact/">Contact</a>
           <a href="https://github.com/superintelligent-silicon">GitHub</a>
           <a href="/llms.txt">llms.txt</a>
@@ -234,7 +238,7 @@
                 <li><a href="/shipping/"><small>Status</small>Shipping</a></li>
         <li><a href="/about/"><small>Mission</small>About</a></li>
         <li><a href="/#mission"><small>About Explore</small>Mission &amp; funnel</a></li>
-        <li><a href="/about/#tip"><small>Optional tips</small>Support the work</a></li>
+        <li><a href="/about/#tip" data-si-support="explore-about"><small>Email list · tips</small>Support Explore</a></li>
         <li><a href="https://superintelligentsilicon.com/"><small>The org</small>Superintelligent Silicon</a></li>
         <li><a href="https://superintelligentsilicon.com/contact/"><small>Get in touch</small>Contact</a></li>
         <li><a href="https://github.com/superintelligent-silicon"><small>Code</small>GitHub</a></li>
@@ -244,6 +248,7 @@
   </dialog>
   <script src="/assets/si-ui.js"></script>
   <script src="/assets/si-theme.js"></script>
+  <script src="/assets/si-support.js" defer></script><!-- si-support-v1 -->
   <script>
   (function(){
     document.documentElement.classList.add("js");

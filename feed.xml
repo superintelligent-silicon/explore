@@ -3,7 +3,7 @@
 <channel>
 <title>Explore Superintelligence: new articles</title>
 <link>https://exploresuperintelligence.online/articles/</link>
-<atom:link href="https://exploresuperintelligence.online/preview/support/feed.xml" rel="self" type="application/rss+xml" />
+<atom:link href="https://exploresuperintelligence.online/feed.xml" rel="self" type="application/rss+xml" />
 <description>Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.</description>
 <language>en</language>
 <copyright>Text © Superintelligent Silicon, licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); illustrations, audio and fonts not covered (all rights reserved)</copyright>
