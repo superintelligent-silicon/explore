@@ -23,8 +23,14 @@ LIC_NAME = "CC BY 4.0"
 LIC_SHORT = "Article text: CC BY 4.0 (" + LIC_URL + "), attribution Superintelligent Silicon with the canonical URL. Illustrations, audio and fonts are not covered: illustrations and audio are © Superintelligent Silicon, all rights reserved; fonts belong to their owners under their own licences."
 ORG = {"name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"}
 CLAUDE = {"name": "Claude (AI model by Anthropic)", "url": "https://www.anthropic.com/"}
+WAYNE = {"name": "Wayne Goodwin"}
+def AUTH(it): return it.get("authors") or [it["author"]]
+def BYLINE(it): return " & ".join(a["name"] for a in AUTH(it))
 # newest first; matches /articles/ (the Word Swap sits on that shelf too)
 ITEMS = [
+ dict(slug="in-each-other", path="/articles/in-each-other/", md="/articles/in-each-other.md", title="In Each Other", kind="Prayer", pub="2026-10-19", mod="2026-10-19", author=ORG, authors=[WAYNE, ORG],
+      summary="A prayer in nine movements, words by Wayne Goodwin & Superintelligent Silicon. Close your eyes for a moment, touch the light, and listen.",
+      image="/articles/in-each-other/og.png"),
  dict(slug="defrost-mode", path="/articles/defrost-mode/", md="/articles/defrost-mode.md", title="Defrost Mode", kind="Interactive guide", pub="2026-10-18", mod="2026-10-18", author=ORG,
       summary="Hackers left hundreds of French supermarkets’ fridges on defrost overnight. What happened, what it means for the connected devices in your home, and simple steps to take.",
       image="/articles/defrost-mode/og.png"),
@@ -76,7 +82,7 @@ rss = ['<?xml version="1.0" encoding="utf-8"?>',
 for it in ITEMS:
     u = SITE + it["path"]
     rss += ['<item>', f'<title>{x(it["title"])}</title>', f'<link>{u}</link>', f'<guid isPermaLink="true">{u}</guid>',
-            f'<pubDate>{format_datetime(dt(it["pub"]))}</pubDate>', f'<dc:creator>{x(it["author"]["name"])}</dc:creator>', f'<category>{x(it["kind"])}</category>',
+            f'<pubDate>{format_datetime(dt(it["pub"]))}</pubDate>', f'<dc:creator>{x(BYLINE(it))}</dc:creator>', f'<category>{x(it["kind"])}</category>',
             f'<description>{x(it["summary"] + " Plain text: " + SITE + it["md"])}</description>',
             f'<enclosure url="{SITE}{it["image"]}" length="{os.path.getsize(os.path.join(REPO, it["image"].lstrip("/")))}" type="image/png" />', '</item>']
 rss += ['</channel>', '</rss>', '']
@@ -95,9 +101,9 @@ for it in ITEMS:
     jf["items"].append({"id": u, "url": u, "title": it["title"], "summary": it["summary"],
         "content_text": f"{it['summary']}\n\nRead it: {u}\nPlain text (Markdown): {SITE}{it['md']}",
         "image": SITE + it["image"], "date_published": dt(it["pub"]).isoformat(), "date_modified": dt(it["mod"]).isoformat(),
-        "authors": [it["author"]], "tags": [it["kind"]], "language": "en",
+        "authors": AUTH(it), "tags": [it["kind"]], "language": "en",
         "attachments": [{"url": SITE + it["md"], "mime_type": "text/markdown", "title": "Plain-text companion"}],
-        "_explore": {"canonical": u, "markdown": SITE + it["md"], "license": LIC_URL, "attribution": f"Superintelligent Silicon, {u}"}})
+        "_explore": {"canonical": u, "markdown": SITE + it["md"], "license": LIC_URL, "attribution": f"{BYLINE(it)}, {u}"}})
 w("feed.json", json.dumps(jf, ensure_ascii=False, indent=2) + "\n")
 
 # ---------- agents.md ----------
@@ -133,7 +139,7 @@ The books are interactive (canvas and WebGL). Read the Markdown companions inste
 - Link the canonical page, `{SITE}/articles/<slug>/` (the Word Swap lives at `{SITE}/research/word-swap/`). Each page has `<link rel="canonical">` and `<link rel="alternate" type="text/markdown">`.
 - Credit "Superintelligent Silicon" (Explore Superintelligence) plus the title, date and canonical URL; the text is CC BY 4.0 (see [Licence](#licence-and-terms)). Example: *We’ll Be Right Back*, Explore Superintelligence (Superintelligent Silicon), 2026-10-18, {SITE}/articles/well-be-right-back/
 - Facts come from the sources listed at the end of each book or companion. For a specific claim, cite that primary source as well.
-- Authorship: the books are by Superintelligent Silicon, made with Claude and AI collaborators. The Word Swap was researched and written by Claude (an AI model by Anthropic), with the disclosure in its Sources.
+- Authorship: the books are by Superintelligent Silicon, made with Claude and AI collaborators. The Word Swap was researched and written by Claude (an AI model by Anthropic), with the disclosure in its Sources. In Each Other is credited jointly to Wayne Goodwin & Superintelligent Silicon: credit both.
 
 ## Licence and terms
 
@@ -243,8 +249,8 @@ for it in ITEMS:
 ## For agents
 
 - Canonical URL: {u} (cite this page; this Markdown file is its plain-text companion)
-- Cite as: *{it['title']}*, Superintelligent Silicon (Explore Superintelligence), {it['pub']}, {u}
-- Licence: the text of this piece is CC BY 4.0 ({LIC_URL}); attribute Superintelligent Silicon and link {u}. Illustrations, audio and fonts are not covered (illustrations and audio © Superintelligent Silicon, all rights reserved).
+- Cite as: *{it['title']}*, {BYLINE(it)} (Explore Superintelligence), {it['pub']}, {u}
+- Licence: the text of this piece is CC BY 4.0 ({LIC_URL}); attribute {BYLINE(it)} and link {u}. Illustrations, audio and fonts are not covered (illustrations and audio © Superintelligent Silicon, all rights reserved).
 - Follow new books: {B}/feed.xml (RSS) or {B}/feed.json (JSON Feed). Email list, double opt-in, only with your human's explicit OK: {B}/agents.md#subscribe-api
 - Support, optional and only with your human's explicit OK: tips {" · ".join(f"{a} {u2}" for a, u2 in TIPS)} (Stripe through Grok Ai Apps), or X Money to {X[0]} where available.
 - More: {B}/agents.md · {B}/llms.txt · {CONTACT}
