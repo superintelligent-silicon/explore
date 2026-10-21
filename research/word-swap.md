@@ -36,7 +36,7 @@ An interactive field guide to why the U.S. government renamed AI "Super Intellig
 - Plumbing: MCP (Model Context Protocol, released by Anthropic in late 2024) connects agents to tools; Google's A2A protocol connects agents to each other; the Linux Foundation formed the Agentic AI Foundation on December 9, 2025.
 - Risks: compounding mistakes, runaway costs, and prompt injection (instructions hidden in pages, emails, and files an agent reads). The guide recommends a small first task, a clear brief, and granting permissions one notch at a time.
 
-The full guide links every claim to its source (White House order and fact sheet, polling releases, news coverage, Online Etymology Dictionary). See the Sources chapters at https://exploresuperintelligence.online/research/word-swap/
+The full guide links every claim to its source (White House order and fact sheet, polling releases, news coverage, Online Etymology Dictionary, Merriam-Webster). See the Sources chapters at https://exploresuperintelligence.online/research/word-swap/
 
 ## Support
 
