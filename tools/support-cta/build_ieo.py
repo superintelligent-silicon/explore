@@ -60,7 +60,7 @@ rep('<div class="by">Words by Wayne Goodwin</div>', f'<div class="by">{BY}</div>
 rep('<span class="by">Wayne Goodwin</span>', f'<span class="by">{BY}<span class="cv">Conceived by Wayne Goodwin.</span></span>')
 rep("artist:'Words by Wayne Goodwin'", "artist:'Superintelligent Silicon'")
 # quiet way back: All articles · Explore home (splash and the whole-prayer sheet); Support tucked into the sheet
-HOMES = '<nav class="homes" aria-label="Leave the prayer"><a class="home" href="/articles/">← All articles</a><span aria-hidden="true">·</span><a class="home" href="/">Explore home</a>'
+HOMES = '<nav class="homes" aria-label="Leave the prayer"><a class="home" href="/articles/">← All articles</a><span aria-hidden="true">·</span><a class="home" href="/">Explore SI</a>'
 rep('    <a class="home" href="/">← Explore Superintelligence</a>`;', f'    {HOMES}</nav>`;')
 rep('    <a class="home sheet-home" href="/">← Explore Superintelligence</a>',
     f'    {HOMES.replace("class=\"homes\"", "class=\"homes sheet-home\"")}<span aria-hidden="true">·</span><button type="button" class="home" data-si-support="{BSRC}">Support</button></nav>')

@@ -62,7 +62,7 @@ The books are interactive (canvas and WebGL). Read the Markdown companions inste
 
 - `email`: the person's own address, which they gave you for this purpose.
 - `source`: must be `"explore-agent"` for agent requests.
-- `human_consent`: must be `true`. Send the request only after the person has explicitly agreed to join the Explore email list.
+- `human_consent`: must be `true`. Send the request only after the person has explicitly agreed to join the Explore Superintelligence email list.
 - Send it server-side, with no `Origin` header. Requests from other websites' browsers are refused.
 - Double opt-in: nothing is sent except one confirmation email. The person joins only when they tap the link in it, then gets one welcome email. Every email has a one-click unsubscribe (RFC 8058 `List-Unsubscribe-Post`).
 - Responses:

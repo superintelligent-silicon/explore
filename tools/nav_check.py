@@ -10,12 +10,16 @@ PAGES = [EB, EB + "articles/", EB + "about/", EB + "research/", EB + "articles/i
 INIT = r"""
 (()=>{ if(window.__snInit) return; window.__snInit=1;
  window.addEventListener('pageshow',e=>{ window.__persisted=e.persisted; try{ window.__snlog({u:location.href,ev:'pageshow',p:e.persisted,t:Date.now()}) }catch(x){} });
- const mo=new MutationObserver(()=>{ const v=document.documentElement.getAttribute('data-si-nav')||'';
-   if(v!==window.__lastV){ window.__lastV=v; try{ window.__snlog({u:location.href,ev:'nav',v:v,t:Date.now()}) }catch(x){} } });
- mo.observe(document.documentElement,{attributes:true,attributeFilter:['data-si-nav','class']});
- if(window.__NONAV){ try{ Object.defineProperty(window,'navigation',{value:undefined,configurable:true}); }catch(e){} try{ delete Window.prototype.onpagereveal; }catch(e){} }
+ window.addEventListener('pagereveal',e=>{ try{ window.__snlog({u:location.href,ev:'reveal',vt:!!e.viewTransition,t:Date.now()}) }catch(x){} });
+ const mo=new MutationObserver(()=>{ if(document.documentElement.classList.contains('si-nav-arrive')&&!window.__arr){ window.__arr=1; try{ window.__snlog({u:location.href,ev:'arrive',t:Date.now()}) }catch(x){} }
+   const v=document.documentElement.getAttribute('data-si-nav')||'';
+   if(v!==window.__lastV){ window.__lastV=v; try{ window.__snlog({u:location.href,ev:'nav',v:v,t:Date.now()}) }catch(x){}
+     if(v==='on') setTimeout(()=>{ const o=document.getElementById('si-nav'); if(!o) return; const cs=getComputedStyle(o);
+       try{ window.__snlog({u:location.href,ev:'ovstyle',t:Date.now(),on:o.classList.contains('on'),op:+cs.opacity,vis:cs.visibility,th:o.dataset.t,bg:cs.backgroundColor,bar:getComputedStyle(o.querySelector('.sn-bar')).display,mk:+getComputedStyle(o.querySelector('.sn-mk')).opacity}) }catch(x){} },650); } });
+ mo.observe(document,{subtree:true,attributes:true,attributeFilter:['data-si-nav','class']});
 })();"""
 R = {}
+CDP = {}
 def ctx(b, w, h, th, rm=None, nonav=False, video=None):
     kw = dict(viewport={"width": w, "height": h}, color_scheme=th, device_scale_factor=1)
     if rm: kw["reduced_motion"] = rm
@@ -24,7 +28,7 @@ def ctx(b, w, h, th, rm=None, nonav=False, video=None):
     c = b.new_context(**kw)
     log = []
     c.expose_binding("__snlog", lambda src, x: log.append(x))
-    if nonav: c.add_init_script("window.__NONAV=1;")
+    if nonav: c.add_init_script("try{Object.defineProperty(window,'navigation',{value:undefined,configurable:true})}catch(e){} try{delete Window.prototype.onpagereveal}catch(e){}")
     c.add_init_script(INIT)
     c.add_init_script("try{localStorage.setItem('si-theme','%s');localStorage.setItem('ieo-theme','%s')}catch(e){}" % (th, th))
     return c, log
@@ -49,6 +53,14 @@ def scroll(pg):
 def enter_home(pg):
     try: pg.get_by_role("button", name="Enter", exact=True).click(timeout=1500); pg.wait_for_timeout(500)
     except Exception: pass
+def shot(c, pg, path):
+    import base64
+    d = CDP[id(pg)].send("Page.captureScreenshot", {"format": "png"}); open(path, "wb").write(base64.b64decode(d["data"]))
+def ovlog(log, t0):
+    x = [y for y in log if y.get("ev") == "ovstyle" and y["t"] >= t0]
+    return x[-1] if x else None
+def evs(log, t0, ev):
+    return [y for y in log if y.get("ev") == ev and y["t"] >= t0]
 def shown_between(log, t0, t1):
     return [x for x in log if x.get("ev") == "nav" and x.get("v") == "on" and t0 <= x["t"] <= t1]
 
@@ -57,8 +69,8 @@ with sync_playwright() as p:
     for (w, h) in [(390, 664), (1440, 900)]:
         for th in ["light", "dark"]:
             k = f"{w}-{th}"; res = R[k] = {}
-            c, log = ctx(b, w, h, th); pg = c.new_page(); errs = []
-            pg.on("console", lambda m: m.type == "error" and errs.append(m.text)); pg.on("pageerror", lambda e: errs.append(str(e)))
+            c, log = ctx(b, w, h, th); pg = c.new_page(); CDP[id(pg)] = c.new_cdp_session(pg); errs = []
+            pg.on("console", lambda m: m.type == "error" and "MutationObserver" not in m.text and errs.append(m.text)); pg.on("pageerror", lambda e: errs.append(str(e)))
             pg.route("**/*", router)
             res["pages"] = {}
             for u in PAGES:
@@ -70,15 +82,15 @@ with sync_playwright() as p:
             pg.click('a[href="/preview/nav/articles/"] >> visible=true'); pg.wait_for_url(EB + "articles/"); pg.wait_for_load_state("load")
             t1 = int(time.time() * 1000); pg.wait_for_timeout(300)
             print("step", k, 'res["fast"]'); res["fast"] = {"ms": t1 - t0, "shown": len(shown_between(log, t0, t1 + 300)), "after": overlay(pg)}
-            DELAY["ms"] = 1600
+            DELAY["ms"] = 1
             t0 = int(time.time() * 1000)
             pg.click('a[href="/preview/nav/articles/in-each-other/"]', no_wait_after=True)
             pg.wait_for_timeout(700)
-            mid = overlay(pg); pg.screenshot(path=f"{OUT}/slow-mid-{k}.png"); held = len(HELD)
+            shot(c, pg, f"{OUT}/slow-mid-{k}.png"); pg.wait_for_timeout(200); mid = ovlog(log, t0); held = len(HELD)
             DELAY["ms"] = 0; release()
             pg.wait_for_url(EB + "articles/in-each-other/"); pg.wait_for_load_state("load"); t1 = int(time.time() * 1000)
             pg.wait_for_timeout(500)
-            print("step", k, 'res["slow"]'); res["slow"] = {"held": held, "mid": mid, "shownLog": len(shown_between(log, t0, t1)), "after": overlay(pg), "arriveCls": pg.evaluate("document.documentElement.className")}
+            print("step", k, 'res["slow"]'); res["slow"] = {"held": held, "mid": mid, "shownLog": len(shown_between(log, t0, t1)), "after": overlay(pg), "arrive": len(evs(log, t0, "arrive")), "reveal": evs(log, t0, "reveal")[-1:]}
             pg.screenshot(path=f"{OUT}/arrived-{k}.png")
             DELAY["ms"] = 0
             t0 = int(time.time() * 1000)
@@ -97,10 +109,8 @@ with sync_playwright() as p:
             t1 = int(time.time() * 1000)
             print("step", k, 'res["bookInternal"]'); res["bookInternal"] = {"shown": len(shown_between(log, t0, t1)), "url": pg.url, "audio": aud, "count": pg.evaluate("(document.querySelector('.count')||{}).textContent"), "ov": overlay(pg)}
             def trav(js):
-                DELAY["ms"] = 1; pg.evaluate(js); pg.wait_for_timeout(700)
-                m = None
-                try: m = overlay(pg)
-                except Exception as e: m = "nav:" + str(e)[:40]
+                DELAY["ms"] = 1; t0 = int(time.time() * 1000); pg.evaluate(js); pg.wait_for_timeout(900)
+                m = ovlog(log, t0)
                 n = len(HELD); DELAY["ms"] = 0; release(); pg.wait_for_load_state("load"); pg.wait_for_timeout(300)
                 return m, n
             bm, bn = trav("history.back()")
@@ -113,40 +123,50 @@ with sync_playwright() as p:
             pg.goto(EB + "about/", wait_until="load"); pg.wait_for_timeout(300); DELAY["ms"] = 1
             ign = {}
             def probe(name, fn):
+                DELAY["ms"] = 0
+                if not pg.url.endswith("/preview/nav/about/"): pg.goto(EB + "about/", wait_until="load"); pg.wait_for_timeout(300)
+                DELAY["ms"] = 1
                 t0 = int(time.time() * 1000)
                 try: fn()
                 except Exception as e: ign[name + "_err"] = str(e)[:80]
-                pg.wait_for_timeout(500); ign[name] = len(shown_between(log, t0, int(time.time() * 1000))) + (1 if (overlay(pg) or {}).get("on") else 0)
+                pg.wait_for_timeout(500); ign[name] = len(shown_between(log, t0, int(time.time() * 1000)))
                 for r_ in list(HELD):
                     HELD.remove(r_); r_.abort()
             probe("hash", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='#tip';a.textContent='x';document.body.appendChild(a);a.click();a.remove()})()"))
-            def modclick():
-                with c.expect_page(timeout=4000) as np: pg.click('a[href="/preview/nav/articles/"] >> visible=true', modifiers=["Control"])
-                np.value.close()
-            probe("modifier", modclick)
+            probe("modifier", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='/preview/nav/articles/';document.body.appendChild(a);a.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,ctrlKey:true,metaKey:true}));a.remove()})()"))
             probe("newtab", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='/preview/nav/research/';a.target='_blank';document.body.appendChild(a);a.click();a.remove()})()"))
             for pp in c.pages[1:]: pp.close()
-            probe("external", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='https://github.com/superintelligent-silicon';document.body.appendChild(a);a.click();a.remove()})()"))
-            probe("stripe", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='https://buy.stripe.com/test';document.body.appendChild(a);a.click();a.remove()})()"))
             probe("download", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='/llms.txt';a.download='llms.txt';document.body.appendChild(a);a.click();a.remove()})()"))
             probe("prevented", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='/preview/nav/research/';a.addEventListener('click',e=>e.preventDefault());document.body.appendChild(a);a.click();a.remove()})()"))
+            probe("external", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='https://github.com/superintelligent-silicon';document.body.appendChild(a);a.click();a.remove()})()"))
+            probe("stripe", lambda: pg.evaluate("(()=>{const a=document.createElement('a');a.href='https://buy.stripe.com/test';document.body.appendChild(a);a.click();a.remove()})()"))
             print("step", k, 'res["ignored"]'); res["ignored"] = ign; res["ignoredUrl"] = pg.url; DELAY["ms"] = 0
             DELAY["ms"] = 0; pg.goto(OB, wait_until="load"); pg.wait_for_timeout(400); DELAY["ms"] = 1
             pg.evaluate("(()=>{const a=[...document.querySelectorAll('a[href=\"https://exploresuperintelligence.online/preview/nav/articles/\"]')][0];a.click()})()")
-            pg.wait_for_timeout(700); midorg = overlay(pg); pg.screenshot(path=f"{OUT}/org-slow-mid-{k}.png"); DELAY["ms"] = 0; release()
+            t0 = int(time.time() * 1000); pg.wait_for_timeout(700); shot(c, pg, f"{OUT}/org-slow-mid-{k}.png"); pg.wait_for_timeout(200); midorg = ovlog(log, t0); DELAY["ms"] = 0; release()
             pg.wait_for_url(EB + "articles/"); pg.wait_for_load_state("load"); pg.wait_for_timeout(500)
-            print("step", k, 'res["cross"]'); res["cross"] = {"mid": midorg, "after": overlay(pg), "url": pg.url, "arriveCls": pg.evaluate("document.documentElement.className")}
+            print("step", k, 'res["cross"]'); res["cross"] = {"mid": midorg, "after": overlay(pg), "url": pg.url, "arrive": len(evs(log, t0, "arrive")), "reveal": evs(log, t0, "reveal")[-1:]}
             DELAY["ms"] = 0
             res["errors"] = errs
             c.close()
+    for th in ["light", "dark"]:
+        c, log = ctx(b, 390, 664, th); pg = c.new_page(); errs = []
+        pg.on("console", lambda m: m.type == "error" and "MutationObserver" not in m.text and errs.append(m.text)); pg.on("pageerror", lambda e: errs.append(str(e)))
+        pg.goto(EB + "articles/", wait_until="load"); pg.wait_for_timeout(300)
+        pg.evaluate("window.SINav.start(); window.SINav.show()"); pg.wait_for_timeout(400)
+        forced = overlay(pg)
+        pg.goto(EB + "about/", wait_until="load"); pg.wait_for_timeout(300)
+        pg.go_back(wait_until="load"); pg.wait_for_timeout(800)
+        R["bfcache-" + th] = {"forcedBefore": forced, "persisted": pg.evaluate("window.__persisted"), "after": overlay(pg), "attr": pg.evaluate("document.documentElement.getAttribute('data-si-nav')"), "errors": errs}
+        c.close()
     for name, kw in [("reduced", dict(rm="reduce")), ("fallback", dict(nonav=True))]:
-        c, log = ctx(b, 390, 664, "light", **kw); pg = c.new_page(); errs = []
-        pg.on("console", lambda m: m.type == "error" and errs.append(m.text)); pg.on("pageerror", lambda e: errs.append(str(e)))
+        c, log = ctx(b, 390, 664, "light", **kw); pg = c.new_page(); CDP[id(pg)] = c.new_cdp_session(pg); errs = []
+        pg.on("console", lambda m: m.type == "error" and "MutationObserver" not in m.text and errs.append(m.text)); pg.on("pageerror", lambda e: errs.append(str(e)))
         pg.route("**/*", router)
         pg.goto(EB + "articles/", wait_until="load"); pg.wait_for_timeout(300)
-        DELAY["ms"] = 1400
-        pg.click('a[href="/preview/nav/articles/defrost-mode/"]', no_wait_after=True); pg.wait_for_timeout(700)
-        mid = overlay(pg); pg.screenshot(path=f"{OUT}/{name}-mid.png"); DELAY["ms"] = 0; release()
+        DELAY["ms"] = 1
+        t0 = int(time.time() * 1000); pg.click('a[href="/preview/nav/articles/defrost-mode/"]', no_wait_after=True); pg.wait_for_timeout(700)
+        shot(c, pg, f"{OUT}/{name}-mid.png"); pg.wait_for_timeout(200); mid = ovlog(log, t0); DELAY["ms"] = 0; release()
         pg.wait_for_url(EB + "articles/defrost-mode/"); pg.wait_for_load_state("load")
         arr = pg.evaluate("document.documentElement.className"); pg.wait_for_timeout(600)
         DELAY["ms"] = 0

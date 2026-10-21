@@ -22,14 +22,16 @@
       "background:var(--sn-bg);transition:opacity .2s ease,visibility 0s linear .2s;-webkit-tap-highlight-color:transparent}" +
     "#si-nav.on{opacity:1;visibility:visible;transition:opacity .22s ease}" +
     "#si-nav.cut{transition:none!important}" +
-    "#si-nav[data-t=light]{--sn-bg:#f6f3ec;--sn-ac:#8a6210;--sn-ln:rgba(27,25,22,.08);--sn-ring:rgba(27,25,22,.22)}" +
-    "#si-nav[data-t=dark]{--sn-bg:#141416;--sn-ac:#d8b160;--sn-ln:rgba(236,235,231,.08);--sn-ring:rgba(236,235,231,.22)}" +
+    "#si-nav[data-t=light]{--sn-bg:#f6f3ec;--sn-ac:#8a6210;--sn-ln:rgba(27,25,22,.08);--sn-ring:rgba(27,25,22,.22);--sn-cap:#6b655b}" +
+    "#si-nav[data-t=dark]{--sn-bg:#141416;--sn-ac:#d8b160;--sn-ln:rgba(236,235,231,.08);--sn-ring:rgba(236,235,231,.22);--sn-cap:#97938b}" +
     "#si-nav .sn-bar{position:absolute;left:0;right:0;top:env(safe-area-inset-top,0px);height:2px;background:var(--sn-ln);overflow:hidden}" +
     "#si-nav .sn-bar i{position:absolute;inset:0;background:var(--sn-ac);transform-origin:0 50%;transform:scaleX(0)}" +
     "#si-nav.on .sn-bar i{animation:sn-prog 9s cubic-bezier(.08,.7,.15,1) forwards}" +
     "@keyframes sn-prog{0%{transform:scaleX(0)}6%{transform:scaleX(.28)}30%{transform:scaleX(.62)}100%{transform:scaleX(.94)}}" +
     "#si-nav .sn-mk{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;opacity:0;transition:opacity .3s ease}" +
-    "#si-nav.on .sn-mk{opacity:1;transition-delay:.35s}" +
+    "#si-nav.on .sn-mk,#si-nav.on .sn-cap{opacity:1;transition-delay:.35s}" +
+    "#si-nav .sn-cap{position:absolute;left:0;right:0;top:calc(50% + 24px);text-align:center;opacity:0;transition:opacity .3s ease;" +
+      "font:600 10.5px/1 Inter,system-ui,-apple-system,'Segoe UI',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--sn-cap)}" +
     "#si-nav .sn-mk circle.r1{stroke:var(--sn-ring)}#si-nav .sn-mk circle.r2{stroke:var(--sn-ac)}" +
     "#si-nav .sn-mk circle.dt{fill:var(--sn-ac);transform-origin:13px 13px;animation:sn-breathe 1.8s ease-in-out infinite}" +
     "@keyframes sn-breathe{0%,100%{opacity:.4;transform:scale(.75)}50%{opacity:1;transform:scale(1)}}" +
@@ -46,7 +48,8 @@
     if (el && el.isConnected) return el;
     el = D.createElement("div"); el.id = "si-nav"; el.setAttribute("aria-hidden", "true");
     el.innerHTML = '<div class="sn-bar"><i></i></div><svg class="sn-mk" viewBox="0 0 26 26" fill="none">' +
-      '<circle class="r1" cx="13" cy="13" r="11.5"/><circle class="r2" cx="13" cy="13" r="6"/><circle class="dt" cx="13" cy="13" r="2"/></svg>';
+      '<circle class="r1" cx="13" cy="13" r="11.5"/><circle class="r2" cx="13" cy="13" r="6"/><circle class="dt" cx="13" cy="13" r="2"/></svg><span class="sn-cap"></span>';
+    el.querySelector(".sn-cap").textContent = /superintelligentsilicon\.com$/.test(location.hostname) ? "Superintelligent Silicon" : "Explore SI";
     (D.body || d).appendChild(el); return el;
   }
   function lum(el2) {

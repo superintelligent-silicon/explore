@@ -167,7 +167,7 @@ The books are interactive (canvas and WebGL). Read the Markdown companions inste
 
 - `email`: the person's own address, which they gave you for this purpose.
 - `source`: must be `"explore-agent"` for agent requests.
-- `human_consent`: must be `true`. Send the request only after the person has explicitly agreed to join the Explore email list.
+- `human_consent`: must be `true`. Send the request only after the person has explicitly agreed to join the Explore Superintelligence email list.
 - Send it server-side, with no `Origin` header. Requests from other websites' browsers are refused.
 - Double opt-in: nothing is sent except one confirmation email. The person joins only when they tap the link in it, then gets one welcome email. Every email has a one-click unsubscribe (RFC 8058 `List-Unsubscribe-Post`).
 - Responses:
@@ -229,7 +229,7 @@ L = open(os.path.join(REPO, "llms.txt"), encoding="utf-8").read()
 add = f"""
 ## For agents
 
-- [Guide for AI agents]({B}/agents.md): how to cite, follow (feeds, email list) and support Explore, the subscribe API contract, rate limits, and the rule that agents get their human's explicit OK before subscribing or paying.
+- [Guide for AI agents]({B}/agents.md): how to cite, follow (feeds, email list) and support Explore Superintelligence, the subscribe API contract, rate limits, and the rule that agents get their human's explicit OK before subscribing or paying.
 - [RSS feed]({B}/feed.xml) and [JSON Feed]({B}/feed.json): new articles, newest first.
 - Licence: article text is [CC BY 4.0]({LIC_URL}); credit Superintelligent Silicon and link the canonical URL. Illustrations, audio and fonts are not covered (illustrations and audio all rights reserved).
 - Plain-text companions for every article: {", ".join(f"[{i['title']}]({SITE}{i['md']})" for i in ITEMS)}.
