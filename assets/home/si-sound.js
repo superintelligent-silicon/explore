@@ -12,7 +12,7 @@
   ".si-splash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:var(--bg,#f6f3ec);color:var(--ink,#1b1916);font-family:var(--ui,inherit);transition:opacity .45s ease,visibility .45s;padding:24px}"+
   ".si-splash.out{opacity:0;visibility:hidden}"+
   ".si-splash .in{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:320px;animation:siIn .6s cubic-bezier(.22,.8,.2,1) both}"+
-  ".si-splash .wm{font-family:var(--serif,Georgia,serif);font-size:30px;letter-spacing:-.01em;margin:14px 0 4px}"+
+  ".si-splash .wm{font-family:var(--serif,Georgia,serif);font-size:30px;letter-spacing:-.01em;margin:14px 0 4px;text-wrap:balance}"+
   ".si-splash .sub{font-size:13.5px;color:var(--dim,#6b655b);margin:0 0 26px}"+
   ".si-splash .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}"+
   ".si-splash button{height:42px;padding:0 18px;border-radius:999px;font:inherit;font-size:14.5px;font-weight:500;cursor:pointer;border:1px solid var(--line2,rgba(0,0,0,.2));background:transparent;color:inherit;display:inline-flex;align-items:center;gap:8px}"+
@@ -151,7 +151,7 @@
   }
   var sp=document.createElement("div"); sp.id="si-splash"; sp.className="si-splash"; sp.setAttribute("role","dialog"); sp.setAttribute("aria-modal","true"); sp.setAttribute("aria-label","Welcome to Explore Superintelligence");
   sp.innerHTML='<div class="in"><svg width="40" height="40" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11.5" fill="none" stroke="currentColor" stroke-opacity=".3"/><circle cx="13" cy="13" r="6" fill="none" stroke="var(--accent-ui,#b5862c)"/><circle cx="13" cy="13" r="2" fill="var(--accent-ui,#b5862c)"/></svg>'+
-    '<p class="wm">Explore</p><p class="sub">Superintelligent Silicon · sound is optional</p><div class="row">'+
+    '<p class="wm">Explore Superintelligence</p><p class="sub">Superintelligent Silicon · sound is optional</p><div class="row">'+
     '<button class="si-enter" type="button">Enter</button>'+(AC?'<button class="si-mark" type="button" aria-label="Enter with sound"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h2.5L8 3v10L4.5 10H2z" fill="currentColor"/><path d="M10.5 5.5a3.5 3.5 0 010 5M12.2 3.8a6 6 0 010 8.4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>With sound</button>':'')+'</div></div>';
   document.body.appendChild(sp); document.documentElement.style.overflow="hidden";
   var en=sp.querySelector(".si-enter"), mark=sp.querySelector(".si-mark");

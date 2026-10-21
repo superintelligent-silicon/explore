@@ -85,9 +85,9 @@
       '<div class="sis-scrim" data-x></div>' +
       '<div class="sis-card" role="document">' +
         '<button class="sis-x" type="button" data-x aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>' +
-        '<p class="sis-k">Support Explore</p>' +
+        '<p class="sis-k">Support Explore SI</p>' +
         '<h2 id="sis-h">Keep the books coming</h2>' +
-        '<p class="sis-lede">Explore is free to read, with no ads or paywalls. Here are a few quiet ways to help it grow.</p>' +
+        '<p class="sis-lede">Explore Superintelligence is free to read, with no ads or paywalls. Here are a few quiet ways to help it grow.</p>' +
         '<section class="sis-o" aria-labelledby="sis-e"><h3 id="sis-e">Get the next book by email</h3><p>New books arrive a few times a month. Free, no spam, unsubscribe anytime.</p>' +
           '<form class="sis-f" novalidate><label for="sis-em">Email address</label><input class="sis-in" id="sis-em" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" required>' +
           '<input class="sis-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">' +
