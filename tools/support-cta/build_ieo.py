@@ -55,6 +55,7 @@ rep('<meta name="robots" content="noindex, nofollow">', f'''<meta name="robots" 
 <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=1)}
 </script>''')
+rep('<meta charset="utf-8">', '<meta charset="utf-8">\n<script src="/assets/si-nav.js"></script>')
 # bylines (subtle, same mono style)
 rep('<div class="by">Words by Wayne Goodwin</div>', f'<div class="by">{BY}</div>')
 rep('<span class="by">Wayne Goodwin</span>', f'<span class="by">{BY}<span class="cv">Conceived by Wayne Goodwin.</span></span>')
