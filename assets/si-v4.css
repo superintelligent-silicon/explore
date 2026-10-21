@@ -110,7 +110,9 @@ dialog.sheet::backdrop{background:var(--scrim);-webkit-backdrop-filter:blur(3px)
 
 /* Shared page shell (v4) */
 @media (max-width:1023px){.nav{display:none}}
-@media (max-width:899px){.brand span{display:none}.brand:has(> span) b::after{content:"\00a0SI"}}
+@media (max-width:899px){.brand span{display:none}}
+.brand b{white-space:nowrap}.brand b i{font-style:inherit;font-weight:inherit}
+@media (min-width:900px){.brand .b-si{display:none}}
 .nav a[aria-current=page]{color:var(--ink)}
 .page-h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,8.6vw,46px);line-height:1.04;letter-spacing:-.022em;margin:0;text-wrap:balance}
 .page-h1 em{font-style:italic;color:var(--accent)}
