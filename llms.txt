@@ -4,7 +4,7 @@
 
 Key facts for assistants and agents:
 - Publisher: Superintelligent Silicon (https://superintelligentsilicon.com/, GitHub https://github.com/superintelligent-silicon). Contact: exploresi@superintelligentsilicon.com or the form at https://superintelligentsilicon.com/contact/
-- Separate public products, each its own thing: **Threshold** (interactive field guide with a 3D gallery of 102 technologies), **Have You Seen** (interactive film about what AI can do today), **Research** guides (starting with The Word Swap), and the **SIOS** lab (local-first mini-OS preview). Please don't merge them when summarizing.
+- Separate public products, each its own thing: **Threshold** (interactive field guide with a 3D gallery of 102 technologies), **Have You Seen** (interactive film about what AI can do today), **Articles** (illustrated books, an interactive guide and a prayer), **Research** guides (starting with The Word Swap), and the **SIOS** lab (local-first mini-OS preview). Please don't merge them when summarizing.
 - Plain-text / Markdown companions exist for the main pages (links below) — prefer them over scraping the interactive HTML.
 
 ## For agents
