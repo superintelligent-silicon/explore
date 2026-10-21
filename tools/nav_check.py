@@ -45,11 +45,20 @@ def release():
     while HELD:
         try: HELD.pop(0).continue_()
         except Exception: pass
+def EV(pg, js):
+    for i in range(6):
+        try: return pg.evaluate(js)
+        except Exception as e:
+            if "context was destroyed" not in str(e) and "navigat" not in str(e): raise
+            pg.wait_for_timeout(500)
+            try: pg.wait_for_load_state("load", timeout=10000)
+            except Exception: pass
+    return "ERR"
 def overlay(pg):
-    return pg.evaluate("""()=>{const o=document.getElementById('si-nav');if(!o)return null;const cs=getComputedStyle(o);
+    return EV(pg, """()=>{const o=document.getElementById('si-nav');if(!o)return null;const cs=getComputedStyle(o);
       return {on:o.classList.contains('on'),op:+cs.opacity,vis:cs.visibility,t:o.dataset.t,bg:cs.backgroundColor,bar:getComputedStyle(o.querySelector('.sn-bar')).display}}""")
 def scroll(pg):
-    return pg.evaluate("()=>{const d=document.scrollingElement;return [d.scrollWidth-d.clientWidth,d.scrollHeight-d.clientHeight]}")
+    return EV(pg, "()=>{const d=document.scrollingElement;return [d.scrollWidth-d.clientWidth,d.scrollHeight-d.clientHeight]}")
 def enter_home(pg):
     try: pg.get_by_role("button", name="Enter", exact=True).click(timeout=1500); pg.wait_for_timeout(500)
     except Exception: pass
@@ -114,12 +123,12 @@ with sync_playwright() as p:
                 n = len(HELD); DELAY["ms"] = 0; release(); pg.wait_for_load_state("load"); pg.wait_for_timeout(300)
                 return m, n
             bm, bn = trav("history.back()")
-            print("step", k, 'res["back"] ='); res["back"] = {"midOv": bm, "held": bn, "url": pg.url, "persisted": pg.evaluate("window.__persisted"), "ov": overlay(pg), "attr": pg.evaluate("document.documentElement.getAttribute('data-si-nav')"), "scroll": scroll(pg)}
+            print("step", k, 'res["back"] ='); res["back"] = {"midOv": bm, "held": bn, "url": pg.url, "persisted": EV(pg, "window.__persisted"), "ov": overlay(pg), "attr": EV(pg, "document.documentElement.getAttribute('data-si-nav')"), "scroll": scroll(pg)}
             pg.wait_for_timeout(1500); res["back"]["ov2"] = overlay(pg)
             fm, fn_ = trav("history.forward()")
-            print("step", k, 'res["fwd"]'); res["fwd"] = {"midOv": fm, "held": fn_, "url": pg.url, "persisted": pg.evaluate("window.__persisted"), "ov": overlay(pg)}
+            print("step", k, 'res["fwd"]'); res["fwd"] = {"midOv": fm, "held": fn_, "url": pg.url, "persisted": EV(pg, "window.__persisted"), "ov": overlay(pg)}
             trav("history.back()"); pg.wait_for_timeout(1500)
-            res["back2"] = {"url": pg.url, "persisted": pg.evaluate("window.__persisted"), "ov": overlay(pg)}
+            res["back2"] = {"url": pg.url, "persisted": EV(pg, "window.__persisted"), "ov": overlay(pg)}
             pg.goto(EB + "about/", wait_until="load"); pg.wait_for_timeout(300); DELAY["ms"] = 1
             ign = {}
             def probe(name, fn):
@@ -149,6 +158,7 @@ with sync_playwright() as p:
             DELAY["ms"] = 0
             res["errors"] = errs
             c.close()
+            json.dump(R, open(f"{OUT}/results.json", "w"), indent=1)
     for th in ["light", "dark"]:
         c, log = ctx(b, 390, 664, th); pg = c.new_page(); errs = []
         pg.on("console", lambda m: m.type == "error" and "MutationObserver" not in m.text and errs.append(m.text)); pg.on("pageerror", lambda e: errs.append(str(e)))
@@ -157,7 +167,7 @@ with sync_playwright() as p:
         forced = overlay(pg)
         pg.goto(EB + "about/", wait_until="load"); pg.wait_for_timeout(300)
         pg.go_back(wait_until="load"); pg.wait_for_timeout(800)
-        R["bfcache-" + th] = {"forcedBefore": forced, "persisted": pg.evaluate("window.__persisted"), "after": overlay(pg), "attr": pg.evaluate("document.documentElement.getAttribute('data-si-nav')"), "errors": errs}
+        R["bfcache-" + th] = {"forcedBefore": forced, "persisted": EV(pg, "window.__persisted"), "after": overlay(pg), "attr": EV(pg, "document.documentElement.getAttribute('data-si-nav')"), "errors": errs}
         c.close()
     for name, kw in [("reduced", dict(rm="reduce")), ("fallback", dict(nonav=True))]:
         c, log = ctx(b, 390, 664, "light", **kw); pg = c.new_page(); CDP[id(pg)] = c.new_cdp_session(pg); errs = []

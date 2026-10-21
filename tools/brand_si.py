@@ -32,7 +32,7 @@ P = {
     ('content="Research on Explore;', 'content="Research on Explore Superintelligence;', 2),
     ('<p class="label">About · <span class="accent">Explore</span></p>', '<p class="label">About · <span class="accent">Explore SI</span></p>'),
     ('aria-label="About Explore"', 'aria-label="About Explore Superintelligence"'),
-    ('<li><strong>Explore</strong><span>', '<li><strong>Explore Superintelligence</strong><span>'),
+    ('<li><strong>Explore</strong><span>', '<li><strong>Explore SI</strong><span>'),
     ('help bring Explore to life', 'help bring Explore Superintelligence to life'),
     ('<p class="note">Explore is brought to you', '<p class="note">Explore Superintelligence is brought to you'),
     ('If Explore’s research has been useful', 'If Explore Superintelligence’s research has been useful')],
@@ -70,7 +70,7 @@ ORG = {
                 '<a href="https://exploresuperintelligence.online/">Explore SI</a>\n            <a href="https://exploresuperintelligence.online/articles/">Articles</a>\n            <a href="https://exploresuperintelligence.online/threshold/">Threshold field guide</a>'),
                ('<nav aria-label="Superintelligent Silicon">\n              <a href="https://exploresuperintelligence.online/">Explore</a>',
                 '<nav aria-label="Superintelligent Silicon">\n              <a href="https://exploresuperintelligence.online/">Explore Superintelligence</a>')],
- "contact.html": MENU + [('Write Superintelligent Silicon / the Explore team.', 'Write Superintelligent Silicon / the Explore Superintelligence team.'),
+ "contact.html": MENU + [('Write Superintelligent Silicon / the Explore team.', 'Write Superintelligent Silicon / the Explore SI team.'),
                ('<small>Public research</small>Explore</a>', '<small>Public research</small>Explore Superintelligence</a>')],
 }
 def apply(path, reps, log):
