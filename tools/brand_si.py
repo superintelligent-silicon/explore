@@ -40,7 +40,7 @@ P = {
  "research/index.html": MENU + [('<h2 id="elsewhere">Elsewhere on Explore</h2>', '<h2 id="elsewhere">Elsewhere on Explore SI</h2>')],
  "shipping/index.html": MENU + [('shared across the Explore home,', 'shared across the Explore Superintelligence home,'),
                                 ('— how Explore relates to Grok Ai Apps', '— how Explore Superintelligence relates to Grok Ai Apps')],
- "sios/index.html": MENU + [('Also on Explore: <a href="/threshold/">', 'Also on Explore Superintelligence: <a href="/threshold/">')],
+ "sios/index.html": MENU + [('Also on Explore: <a href="/threshold/">', 'Also on Explore SI: <a href="/threshold/">')],
  "sios/shell/index.html": [('<a class="menu-link" href="https://exploresuperintelligence.online/">Explore</a>', '<a class="menu-link" href="https://exploresuperintelligence.online/">Explore SI</a>'),
                            ('· <a href="https://exploresuperintelligence.online/">Explore</a>', '· <a href="https://exploresuperintelligence.online/">Explore Superintelligence</a>')],
  "threshold/index.html": [('<a href="/">← Explore</a>', '<a href="/">← Explore SI</a>')],
