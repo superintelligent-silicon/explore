@@ -1,11 +1,11 @@
 # The Word Swap: from Artificial to Super Intelligence
 
-> Plain-text summary of an interactive guide published by Explore Superintelligence.
+> Plain-text summary of an interactive guide published by Superintelligent Silicon on Explore Superintelligence.
 > Full interactive version (charts, timeline, quiz, sources): https://exploresuperintelligence.online/research/word-swap/
 > Cite the HTML page above as the canonical source. This file is a summary, not the full guide.
 
 - Published: 2026-09-29 · Current to: 2026-10-05
-- Publisher: Explore Superintelligence (Superintelligent Silicon) — https://exploresuperintelligence.online/
+- Publisher: Superintelligent Silicon (https://superintelligentsilicon.com/), on Explore Superintelligence — https://exploresuperintelligence.online/
 - Authorship disclosure: Researched and written by Claude, an AI model made by Anthropic. Anthropic is a party to parts of this story: its CEO attended the White House event, its models appear in the guide's incident list, it makes some of the agent products described, and it created MCP. Analysis sections are marked as analysis in the full guide.
 
 ## What the guide covers

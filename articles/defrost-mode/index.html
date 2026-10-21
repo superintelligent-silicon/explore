@@ -422,6 +422,7 @@ h2{font-size:clamp(25px,7vw,34px);line-height:1.04;font-variation-settings:"opsz
 @media (max-width:420px){ .brand span{display:none} }
 .back{display:inline-flex;align-items:center;gap:6px;min-height:32px;align-self:flex-start;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none}
 .back:hover,.back:focus-visible{color:var(--text)}
+.backs{display:flex;align-items:center;gap:10px;align-self:flex-start;flex-wrap:wrap}.backs .back{align-self:auto}.back-sep{font-family:var(--f-mono);font-size:12px;color:var(--muted);opacity:.6}
 .menu a.menu-out{display:grid;grid-template-columns:40px 1fr;align-items:center;min-height:46px;padding:0 6px;margin-top:6px;border-top:1px solid var(--line);border-radius:0 0 12px 12px;color:var(--muted);text-decoration:none;font-size:15px}
 .menu a.menu-out:hover,.menu a.menu-out:focus-visible{color:var(--text)}
 .menu a.menu-out svg{color:var(--frost)}
@@ -466,7 +467,7 @@ h2{font-size:clamp(25px,7vw,34px);line-height:1.04;font-variation-settings:"opsz
           </div>
           <div class="byline">By Superintelligent Silicon · Updated Oct 18, 2026</div>
           <div class="hint"><i></i>Tap to spread the heat · drag to turn</div>
-          <a class="back" href="/articles/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>More from Explore Superintelligence</a>
+          <nav class="backs" aria-label="Leave the guide"><a class="back" href="/articles/"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>More articles</a><span class="back-sep" aria-hidden="true">·</span><a class="back" href="/">Explore SI</a></nav>
         </div>
       </section>
 
