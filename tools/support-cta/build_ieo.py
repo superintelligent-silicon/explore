@@ -32,7 +32,7 @@ ld = {"@context": "https://schema.org", "@graph": [
    "image": {"@type": "ImageObject", "url": U + "og.png", "width": 1200, "height": 630},
    "datePublished": "2026-10-19", "dateModified": "2026-10-19",
    "author": {"@type": "Organization", "@id": "https://superintelligentsilicon.com/#org", "name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"},
-   "contributor": {"@type": "Person", "name": "Wayne Goodwin", "description": "Conceived by Wayne Goodwin"},
+   "contributor": {"@type": "Person", "name": "Way", "description": "Conceived by Way"},
    "publisher": {"@type": "Organization", "@id": "https://superintelligentsilicon.com/#org", "name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"},
    "isPartOf": {"@type": "CollectionPage", "@id": S + "/articles/#page"},
    "license": "https://creativecommons.org/licenses/by/4.0/", "copyrightNotice": NOTE, "copyrightYear": 2026,
@@ -58,7 +58,7 @@ rep('<meta name="robots" content="noindex, nofollow">', f'''<meta name="robots" 
 rep('<meta charset="utf-8">', '<meta charset="utf-8">\n<script src="/assets/si-nav.js"></script>')
 # bylines (subtle, same mono style)
 rep('<div class="by">Words by Wayne Goodwin</div>', f'<div class="by">{BY}</div>')
-rep('<span class="by">Wayne Goodwin</span>', f'<span class="by">{BY}<span class="cv">Conceived by Wayne Goodwin.</span></span>')
+rep('<span class="by">Wayne Goodwin</span>', f'<span class="by">{BY}<span class="cv">Conceived by Way.</span></span>')
 rep("artist:'Words by Wayne Goodwin'", "artist:'Superintelligent Silicon'")
 # quiet way back: All articles · Explore home (splash and the whole-prayer sheet); Support tucked into the sheet
 HOMES = '<nav class="homes" aria-label="Leave the prayer"><a class="home" href="/articles/">← All articles</a><span aria-hidden="true">·</span><a class="home" href="/">Explore SI</a>'

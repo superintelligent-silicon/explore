@@ -55,7 +55,7 @@ may we all then become *complete* in that love,
 
 and let this world be what it could have *always been*.
 
-*Conceived by Wayne Goodwin.*
+*Conceived by Way.*
 
 ## Listen
 

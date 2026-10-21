@@ -447,7 +447,7 @@ Unless a connected feature really earns its place, the plain model is often the 
 
 Updated October 18, 2026. The entry path and attacker are still unconfirmed; figures are as reported, with sources named.
 
-Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Wayne Goodwin.
+Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Way.
 
 ## For agents
 

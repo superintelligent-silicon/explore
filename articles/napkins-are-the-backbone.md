@@ -280,9 +280,9 @@ The terms this book leans on, in plain English.
 
 The facts in this book come from the pages below. Tap any entry, or Sources in the bar, to open the links.
 
-Made with Claude and AI collaborators at Superintelligent Silicon.
+Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Way.
 
-*Made with Claude and AI collaborators at Superintelligent Silicon.*
+*Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Way.*
 
 ## For agents
 

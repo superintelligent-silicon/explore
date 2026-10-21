@@ -21,7 +21,7 @@ Key facts for assistants and agents:
 
 ## Have You Seen
 
-- [Have you seen what AI can do?](https://exploresuperintelligence.online/have-you-seen/): Interactive film in 17 short chapters, drawn live in code (WebGL particles, browser-generated music), alternating sourced science stories (AlphaFold, AI hurricane forecasting, the Herculaneum scrolls, a restored voice, rentosertib, GNoME materials) with everyday things anyone can try with an AI assistant. Credit: Superintelligent Silicon × Claude. Plain-text version: https://exploresuperintelligence.online/have-you-seen.md
+- [Have you seen what AI can do?](https://exploresuperintelligence.online/have-you-seen/): Interactive film in 17 short chapters, drawn live in code (WebGL particles, browser-generated music), alternating sourced science stories (AlphaFold, AI hurricane forecasting, the Herculaneum scrolls, a restored voice, rentosertib, GNoME materials) with everyday things anyone can try with an AI assistant. Credit: GIGG × Claude. Plain-text version: https://exploresuperintelligence.online/have-you-seen.md
 
 ## Articles
 

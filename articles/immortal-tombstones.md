@@ -156,9 +156,9 @@ Tap any source to open it.
 - [Add a Legacy Contact for your Apple Account](https://support.apple.com/en-us/102631) — Apple Support
 - [About Inactive Account Manager](https://support.google.com/accounts/answer/3036546) — Google Account Help
 - [Adding a Legacy Contact](https://about.fb.com/news/2015/02/adding-a-legacy-contact/) — Meta Newsroom · 2015
-Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Wayne Goodwin.
+Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Way.
 
-*Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Wayne Goodwin.*
+*Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Way.*
 
 ## For agents
 

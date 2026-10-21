@@ -327,7 +327,7 @@ The facts in this book come from the pages below. Tap any entry, or Sources in t
 42. [Nick Gillespie: interview with Dan Carlin](https://nickgillespie.substack.com/p/hardcore-historys-dan-carlin-what)
 43. [Low End Mac: Hardcore History's business model](https://lowendmac.com/2016/hardcore-history/)
 
-*Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Wayne Goodwin.*
+*Made with Claude and AI collaborators at Superintelligent Silicon. Conceived by Way.*
 
 *That was part one. Part two is The Ad Ledger, a magazine of the numbers behind the breaks. Part three, The Long Pitch, follows the same tricks back through propaganda, public relations and hypnosis to the ancient world.*
 

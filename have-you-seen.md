@@ -1,6 +1,6 @@
 # Have you seen what AI can do?
 
-> Plain-text companion to the interactive film at https://exploresuperintelligence.online/have-you-seen/ (17 chapters; the web version is drawn live in code with WebGL particles and music generated in your browser). Published by Explore Superintelligence, the public site of Superintelligent Silicon. Credit: Superintelligent Silicon × Claude.
+> Plain-text companion to the interactive film at https://exploresuperintelligence.online/have-you-seen/ (17 chapters; the web version is drawn live in code with WebGL particles and music generated in your browser). Published by Explore Superintelligence, the public site of Superintelligent Silicon. Credit: GIGG × Claude.
 
 ## 00. Have you seen (Opening)
 

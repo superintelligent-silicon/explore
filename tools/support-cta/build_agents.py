@@ -23,7 +23,7 @@ LIC_NAME = "CC BY 4.0"
 LIC_SHORT = "Article text: CC BY 4.0 (" + LIC_URL + "), attribution Superintelligent Silicon with the canonical URL. Illustrations, audio and fonts are not covered: illustrations and audio are © Superintelligent Silicon, all rights reserved; fonts belong to their owners under their own licences."
 ORG = {"name": "Superintelligent Silicon", "url": "https://superintelligentsilicon.com/"}
 CLAUDE = {"name": "Claude (AI model by Anthropic)", "url": "https://www.anthropic.com/"}
-WAYNE = {"name": "Wayne Goodwin"}
+WAYNE = {"name": "Way"}
 def AUTH(it): return it.get("authors") or [it["author"]]
 def BYLINE(it): return " & ".join(a["name"] for a in AUTH(it))
 # newest first; matches /articles/ (the Word Swap sits on that shelf too)
@@ -139,7 +139,7 @@ The books are interactive (canvas and WebGL). Read the Markdown companions inste
 - Link the canonical page, `{SITE}/articles/<slug>/` (the Word Swap lives at `{SITE}/research/word-swap/`). Each page has `<link rel="canonical">` and `<link rel="alternate" type="text/markdown">`.
 - Credit "Superintelligent Silicon" (Explore Superintelligence) plus the title, date and canonical URL; the text is CC BY 4.0 (see [Licence](#licence-and-terms)). Example: *We’ll Be Right Back*, Explore Superintelligence (Superintelligent Silicon), 2026-10-18, {SITE}/articles/well-be-right-back/
 - Facts come from the sources listed at the end of each book or companion. For a specific claim, cite that primary source as well.
-- Authorship: the books are by Superintelligent Silicon, made with Claude and AI collaborators. The Word Swap was researched and written by Claude (an AI model by Anthropic), with the disclosure in its Sources. In Each Other, a prayer, is by Superintelligent Silicon and was conceived by Wayne Goodwin.
+- Authorship: the books are by Superintelligent Silicon, made with Claude and AI collaborators. The Word Swap was researched and written by Claude (an AI model by Anthropic), with the disclosure in its Sources. In Each Other, a prayer, is by Superintelligent Silicon and was conceived by Way.
 
 ## Licence and terms
 
