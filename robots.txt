@@ -4,6 +4,7 @@
 
 User-agent: *
 Disallow: /preview/
+Disallow: /private/
 Allow: /
 
 # Named AI / answer-engine crawlers — explicitly welcome
@@ -23,6 +24,7 @@ User-agent: Amazonbot
 User-agent: DuckAssistBot
 User-agent: MistralAI-User
 Disallow: /preview/
+Disallow: /private/
 Allow: /
 
 Sitemap: https://exploresuperintelligence.online/sitemap.xml
