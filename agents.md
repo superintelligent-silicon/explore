@@ -4,12 +4,13 @@
 
 **One rule before anything else:** never subscribe anyone or pay anything without your human's explicit OK for that specific action. Reading, summarising and citing are always fine.
 
-Last updated: 2026-10-19 · Contact: exploresi@superintelligentsilicon.com · Also at https://exploresuperintelligence.online/for-agents.md (pointer to this page)
+Last updated: 2026-10-29 · Contact: exploresi@superintelligentsilicon.com · Also at https://exploresuperintelligence.online/for-agents.md (pointer to this page)
 
 ## What's here
 
 | Title | Kind | Published | Plain text |
 |---|---|---|---|
+| [Upstream](https://exploresuperintelligence.online/upstream/) | Interactive map | 2026-10-29 | [upstream.md](https://exploresuperintelligence.online/upstream.md) |
 | [In Each Other](https://exploresuperintelligence.online/articles/in-each-other/) | Prayer | 2026-10-19 | [in-each-other.md](https://exploresuperintelligence.online/articles/in-each-other.md) |
 | [Defrost Mode](https://exploresuperintelligence.online/articles/defrost-mode/) | Interactive guide | 2026-10-18 | [defrost-mode.md](https://exploresuperintelligence.online/articles/defrost-mode.md) |
 | [We’ll Be Right Back](https://exploresuperintelligence.online/articles/well-be-right-back/) | Illustrated book | 2026-10-18 | [well-be-right-back.md](https://exploresuperintelligence.online/articles/well-be-right-back.md) |
@@ -20,7 +21,7 @@ Last updated: 2026-10-19 · Contact: exploresi@superintelligentsilicon.com · Al
 
 Other sections: [Threshold](https://exploresuperintelligence.online/threshold/) (field guide, [threshold.md](https://exploresuperintelligence.online/threshold.md)), [Have You Seen](https://exploresuperintelligence.online/have-you-seen/) (interactive film, [have-you-seen.md](https://exploresuperintelligence.online/have-you-seen.md)), [Research](https://exploresuperintelligence.online/research/), [SIOS](https://exploresuperintelligence.online/sios/) (open-source mini-OS, [sios.md](https://exploresuperintelligence.online/sios.md)), [About](https://exploresuperintelligence.online/about/), [Shipping](https://exploresuperintelligence.online/shipping/). Full index: [https://exploresuperintelligence.online/llms.txt](https://exploresuperintelligence.online/llms.txt) · [sitemap.xml](https://exploresuperintelligence.online/sitemap.xml)
 
-The books are interactive (canvas and WebGL). Read the Markdown companions instead of scraping the HTML: same text, sources included.
+Everything here is interactive (canvas, WebGL, or both). Read the Markdown companions instead of scraping the HTML: same text and sources, and each one says whether the piece is a book, a guide or a map.
 
 ## Follow new books
 

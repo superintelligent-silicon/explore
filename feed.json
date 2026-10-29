@@ -3,7 +3,7 @@
   "title": "Explore Superintelligence: new articles",
   "home_page_url": "https://exploresuperintelligence.online/articles/",
   "feed_url": "https://exploresuperintelligence.online/feed.json",
-  "description": "Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.",
+  "description": "Illustrated books, an interactive map and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.",
   "icon": "https://exploresuperintelligence.online/icon-512.png",
   "favicon": "https://exploresuperintelligence.online/favicon.svg",
   "language": "en",
@@ -32,6 +32,39 @@
     }
   },
   "items": [
+    {
+      "id": "https://exploresuperintelligence.online/upstream/",
+      "url": "https://exploresuperintelligence.online/upstream/",
+      "title": "Upstream",
+      "summary": "A public-record 3D map of who shapes AI and everything it touches: 630 organizations and people, 1,577 sourced connections and 330 on-the-record statements across four editions (the whole map, Silicon, Power, Capital), each with its source. Interactive map, not a book.",
+      "content_text": "A public-record 3D map of who shapes AI and everything it touches: 630 organizations and people, 1,577 sourced connections and 330 on-the-record statements across four editions (the whole map, Silicon, Power, Capital), each with its source. Interactive map, not a book.\n\nRead it: https://exploresuperintelligence.online/upstream/\nPlain text (Markdown): https://exploresuperintelligence.online/upstream.md",
+      "image": "https://exploresuperintelligence.online/upstream/og.png",
+      "date_published": "2026-10-29T00:00:00-10:00",
+      "date_modified": "2026-10-29T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Superintelligent Silicon",
+          "url": "https://superintelligentsilicon.com/"
+        }
+      ],
+      "tags": [
+        "Interactive map"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/upstream.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/upstream/",
+        "markdown": "https://exploresuperintelligence.online/upstream.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/upstream/"
+      }
+    },
     {
       "id": "https://exploresuperintelligence.online/articles/in-each-other/",
       "url": "https://exploresuperintelligence.online/articles/in-each-other/",

@@ -28,6 +28,9 @@ def AUTH(it): return it.get("authors") or [it["author"]]
 def BYLINE(it): return " & ".join(a["name"] for a in AUTH(it))
 # newest first; matches /articles/ (the Word Swap sits on that shelf too)
 ITEMS = [
+ dict(slug="upstream", path="/upstream/", md="/upstream.md", title="Upstream", kind="Interactive map", pub="2026-10-29", mod="2026-10-29", author=ORG,
+      summary="A public-record 3D map of who shapes AI and everything it touches: 630 organizations and people, 1,577 sourced connections and 330 on-the-record statements across four editions (the whole map, Silicon, Power, Capital), each with its source. Interactive map, not a book.",
+      image="/upstream/og.png"),
  dict(slug="in-each-other", path="/articles/in-each-other/", md="/articles/in-each-other.md", title="In Each Other", kind="Prayer", pub="2026-10-19", mod="2026-10-19", author=ORG,
       summary="A prayer in nine movements from Superintelligent Silicon. Close your eyes for a moment, touch the light, and listen.",
       image="/articles/in-each-other/og.png"),
@@ -75,7 +78,7 @@ rss = ['<?xml version="1.0" encoding="utf-8"?>',
        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule">', '<channel>',
        '<title>Explore Superintelligence: new articles</title>', f'<link>{SITE}/articles/</link>',
        f'<atom:link href="{B}/feed.xml" rel="self" type="application/rss+xml" />',
-       '<description>Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.</description>',
+       '<description>Illustrated books, an interactive map and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.</description>',
        '<language>en</language>', f'<copyright>Text © Superintelligent Silicon, licensed CC BY 4.0 ({LIC_URL}); illustrations, audio and fonts not covered (all rights reserved)</copyright>', f'<creativeCommons:license>{LIC_URL}</creativeCommons:license>', f'<managingEditor>{CONTACT} (Superintelligent Silicon)</managingEditor>',
        f'<lastBuildDate>{format_datetime(now)}</lastBuildDate>', '<ttl>720</ttl>',
        f'<image><url>{SITE}/icon-512.png</url><title>Explore Superintelligence: new articles</title><link>{SITE}/articles/</link></image>']
@@ -90,7 +93,7 @@ w("feed.xml", "\n".join(rss))
 
 # ---------- JSON Feed 1.1 ----------
 jf = {"version": "https://jsonfeed.org/version/1.1", "title": "Explore Superintelligence: new articles", "home_page_url": f"{SITE}/articles/",
-      "feed_url": f"{B}/feed.json", "description": "Illustrated books and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.",
+      "feed_url": f"{B}/feed.json", "description": "Illustrated books, an interactive map and interactive guides on superintelligence and the people, ideas and tools shaping it. Sourced, designed and free to read.",
       "icon": f"{SITE}/icon-512.png", "favicon": f"{SITE}/favicon.svg", "language": "en", "authors": [ORG],
       "_explore": {"about": "Custom extension (JSON Feed allows _-prefixed keys). Guide for AI agents and the subscribe/tip options.", "agents_guide": f"{B}/agents.md",
                    "llms_txt": f"{B}/llms.txt", "rss": f"{B}/feed.xml", "contact": CONTACT,
@@ -125,7 +128,7 @@ Last updated: {now.date().isoformat()} · Contact: {CONTACT} · Also at {B}/for-
 
 Other sections: [Threshold]({SITE}/threshold/) (field guide, [threshold.md]({SITE}/threshold.md)), [Have You Seen]({SITE}/have-you-seen/) (interactive film, [have-you-seen.md]({SITE}/have-you-seen.md)), [Research]({SITE}/research/), [SIOS]({SITE}/sios/) (open-source mini-OS, [sios.md]({SITE}/sios.md)), [About]({SITE}/about/), [Shipping]({SITE}/shipping/). Full index: [{B}/llms.txt]({B}/llms.txt) · [sitemap.xml]({SITE}/sitemap.xml)
 
-The books are interactive (canvas and WebGL). Read the Markdown companions instead of scraping the HTML: same text, sources included.
+Everything here is interactive (canvas, WebGL, or both). Read the Markdown companions instead of scraping the HTML: same text and sources, and each one says whether the piece is a book, a guide or a map.
 
 ## Follow new books
 

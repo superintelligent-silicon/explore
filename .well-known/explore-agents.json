@@ -14,6 +14,7 @@
     "json_feed": "https://exploresuperintelligence.online/feed.json"
   },
   "markdown_companions": [
+    "https://exploresuperintelligence.online/upstream.md",
     "https://exploresuperintelligence.online/articles/in-each-other.md",
     "https://exploresuperintelligence.online/articles/defrost-mode.md",
     "https://exploresuperintelligence.online/articles/well-be-right-back.md",
@@ -59,5 +60,5 @@
       "fonts": "owners' own licences, not redistributable from this site"
     }
   },
-  "updated": "2026-10-19"
+  "updated": "2026-10-29"
 }
