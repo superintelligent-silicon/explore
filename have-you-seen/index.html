@@ -264,10 +264,14 @@ body::before { content: ""; position: fixed; inset: 0; background: radial-gradie
    on every page. Reserve that band plus a 10px gap here, at every width, so the film's own top row (chip and
    hud) always starts below it and the two can never collide however long the hud label gets. */
 .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(43px + env(safe-area-inset-top, 0px)) 16px 0; }
-.chip { flex: 0 0 auto; max-width: 52vw; font-family: var(--mono); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* On phones the chip and the gold hud label compete for one row. Both type sizes scale with the viewport
+   below ~430px: the chip shrinks just enough to hand the hud more width, and the gold label shrinks so a
+   short label holds a single confident line instead of orphaning a word. text-wrap: balance keeps any
+   wrap that does happen even on both lines. Padding and the nav clearance above are untouched. */
+.chip { flex: 0 0 auto; max-width: 50vw; font-family: var(--mono); font-size: clamp(11px, .9vw + 8.2px, 12px); letter-spacing: clamp(.16em, .26vw + .078em, .2em); text-transform: uppercase; color: var(--gold); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .chip::after { content: ""; display: block; width: 34px; height: 2px; background: var(--gold); margin-top: 6px; opacity: .8; }
 .hud { flex: 1 1 auto; min-width: 0; max-width: 100%; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--fg-dim); text-align: right; line-height: 1.6; font-variant-numeric: tabular-nums; min-height: 1em; overflow-wrap: anywhere; }
-.hud b { display: block; color: var(--gold-2); font-weight: 500; font-size: 20px; letter-spacing: .04em; }
+.hud b { display: block; color: var(--gold-2); font-weight: 500; font-size: clamp(15px, 2.2vw + 6.6px, 20px); letter-spacing: .04em; text-wrap: balance; }
 .space { flex: 1; position: relative; }
 .titlecard { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; opacity: 0; transform: translateY(10px); transition: opacity .7s, transform .7s; padding-inline: 16px; }
 .titlecard.show { opacity: 1; transform: none; }
