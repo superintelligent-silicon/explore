@@ -103,8 +103,9 @@ body.entered #ui{opacity:1}
 #ui > *{min-width:0}
 .top{display:flex;align-items:center;gap:8px;pointer-events:auto}
 .brand{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.15}
-.brand b{font-family:var(--display);font-style:italic;font-weight:500;font-size:17px;color:var(--hi);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand b{font-family:var(--display);font-style:italic;font-weight:500;font-size:17px;color:var(--hi);overflow-wrap:anywhere}
+.brand span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;line-height:1.35;text-transform:uppercase;color:var(--mute);margin-top:2px;overflow-wrap:anywhere;text-wrap:balance}
+@media (max-width:420px){.brand span{font-size:9.5px;letter-spacing:.08em}}
 .ic{min-width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:rgba(20,21,24,.72);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:inline-grid;place-items:center;cursor:pointer;padding:0;transition:border-color .2s,background .2s}
 .ic:hover{border-color:var(--dim)}
