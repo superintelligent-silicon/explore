@@ -14,6 +14,7 @@
     "json_feed": "https://exploresuperintelligence.online/feed.json"
   },
   "markdown_companions": [
+    "https://exploresuperintelligence.online/articles/the-third-party.md",
     "https://exploresuperintelligence.online/upstream.md",
     "https://exploresuperintelligence.online/articles/in-each-other.md",
     "https://exploresuperintelligence.online/articles/defrost-mode.md",

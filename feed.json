@@ -33,6 +33,39 @@
   },
   "items": [
     {
+      "id": "https://exploresuperintelligence.online/articles/the-third-party/",
+      "url": "https://exploresuperintelligence.online/articles/the-third-party/",
+      "title": "The Third Party",
+      "summary": "An essay on strangers in the middle: credit bureaus, screening reports, rent algorithms, assessors and credentials, who they answer to, where they came from, and what else is possible.",
+      "content_text": "An essay on strangers in the middle: credit bureaus, screening reports, rent algorithms, assessors and credentials, who they answer to, where they came from, and what else is possible.\n\nRead it: https://exploresuperintelligence.online/articles/the-third-party/\nPlain text (Markdown): https://exploresuperintelligence.online/articles/the-third-party.md",
+      "image": "https://exploresuperintelligence.online/articles/the-third-party/og.png",
+      "date_published": "2026-11-05T00:00:00-10:00",
+      "date_modified": "2026-11-05T00:00:00-10:00",
+      "authors": [
+        {
+          "name": "Superintelligent Silicon",
+          "url": "https://superintelligentsilicon.com/"
+        }
+      ],
+      "tags": [
+        "Illustrated book"
+      ],
+      "language": "en",
+      "attachments": [
+        {
+          "url": "https://exploresuperintelligence.online/articles/the-third-party.md",
+          "mime_type": "text/markdown",
+          "title": "Plain-text companion"
+        }
+      ],
+      "_explore": {
+        "canonical": "https://exploresuperintelligence.online/articles/the-third-party/",
+        "markdown": "https://exploresuperintelligence.online/articles/the-third-party.md",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "Superintelligent Silicon, https://exploresuperintelligence.online/articles/the-third-party/"
+      }
+    },
+    {
       "id": "https://exploresuperintelligence.online/upstream/",
       "url": "https://exploresuperintelligence.online/upstream/",
       "title": "Upstream",

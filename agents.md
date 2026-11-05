@@ -10,6 +10,7 @@ Last updated: 2026-10-29 · Contact: exploresi@superintelligentsilicon.com · Al
 
 | Title | Kind | Published | Plain text |
 |---|---|---|---|
+| [The Third Party](https://exploresuperintelligence.online/articles/the-third-party/) | Illustrated book | 2026-11-05 | [the-third-party.md](https://exploresuperintelligence.online/articles/the-third-party.md) |
 | [Upstream](https://exploresuperintelligence.online/upstream/) | Interactive map | 2026-10-29 | [upstream.md](https://exploresuperintelligence.online/upstream.md) |
 | [In Each Other](https://exploresuperintelligence.online/articles/in-each-other/) | Prayer | 2026-10-19 | [in-each-other.md](https://exploresuperintelligence.online/articles/in-each-other.md) |
 | [Defrost Mode](https://exploresuperintelligence.online/articles/defrost-mode/) | Interactive guide | 2026-10-18 | [defrost-mode.md](https://exploresuperintelligence.online/articles/defrost-mode.md) |
