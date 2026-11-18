@@ -23,18 +23,69 @@
   document.head.appendChild(css);
 
   /* ---------- audio engine ---------- */
+  /* Mute must always work: AudioParam ramps throw if currentTime is frozen
+     (suspended/interrupted context), and that used to abort setOn before the
+     header button could update. Button state is updated first; audio work is
+     wrapped; a wedged context is closed and rebuilt on the next "on". */
+  var muteTimer=0;
+  function syncBtn(){
+    if(!btn) return;
+    btn.setAttribute("aria-pressed",on?"true":"false");
+    btn.setAttribute("aria-label",on?"Mute sound":"Turn sound on");
+    btn.innerHTML=on?ICON_ON:ICON_OFF;
+  }
+  function rampGain(node,target,dur){
+    if(!node||!ctx) return false;
+    try{
+      var t=ctx.currentTime, param=node.gain, cur;
+      try{ cur=param.value; }catch(e){ cur=(target>0?0.6:0); }
+      param.cancelScheduledValues(t);
+      param.setValueAtTime(cur,t);
+      if(dur&&ctx.state==="running") param.linearRampToValueAtTime(target,t+dur);
+      else param.setValueAtTime(target,t);
+      return true;
+    }catch(e){
+      try{ node.gain.value=target; }catch(e2){}
+      return false;
+    }
+  }
+  function closeCtx(){
+    clearTimeout(muteTimer); muteTimer=0;
+    stopPad(true);
+    try{ if(master) master.gain.value=0; }catch(e){}
+    try{ if(ctx&&ctx.state!=="closed") ctx.close(); }catch(e){}
+    ctx=null; master=null; pad=null;
+  }
+  function resumeCtx(){
+    if(ctx&&ctx.state==="closed"){ ctx=null; master=null; pad=null; }
+    if(!ctx) init();
+    if(!ctx) return Promise.resolve();
+    if(ctx.state==="running") return Promise.resolve();
+    try{
+      var p=ctx.resume();
+      return (p&&p.then)?p.catch(function(){}):Promise.resolve();
+    }catch(e){ return Promise.resolve(); }
+  }
   function init(){
+    if(ctx&&ctx.state==="closed"){ ctx=null; master=null; pad=null; }
     if(ctx||!AC) return;
     ctx=new AC(); master=ctx.createGain(); master.gain.value=0;
     var comp=ctx.createDynamicsCompressor(); comp.threshold.value=-22; comp.ratio.value=4;
     var lp=ctx.createBiquadFilter(); lp.type="lowpass"; lp.frequency.value=5200;
     master.connect(lp); lp.connect(comp); comp.connect(ctx.destination);
   }
+  function disconnectLater(nodes,when){
+    var done=function(){ nodes.forEach(function(n){ try{n.disconnect();}catch(e){} }); };
+    var head=nodes[0];
+    if(head&&"onended" in head){ head.onended=done; }
+    else setTimeout(done, Math.max(50, Math.ceil((when- (ctx?ctx.currentTime:0))*1000)+80));
+  }
   function tone(f,t0,dur,vol,type,det){
     var o=ctx.createOscillator(), g=ctx.createGain();
     o.type=type||"sine"; o.frequency.value=f; if(det) o.detune.value=det;
     g.gain.setValueAtTime(0,t0); g.gain.linearRampToValueAtTime(vol,t0+0.012); g.gain.exponentialRampToValueAtTime(0.0001,t0+dur);
     o.connect(g); g.connect(master); o.start(t0); o.stop(t0+dur+0.05);
+    disconnectLater([o,g], t0+dur+0.05);
   }
   function noise(t0,dur,vol,from,to){
     var n=Math.floor(ctx.sampleRate*dur), b=ctx.createBuffer(1,n,ctx.sampleRate), d=b.getChannelData(0);
@@ -43,7 +94,8 @@
     var f=ctx.createBiquadFilter(); f.type="bandpass"; f.Q.value=0.9;
     f.frequency.setValueAtTime(from,t0); f.frequency.exponentialRampToValueAtTime(to,t0+dur);
     var g=ctx.createGain(); g.gain.setValueAtTime(0,t0); g.gain.linearRampToValueAtTime(vol,t0+dur*0.35); g.gain.exponentialRampToValueAtTime(0.0001,t0+dur);
-    s.connect(f); f.connect(g); g.connect(master); s.start(t0);
+    s.connect(f); f.connect(g); g.connect(master); s.start(t0); s.stop(t0+dur+0.05);
+    disconnectLater([s,f,g], t0+dur+0.05);
   }
   var S={
     chime:function(t){ [659.25,987.77].forEach(function(f,i){ tone(f,t+i*0.09,0.9,0.04,"sine"); }); },
@@ -57,9 +109,12 @@
     tap:function(t){ tone(659.25,t,0.14,0.035,"sine"); tone(987.77,t+0.02,0.12,0.015,"sine"); }
   };
   function play(name,arg){
-    if(!on||!ctx) return;
-    if(ctx.state!=="running") ctx.resume();
-    S[name](ctx.currentTime+0.005,arg);
+    if(!on||!S[name]) return;
+    function go(){
+      if(!on||!ctx||ctx.state!=="running") return;
+      try{ S[name](ctx.currentTime+0.005,arg); }catch(e){}
+    }
+    resumeCtx().then(go);
   }
   function startPad(){
     if(pad||!ctx) return;
@@ -68,19 +123,39 @@
     var lfo=ctx.createOscillator(), lg=ctx.createGain(); lfo.frequency.value=0.07; lg.gain.value=220; lfo.connect(lg); lg.connect(f.frequency); lfo.start();
     var os=[130.81,196,261.63,329.63].map(function(fr,i){ var o=ctx.createOscillator(); o.type=i%2?"triangle":"sine"; o.frequency.value=fr; o.detune.value=(i-1.5)*4; o.connect(f); o.start(); return o; });
     f.connect(g); g.connect(master);
-    g.gain.linearRampToValueAtTime(0.018,ctx.currentTime+6);
-    pad={g:g,os:os.concat([lfo])};
+    try{ g.gain.linearRampToValueAtTime(0.018,ctx.currentTime+6); }catch(e){ try{ g.gain.value=0.018; }catch(e2){} }
+    pad={g:g,f:f,lg:lg,os:os.concat([lfo])};
   }
-  function stopPad(){
-    if(!pad) return; var p=pad; pad=null; var t=ctx.currentTime;
-    p.g.gain.cancelScheduledValues(t); p.g.gain.setValueAtTime(p.g.gain.value,t); p.g.gain.linearRampToValueAtTime(0,t+0.8);
-    setTimeout(function(){ p.os.forEach(function(o){ try{o.stop();}catch(e){} }); },900);
+  function stopPad(immediate){
+    if(!pad) return; var p=pad; pad=null;
+    function kill(){
+      (p.os||[]).forEach(function(o){ try{o.stop();}catch(e){} try{o.disconnect();}catch(e){} });
+      try{ if(p.lg) p.lg.disconnect(); }catch(e){}
+      try{ if(p.f) p.f.disconnect(); }catch(e){}
+      try{ p.g.disconnect(); }catch(e){}
+    }
+    if(immediate||!ctx||ctx.state!=="running"){ try{ p.g.gain.value=0; }catch(e){} kill(); return; }
+    try{ rampGain(p.g,0,0.8); setTimeout(kill,900); }
+    catch(e){ try{ p.g.gain.value=0; }catch(e2){} kill(); }
   }
   function setOn(v,persist){
     on=!!v&&!!AC; if(persist) LS.set(on?"on":"off");
-    if(on){ init(); ctx.resume(); var t=ctx.currentTime; master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value,t); master.gain.linearRampToValueAtTime(0.6,t+0.25); }
-    else if(ctx){ stopPad(); var t2=ctx.currentTime; master.gain.cancelScheduledValues(t2); master.gain.setValueAtTime(master.gain.value,t2); master.gain.linearRampToValueAtTime(0,t2+0.6); }
-    if(btn){ btn.setAttribute("aria-pressed",on?"true":"false"); btn.setAttribute("aria-label",on?"Mute sound":"Turn sound on"); btn.innerHTML=on?ICON_ON:ICON_OFF; }
+    syncBtn();
+    try{
+      if(on){
+        clearTimeout(muteTimer); muteTimer=0;
+        init();
+        resumeCtx().then(function(){ if(on) rampGain(master,0.6,0.25); });
+      } else if(ctx){
+        stopPad();
+        var faded=rampGain(master,0,0.6);
+        clearTimeout(muteTimer);
+        if(!faded||!ctx||ctx.state!=="running") closeCtx();
+        else muteTimer=setTimeout(function(){ if(!on) closeCtx(); },700);
+      }
+    }catch(e){
+      if(!on) closeCtx();
+    }
   }
 
   /* ---------- sound toggle in chrome ---------- */
@@ -90,7 +165,11 @@
   function addToggle(){
     if(!AC||btn) return;
     btn=document.createElement("button"); btn.type="button"; btn.className="si-snd"; btn.id="si-sound-toggle";
-    btn.addEventListener("click",function(){ var nv=!on; setOn(nv,true); if(nv) play("tap"); });
+    btn.addEventListener("click",function(){
+      var nv=!on;
+      try{ setOn(nv,true); }catch(e){ on=!!nv&&!!AC; syncBtn(); if(!on) closeCtx(); }
+      if(nv) play("tap");
+    });
     var hw=document.querySelector(".hdr .wrap"), mb=hw&&hw.querySelector(".menu-btn"); if(hw) hw.insertBefore(btn,mb||null); else document.body.appendChild(btn); setOn(on,false);
   }
 
@@ -128,7 +207,13 @@
     new MutationObserver(function(ms){ ms.forEach(function(m){ var d=m.target; if(d.tagName==="DIALOG") play(d.open?"open":"close"); }); })
       .observe(document.body,{subtree:true,attributes:true,attributeFilter:["open"]});
   }
-  document.addEventListener("visibilitychange",function(){ if(!ctx) return; if(document.hidden) ctx.suspend(); else if(on) ctx.resume(); });
+  document.addEventListener("visibilitychange",function(){
+    if(!ctx) return;
+    try{
+      if(document.hidden) ctx.suspend();
+      else if(on&&ctx.state!=="closed") resumeCtx();
+    }catch(e){}
+  });
 
   /* ---------- splash ---------- */
   var pref=LS.get();
